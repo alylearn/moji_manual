@@ -19,6 +19,8 @@
     --kana-green-light: #EBF7EF;
     --kaiwha-orange: #F07D00;
     --kaiwha-orange-light: #FFF4E6;
+    --kori-indigo: #5B5FD9;
+    --kori-indigo-light: #ECEDFB;
     --text-primary: #1a1a1a;
     --text-secondary: #555;
     --text-muted: #999;
@@ -193,6 +195,7 @@
   .product-card.kana::before { background: var(--kana-green); }
   .product-card.test::before { background: var(--test-red); }
   .product-card.kaiwha::before { background: var(--kaiwha-orange); }
+  .product-card.kori::before { background: var(--kori-indigo); }
 
   .product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
 
@@ -204,6 +207,7 @@
   .card-name.kana { color: var(--kana-green); }
   .card-name.test { color: var(--test-red); }
   .card-name.kaiwha { color: var(--kaiwha-orange); }
+  .card-name.kori { color: var(--kori-indigo); }
 
   .card-tag {
     font-size: 10px;
@@ -217,6 +221,7 @@
   .card-tag.kana { background: var(--kana-green-light); color: var(--kana-green); }
   .card-tag.test { background: var(--test-red-light); color: var(--test-red); }
   .card-tag.kaiwha { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
+  .card-tag.kori { background: var(--kori-indigo-light); color: var(--kori-indigo); }
 
   .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
 
@@ -461,6 +466,13 @@
   .kaiwha .stat-number { color: var(--kaiwha-orange); }
   .kaiwha .scenario-label { color: var(--kaiwha-orange); }
 
+  .kori .module-icon { background: var(--kori-indigo-light); }
+  .kori .module-title { color: var(--kori-indigo); }
+  .kori .section-title { color: var(--kori-indigo); }
+  .kori .app-badge { background: var(--kori-indigo-light); color: var(--kori-indigo); }
+  .kori .stat-number { color: var(--kori-indigo); }
+  .kori .scenario-label { color: var(--kori-indigo); }
+
   /* Update notice */
   .update-notice {
     font-size: 11px;
@@ -531,7 +543,7 @@
       </a>
     </div>
     <div class="nav-section">
-      <div class="nav-section-title">五款产品</div>
+      <div class="nav-section-title">六款产品</div>
 
       <div class="nav-group">
         <a class="nav-item nav-parent" onclick="toggleNav('jisho-nav'); showSection('jisho')">
@@ -571,6 +583,7 @@
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-daka')">打卡日历</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-leiji')">累计学词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-cihui-test')">词汇水平测试</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-renge-test')">日语人格测试</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-xiaoxiao')">消消乐</a>
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-wode')">我的</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-wode-center')">我的中心</a>
@@ -693,9 +706,40 @@
         </div>
       </div>
 
+      <div class="nav-group">
+        <a class="nav-item nav-parent" onclick="toggleNav('kori-nav'); showSection('kori')">
+          <span class="nav-dot" style="background:var(--kori-indigo)"></span>
+          <span style="flex:1">Kori辞书</span><span class="nav-arrow" id="arrow-kori-nav">▸</span>
+        </a>
+        <div class="nav-children" id="kori-nav">
+          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-fanyi')">翻译页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-fanyi')">智能翻译</a>
+          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-search')">搜索页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-search')">搜索</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-citiao')">词条详情</a>
+          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-shoucang')">收藏页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-shoucang')">收藏主页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-shoucang-tingci')">听词</a>
+          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-beici-home')">背词</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-beici-home')">背词首页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-beici-set')">背词设置</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-xuexiliebiao')">学习列表</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-xinxue')">新学</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-fuxi')">复习</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-tingci')">听词</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-daka')">打卡日历</a>
+          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-wode')">我的</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode')">我的中心</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-profile')">个人主页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-xiaozujian')">桌面小组件</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-huigu')">每日回顾</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-shezhi')">设置</a>
+        </div>
+      </div>
+
     </div>
   </nav>
-  <div class="update-notice">最后更新：2026年5月</div>
+  <div class="update-notice">最后更新：2026年6月</div>
 </aside>
 
 <!-- Main -->
@@ -716,7 +760,7 @@
   <section class="product-section active" id="section-overview">
     <div style="margin-top:32px">
       <div style="font-size:14px;color:var(--text-secondary);line-height:1.9;max-width:700px">
-        MOJi旗下共五款日语学习产品，覆盖从零基础入门到专项备考的全学习周期，形成完整的日语学习生态。每款产品定位清晰，功能互补，可独立使用，也可组合搭配。
+        MOJi旗下共六款产品，覆盖日语全周期学习与韩语词典工具。日语产品（MOJi辞書 / MOJi阅读 / MOJiKana / MOJiTest / MOJi会话）从零基础入门到专项备考形成完整生态，新增 Kori辞书 拓展至韩语学习场景。每款产品定位清晰，可独立使用，也可组合搭配。
       </div>
     </div>
     <div class="overview-grid">
@@ -793,6 +837,21 @@
           <span class="feature-pill">表达润色</span>
           <span class="feature-pill">角色扮演</span>
           <span class="feature-pill">语音定制</span>
+        </div>
+      </div>
+      <div class="product-card kori" onclick="showSection('kori')">
+        <div class="card-header">
+          <div class="card-name kori">Kori辞书</div>
+          <span class="card-tag kori">韩语词典</span>
+        </div>
+        <div class="card-desc">面向中文母语者的韩语学习词典，支持中韩互译、深度词条、收藏词单管理与背词计划，复刻MOJi辞書核心学习链路至韩语场景。</div>
+        <div class="card-features">
+          <span class="feature-pill">中韩互译</span>
+          <span class="feature-pill">深度词条</span>
+          <span class="feature-pill">AI简明释义</span>
+          <span class="feature-pill">词单背词</span>
+          <span class="feature-pill">每日回顾</span>
+          <span class="feature-pill">打卡日历</span>
         </div>
       </div>
     </div>
@@ -942,6 +1001,7 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">顶部在线人数</span><span class="feature-desc">实时显示当前在线船友数量及状态文案，文案内容动态变化</span></li>
+          <li><span class="feature-name">顶部功能入口</span><span class="feature-desc">横向滑动功能卡片：玩游戏「消消乐」/ 词汇水平「去评估」/ 日语人格「去测试」/ 影子跟读 等，各功能卡片可直接跳转对应模块</span></li>
           <li><span class="feature-name">标签列表</span><span class="feature-desc">推荐 / NOW / 在日见闻 / 日语学习 / 日常打卡 / 磨磨叽叽 / 小课堂 / イベント / ドラマ / アニメ / 消消乐</span></li>
           <li><span class="feature-name">社区发帖</span><span class="feature-desc">选择圈子标签发布图文内容，与学习者互动</span></li>
           <li><span class="feature-name">点赞评论</span><span class="feature-desc">对帖子点赞、发表评论，评论区支持发送图片</span></li>
@@ -1336,6 +1396,29 @@
           <li><span class="feature-name">测试说明</span><span class="feature-desc">5分钟快速评估日语词汇水平；科学题库结构与动态出题逻辑；461872+人参与；获得针对性学习建议</span></li>
           <li><span class="feature-name">等级分布</span><span class="feature-desc">N5（800词·生存日语）/ N4（2000词·生活用词）/ N3（3000词·内容消费）/ N2（6000词·职场学术）/ N1（10000词·专业领域）</span></li>
           <li><span class="feature-name">历史记录</span><span class="feature-desc">右上角「历史记录」查看历次结果；页面顶部显示当前等级</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="block-renge-test">
+      <div class="module-header">
+        <div class="module-icon">🎭</div>
+        <div>
+          <div class="module-title">日语人格测试</div>
+          <div class="module-subtitle">3分钟测出你的日语学习人格 · 趣味鉴定</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">MOJi圈</span><span class="path-arrow">→</span><span class="path-step">顶部功能区「日语人格·去测试」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">入口页</span><span class="feature-desc">主视觉「你是哪种日语人格？」+ 日文副标题「あなたはどのタイプ？」；四类型预览（同人文学 / 番剧日音 / 教材刷题 / 游戏文本）；底部黄色「开始鉴定（テストを始める →）」按钮；标注「3分钟测出你的日语学习人格」</span></li>
+          <li><span class="feature-name">测试问答</span><span class="feature-desc">通过若干道选择题判定用户日语学习偏好，根据答题结果输出人格类型</span></li>
+          <li><span class="feature-name">结果页·人格卡</span><span class="feature-desc">顶部「あなたのタイプ · YOUR TYPE」标签；中央人格插画 + 英文人格名（如SHIPPER）+ 中文人格名（如磕学挖掘机）；橙色短描述（如「同人黑话大师，精通各种"脖子以下不可描述"的动词」）</span></li>
+          <li><span class="feature-name">扎心鉴定（CHARACTER ANALYSIS）</span><span class="feature-desc">长文描述该人格的学习驱动力、词汇分布、行为特征；语言风格幽默、网感强</span></li>
+          <li><span class="feature-name">DLC礼包</span><span class="feature-desc">人格对应DLC内容包（如「同人磕学DLC」，含同人常见表达 / 小说描写 / 场景表达），可「免费领取」</span></li>
+          <li><span class="feature-name">属性标签（ATTRIBUTE TAGS）</span><span class="feature-desc">5-6个黄色标签描述该人格特质（如厨力爆表 / 社交牛 / 流行网感 / 敬语达人 / 开口困难户 / 卷王属性）</span></li>
+          <li><span class="feature-name">雷达图巅峰属性（PEAK STATS）</span><span class="feature-desc">条状评分图，展示7项属性数值（如正统做题 / 厨力 / 社交牛 / 卷王度 / 网感 / 社畜 / 哑巴度），各项0-100分；不同人格的高低分项不同</span></li>
+          <li><span class="feature-name">底部操作</span><span class="feature-desc">黄色「喊搭子来测！」按钮（看看有谁和你是同款日语人格，分享传播）/ 「再测一次」链接 / 右下角「意见反馈」按钮</span></li>
         </ul>
       </div>
     </div>
@@ -3232,6 +3315,389 @@
         </ul>
       </div>
     </div>
+  </section>
+
+  <!-- Kori辞书 -->
+  <section class="product-section kori" id="section-kori">
+    <div class="section-title">
+      Kori辞书
+      <span class="app-badge" style="background:var(--kori-indigo-light);color:var(--kori-indigo)">韩语词典</span>
+    </div>
+    <div style="font-size:14px;color:var(--text-secondary);line-height:1.9;max-width:760px;margin-bottom:24px">
+      Kori辞书是面向中文母语者的韩语学习词典，提供中韩互译、深度词条释义、词汇收藏管理、背词计划与桌面小组件等完整学习链路。当前版本 v2.0.6。
+    </div>
+
+    <!-- ========== 翻译页 ========== -->
+    <div class="content-divider" id="kori-fanyi-section">翻译页</div>
+
+    <div class="module-block section-block" id="kori-fanyi">
+      <div class="module-header">
+        <div class="module-icon">🌐</div>
+        <div>
+          <div class="module-title">智能翻译</div>
+          <div class="module-subtitle">中韩互译 · 对照/完整模式 · 重点词汇提取</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页顶部「翻译」Tab</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">翻译方式</span><span class="feature-desc">输入或粘贴翻译；支持拍照识别（OCR）和手写输入</span></li>
+          <li><span class="feature-name">语言方向</span><span class="feature-desc">自动识别 / 韩-中 二选一</span></li>
+          <li><span class="feature-name">翻译结果</span><span class="feature-desc">对照模式（原文+译文并排）/ 完整模式 两种视图</span></li>
+          <li><span class="feature-name">重点词汇区</span><span class="feature-desc">自动提取句中词汇；点击词汇弹出释义卡，可直接收藏</span></li>
+          <li><span class="feature-name">右上角「···」</span><span class="feature-desc">收藏 / 分享</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== 搜索页 ========== -->
+    <div class="content-divider" id="kori-search-section">搜索页</div>
+
+    <div class="module-block section-block" id="kori-search">
+      <div class="module-header">
+        <div class="module-icon">🔍</div>
+        <div>
+          <div class="module-title">搜索</div>
+          <div class="module-subtitle">多输入方式 · 浏览历史 · 实时热搜</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页顶部「搜索」Tab（默认页）</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">搜索方式</span><span class="feature-desc">支持汉字、韩文、罗马音；自动识别输入类型；支持拍照识别（OCR）和手写输入</span></li>
+          <li><span class="feature-name">搜索页内容</span><span class="feature-desc">浏览历史（最近查词记录，右上角「··」可清除）；实时热搜（平台热门查词排行）</span></li>
+          <li><span class="feature-name">底部搜索栏</span><span class="feature-desc">左侧扫一扫图标（OCR拍照识别）/ 右侧手写图标 / 中间输入或粘贴搜索</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-citiao">
+      <div class="module-header">
+        <div class="module-icon">📖</div>
+        <div>
+          <div class="module-title">词条详情</div>
+          <div class="module-subtitle">深度词条 · AI简明释义 · 关联词 · 评论</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">搜索结果</span><span class="path-arrow">→</span><span class="path-step">点击任意词条</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">顶部信息</span><span class="feature-desc">韩文词条大字 + 罗马音 + 发音标记 + 多声优朗读（右上角「···」→「发音设置」可切换）；词性标签 + 源语</span></li>
+          <li><span class="feature-name">义项</span><span class="feature-desc">一词多义时分为不同义项，每个义项的简明释义不同；下拉可点击切换义项，方便查找</span></li>
+          <li><span class="feature-name">简明释义</span><span class="feature-desc">AI生成，一行简洁中文释义</span></li>
+          <li><span class="feature-name">词类活用</span><span class="feature-desc">陈述型 / 疑问型 / 感叹型 / 副词型 / 名词型 / 冠词型 / 连接型 等</span></li>
+          <li><span class="feature-name">释义</span><span class="feature-desc">中文释义 + 韩文释义</span></li>
+          <li><span class="feature-name">例句</span><span class="feature-desc">韩文例句 + 中文翻译；声优朗读</span></li>
+          <li><span class="feature-name">关联词</span><span class="feature-desc">近义词 / 反义词 / 上位词 / 下位词 / 参考词 / 方言 等</span></li>
+          <li><span class="feature-name">语用信息</span><span class="feature-desc">惯用语·俗语，规范信息，历史信息</span></li>
+          <li><span class="feature-name">评论区</span><span class="feature-desc">用户评论、助记、造句；下方数字显示评论数</span></li>
+          <li><span class="feature-name">操作按钮</span><span class="feature-desc">底部：评论数 / 收藏；「···」更多操作</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== 收藏页 ========== -->
+    <div class="content-divider" id="kori-shoucang-section">收藏页</div>
+
+    <div class="module-block section-block" id="kori-shoucang">
+      <div class="module-header">
+        <div class="module-icon">⭐</div>
+        <div>
+          <div class="module-title">收藏主页</div>
+          <div class="module-subtitle">词汇收藏管理 · 筛选排序</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页顶部「收藏」Tab</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">收藏列表</span><span class="feature-desc">按时间分组显示（昨天 / 近一周 / 月份），每条显示词单封面 + 词单名称 + 收藏星标；底部「查找收藏内容」搜索栏；右下角蓝色「+」新建</span></li>
+          <li><span class="feature-name">筛选与排序</span><span class="feature-desc">点击「全部·最新收藏▾」左侧按钮弹出面板：筛选（全部/单字/例句/其他）/ 排序（最新收藏/种类/最近浏览/最早收藏/名称）</span></li>
+          <li><span class="feature-name">右上角「··」菜单</span><span class="feature-desc">PDF导出 / 回顾单词 / 隐藏释义 / 展示评论 / 批量管理</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-shoucang-tingci">
+      <div class="module-header">
+        <div class="module-icon">🎧</div>
+        <div>
+          <div class="module-title">听词</div>
+          <div class="module-subtitle">收藏词单朗读 · 卡片/列表模式</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">任意收藏词单</span><span class="path-arrow">→</span><span class="path-step">顶部「听单词」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">选择任意收藏词单，以卡片形式逐词朗读；卡片显示韩文大字 + 发音标记 + 词性标签 + 中文释义 + 例句；底部：设置/暂停/评论；支持卡片/列表视图切换；进度显示（如1/73）；「详细释义」跳转完整词条</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== 背词 ========== -->
+    <div class="content-divider" id="kori-beici-section">背词</div>
+
+    <div class="module-block section-block" id="kori-beici-home">
+      <div class="module-header">
+        <div class="module-icon">📚</div>
+        <div>
+          <div class="module-title">背词首页</div>
+          <div class="module-subtitle">计划总览 · 今日数据</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页功能区「背词」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">我的计划卡片</span><span class="feature-desc">词书封面 + 词书名 + 总词数 + 预计学完天数 + 掌握数/已学数 + 进度条；「学习列表」入口；右侧铅笔图标→背词设置；底部「复习 X」（白色）和「学习」按钮；右上角「更多计划」进入完整计划列表</span></li>
+          <li><span class="feature-name">今天学习数据</span><span class="feature-desc">今日学词数 + 累计学词 / 累计打卡（天数）；「打卡日历」入口</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-beici-set">
+      <div class="module-header">
+        <div class="module-icon">⚙️</div>
+        <div>
+          <div class="module-title">背词设置</div>
+          <div class="module-subtitle">题型配置 · 学习/复习分开设置</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片右侧「铅笔图标」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">计划名称</span><span class="feature-desc">可修改名称</span></li>
+          <li><span class="feature-name">背词任务</span><span class="feature-desc">单词剩余量；开始与结束时间；每次背词量</span></li>
+          <li><span class="feature-name">题型设置</span><span class="feature-desc">分为「学习」与「复习」，题型配置相同；可选「官方题型」（自动生成最佳3种）或「自选题型」；自选题型分三档——通用（看单词选释义/看释义选单词）/ 重点考察（看单词选错义/听发音选单字/听发音选释义）/ 进阶拼写（看释义拼单词/拼写例句）</span></li>
+          <li><span class="feature-name">背词排序</span><span class="feature-desc">词表正序 / 随机排序</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-xuexiliebiao">
+      <div class="module-header">
+        <div class="module-icon">📋</div>
+        <div>
+          <div class="module-title">学习列表</div>
+          <div class="module-subtitle">未学习 · 复习中 · 已掌握 · 批量筛选</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片「学习列表」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">三个Tab</span><span class="feature-desc">未学习（显示总词汇数）/ 复习中（额外显示记忆程度）/ 已掌握（额外显示记忆程度）</span></li>
+          <li><span class="feature-name">批量筛选</span><span class="feature-desc">「复习中」/「已掌握」右上角漏斗按钮进入筛选模式；复习中按日期选/按程度选；已掌握按日期选</span></li>
+          <li><span class="feature-name">学单词</span><span class="feature-desc">底部「学单词」蓝色按钮，进入学单词模式</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-xinxue">
+      <div class="module-header">
+        <div class="module-icon">🆕</div>
+        <div>
+          <div class="module-title">新学</div>
+          <div class="module-subtitle">词汇列表 · 学习 · 测试（题型由设置决定）</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片「学习」按钮</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">词汇列表</span><span class="feature-desc">展示本次新学词汇；每条显示单词 + 发音标记 + 词性 + 简明释义 + 发音按钮；左上角「全部▾」切换显示方式（全部/拼写/解释）</span></li>
+          <li><span class="feature-name">学单词（蓝色）</span><span class="feature-desc">进入听词界面，按顺序朗读本次新学词汇</span></li>
+          <li><span class="feature-name">测试（灰色）</span><span class="feature-desc">题型由背词设置决定；右上角「···」：标记掌握 / 帮助 / 设置 / 错误反馈</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-fuxi">
+      <div class="module-header">
+        <div class="module-icon">🔁</div>
+        <div>
+          <div class="module-title">复习</div>
+          <div class="module-subtitle">复习列表 · 筛选排序 · 多选管理</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片「复习 X」按钮</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">复习列表</span><span class="feature-desc">展示待复习词汇；每条显示单词 + 发音标记 + 词性 + 简明释义 + 记忆程度 + 发音按钮；底部「测试复习」（蓝色）</span></li>
+          <li><span class="feature-name">左上角「全部▾」</span><span class="feature-desc">切换显示方式：全部 / 拼写 / 解释</span></li>
+          <li><span class="feature-name">右上角漏斗筛选</span><span class="feature-desc">按日期选 / 按程度选</span></li>
+          <li><span class="feature-name">右上角田字格</span><span class="feature-desc">多选模式；底部操作：标记掌握</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-tingci">
+      <div class="module-header">
+        <div class="module-icon">🎶</div>
+        <div>
+          <div class="module-title">听词</div>
+          <div class="module-subtitle">卡片/列表模式 · 播放设置 · 遮挡 · 详细释义 · 评论</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">学习「学单词」/ 学习列表「学单词」/ 首页默认页「听单词」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">卡片模式</span><span class="feature-desc">单词卡片逐词朗读；显示韩文大字 + 发音标记 + 词性标签 + 简明释义 + 例句；顶部声优胶囊（如「善姬 朗读」）可点击切换声优；进度显示；右下角切换「列表」视图</span></li>
+          <li><span class="feature-name">列表模式</span><span class="feature-desc">灰色背景滚动列表，多词同屏显示，当前播放词居中高亮；右下角切换「卡片」视图</span></li>
+          <li><span class="feature-name">播放设置</span><span class="feature-desc">顺序（顺序/随机）/ 倍速 / 间隔；定时关闭 / 循环设置 / 发音设置；播放词条解释（开关）/ 播放例句（韩语/中文独立勾选）</span></li>
+          <li><span class="feature-name">遮挡功能</span><span class="feature-desc">点击眼睛图标：遮挡全部 / 遮挡释义例句 / 遮挡单词</span></li>
+          <li><span class="feature-name">详细释义</span><span class="feature-desc">点击「详细释义 →」跳转词条详情页</span></li>
+          <li><span class="feature-name">评论区</span><span class="feature-desc">点击💬进入；展示用户评论及点赞数；可发布评论</span></li>
+          <li><span class="feature-name">词条列表弹窗</span><span class="feature-desc">点击底部左侧列表图标，弹出完整词汇列表，可跳转任意词条</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-daka">
+      <div class="module-header">
+        <div class="module-icon">📅</div>
+        <div>
+          <div class="module-title">打卡日历</div>
+          <div class="module-subtitle">学习记录 · 回顾与预测 · 每日提醒</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">今天学习数据区「打卡日历」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">顶部状态栏</span><span class="feature-desc">连续天数 / 累计天数 / 累计学时；未完成时显示「去背词」蓝色按钮</span></li>
+          <li><span class="feature-name">日历视图</span><span class="feature-desc">月历展示；可按月翻页</span></li>
+          <li><span class="feature-name">学习记录</span><span class="feature-desc">周/月/年切换柱状图；蓝色柱=学习量，红色柱=复习量；底部：学习词数 / 复习词数</span></li>
+          <li><span class="feature-name">每日提醒</span><span class="feature-desc">开关控制，开启后按时推送背词提醒</span></li>
+          <li><span class="feature-name">每日回顾</span><span class="feature-desc">小组件跳转桌面小组件设置，一键查看当日背词任务</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== 我的 ========== -->
+    <div class="content-divider" id="kori-wode-section">我的</div>
+
+    <div class="module-block section-block" id="kori-wode">
+      <div class="module-header">
+        <div class="module-icon">👤</div>
+        <div>
+          <div class="module-title">我的中心</div>
+          <div class="module-subtitle">会员 · 钱包 · 学习目标 · 快捷工具</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页右上角头像</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">订阅会员</span><span class="feature-desc">显示到期时间，一键续费；VIP标识显示</span></li>
+          <li><span class="feature-name">钱包</span><span class="feature-desc">KO币余额 + 优惠券数量</span></li>
+          <li><span class="feature-name">学习目标</span><span class="feature-desc">可设置目标等级（如TOPIK6）</span></li>
+          <li><span class="feature-name">快捷工具</span><span class="feature-desc">小组件 / 每日回顾 / 邀请码 / 语言切换 / 帮助与反馈 / 关注我们</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-wode-profile">
+      <div class="module-header">
+        <div class="module-icon">🌟</div>
+        <div>
+          <div class="module-title">个人主页</div>
+          <div class="module-subtitle">基本信息展示 · 资料编辑</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">我的中心</span><span class="path-arrow">→</span><span class="path-step">「个人主页」按钮</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">基本信息</span><span class="feature-desc">头像 / 昵称 / UID / 个性签名</span></li>
+          <li><span class="feature-name">编辑资料</span><span class="feature-desc">可编辑头像 / 昵称 / 性别 / 签名 / 背景</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-wode-xiaozujian">
+      <div class="module-header">
+        <div class="module-icon">🧩</div>
+        <div>
+          <div class="module-title">桌面小组件</div>
+          <div class="module-subtitle">背词进度 · 每日回顾 · 快捷入口</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">我的中心</span><span class="path-arrow">→</span><span class="path-step">「小组件」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">背词进度</span><span class="feature-desc">展示背词进度百分比和剩余单词数；点击跳转背词计划；样式为黑白纯色</span></li>
+          <li><span class="feature-name">每日回顾</span><span class="feature-desc">随机展示收藏词汇，碎片时间记忆单词；样式可选：黑白纯色 / 自定义背景；底部「设置回顾范围」入口</span></li>
+          <li><span class="feature-name">快捷入口</span><span class="feature-desc">一键跳转功能（翻译/收藏/打开链接/搜索），节省打开App时间；三种样式——快捷方式1（4格图标）/ 快捷方式2（含打开链接/翻译/查词/收藏）/ 快捷方式3（含搜索复制内容/翻译复制内容/搜索收藏）</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-wode-huigu">
+      <div class="module-header">
+        <div class="module-icon">🔔</div>
+        <div>
+          <div class="module-title">每日回顾</div>
+          <div class="module-subtitle">小组件推送 · 通知碎片复习</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">我的中心</span><span class="path-arrow">→</span><span class="path-step">「每日回顾」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">小组件</span><span class="feature-desc">桌面添加Kori小组件，每日显示待回顾词汇</span></li>
+          <li><span class="feature-name">应用通知</span><span class="feature-desc">可设置每天推送条数（默认每天6条），不打开App也能碎片复习；词单无词时默认推送热搜词汇</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="kori-wode-shezhi">
+      <div class="module-header">
+        <div class="module-icon">⚙️</div>
+        <div>
+          <div class="module-title">设置</div>
+          <div class="module-subtitle">账号 · 功能 · 系统</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">我的中心</span><span class="path-arrow">→</span><span class="path-step">右上角设置图标</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">账号与安全</span><span class="feature-desc">账号管理；服务号绑定（绑定微信服务号）</span></li>
+          <li><span class="feature-name">功能设置</span><span class="feature-desc">发音（声优偏好）/ 主题（纯白风格 / 暗黑风格 / 自定义背景）/ 高阶玩法</span></li>
+          <li><span class="feature-name">系统设置</span><span class="feature-desc">注音模式（罗马音 / 不注音）/ 常亮模式（背词时屏幕不息屏）/ 清除缓存 / 个性化内容推荐开关 / 反馈</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== 使用场景 ========== -->
+    <div class="content-divider" id="kori-scenario-section">使用场景</div>
+
+    <div class="module-block section-block">
+      <div class="module-header">
+        <div class="module-icon">💡</div>
+        <div>
+          <div class="module-title">日常查词</div>
+          <div class="module-subtitle">精准查询 · 一键收藏 · 自动复习</div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">精准命中</span><span class="feature-desc">遇到不认识的单词，精准搜索第一条即命中</span></li>
+          <li><span class="feature-name">深度理解</span><span class="feature-desc">查看动词活用、近反义词加深理解</span></li>
+          <li><span class="feature-name">一键收藏</span><span class="feature-desc">一键收藏生词，自动进入复习计划</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-block section-block">
+      <div class="module-header">
+        <div class="module-icon">📖</div>
+        <div>
+          <div class="module-title">系统背词</div>
+          <div class="module-subtitle">官方词单 · 艾宾浩斯曲线 · 碎片化复习</div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">选择词单</span><span class="feature-desc">选择官方词单</span></li>
+          <li><span class="feature-name">复习规划</span><span class="feature-desc">选择题型，按艾宾浩斯曲线规划复习</span></li>
+          <li><span class="feature-name">碎片强化</span><span class="feature-desc">桌面小组件 / 单词推送，碎片化强化</span></li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 
 </main>
