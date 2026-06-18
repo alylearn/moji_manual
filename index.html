@@ -4,7 +4,531 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MOJi 全产品说明书</title>
-<link rel="stylesheet" href="manual_style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  :root {
+    --moji-green: #1D9E75;
+    --moji-green-light: #E1F5EE;
+    --moji-green-mid: #5DCAA5;
+    --test-red: #E8342A;
+    --test-red-light: #FFF0EF;
+    --yomi-blue: #1A6BAF;
+    --yomi-blue-light: #EAF3FB;
+    --kana-green: #3BAA5C;
+    --kana-green-light: #EBF7EF;
+    --kaiwha-orange: #F07D00;
+    --kaiwha-orange-light: #FFF4E6;
+    --kori-indigo: #5B5FD9;
+    --kori-indigo-light: #ECEDFB;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #999;
+    --border: #e8e8e8;
+    --bg: #fafaf8;
+    --white: #ffffff;
+    --sidebar-w: 260px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: var(--sidebar-w);
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-logo {
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-logo .logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--moji-green);
+    letter-spacing: -0.5px;
+  }
+
+  .sidebar-logo .logo-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    letter-spacing: 1px;
+  }
+
+  .sidebar-nav { padding: 16px 0; flex: 1; }
+
+  .nav-section { margin-bottom: 8px; }
+
+  .nav-section-title {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 20px 4px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+    text-decoration: none;
+  }
+
+  .nav-item:hover { background: var(--bg); color: var(--text-primary); }
+
+  .nav-item.active {
+    color: var(--moji-green);
+    background: var(--moji-green-light);
+    border-left-color: var(--moji-green);
+    font-weight: 500;
+  }
+
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Main content */
+  .main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    padding: 0;
+  }
+
+  /* Page header */
+  .page-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 56px 36px;
+  }
+
+  .page-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+  }
+
+  .page-header .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .meta-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: var(--moji-green-light);
+    color: var(--moji-green);
+    font-weight: 500;
+  }
+
+  /* Product sections */
+  .product-section {
+    display: none;
+    padding: 40px 56px 60px;
+  }
+
+  .product-section.active { display: block; }
+
+  /* Overview grid */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .product-card.jisho::before { background: var(--moji-green); }
+  .product-card.yomi::before { background: var(--yomi-blue); }
+  .product-card.kana::before { background: var(--kana-green); }
+  .product-card.test::before { background: var(--test-red); }
+  .product-card.kaiwha::before { background: var(--kaiwha-orange); }
+  .product-card.kori::before { background: var(--kori-indigo); }
+
+  .product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+
+  .card-name { font-size: 16px; font-weight: 700; }
+  .card-name.jisho { color: var(--moji-green); }
+  .card-name.yomi { color: var(--yomi-blue); }
+  .card-name.kana { color: var(--kana-green); }
+  .card-name.test { color: var(--test-red); }
+  .card-name.kaiwha { color: var(--kaiwha-orange); }
+  .card-name.kori { color: var(--kori-indigo); }
+
+  .card-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .card-tag.jisho { background: var(--moji-green-light); color: var(--moji-green); }
+  .card-tag.yomi { background: var(--yomi-blue-light); color: var(--yomi-blue); }
+  .card-tag.kana { background: var(--kana-green-light); color: var(--kana-green); }
+  .card-tag.test { background: var(--test-red-light); color: var(--test-red); }
+  .card-tag.kaiwha { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
+  .card-tag.kori { background: var(--kori-indigo-light); color: var(--kori-indigo); }
+
+  .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+  .card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .feature-pill {
+    font-size: 11px;
+    padding: 3px 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text-secondary);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title .app-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .section-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 680px;
+    margin-bottom: 32px;
+  }
+
+  /* Module blocks */
+
+  .screenshot-gallery { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+  .screenshot-gallery img { max-width: 260px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer; }
+  .screenshot-gallery img:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .module-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .module-header {
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .module-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .module-title { font-size: 15px; font-weight: 600; flex: 1; }
+  .module-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+  .path-chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .path-step {
+    font-size: 11px;
+    background: var(--test-red-light);
+    color: var(--test-red);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .jisho .path-step { background: var(--moji-green-light); color: var(--moji-green); }
+  .yomi .path-step { background: var(--yomi-blue-light); color: var(--yomi-blue); }
+  .kana .path-step { background: var(--kana-green-light); color: var(--kana-green); }
+  .kaiwha .path-step { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
+
+  .path-arrow {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .module-body { padding: 20px 24px; }
+
+  .feature-list { list-style: none; }
+
+  .feature-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--bg);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .feature-list li:last-child { border-bottom: none; }
+
+  .feature-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+
+  .feature-desc { color: var(--text-secondary); }
+  .feature-desc ul { margin: 4px 0 0 0; padding-left: 16px; list-style: disc; }
+  .feature-desc ul li { margin-bottom: 4px; line-height: 1.7; }
+
+  /* Scenario section */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .scenario-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .scenario-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .scenario-steps { list-style: none; }
+
+  .scenario-steps li {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 3px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.6;
+  }
+
+  .scenario-steps li::before {
+    content: '→';
+    color: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Divider */
+  .content-divider {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .content-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 18px;
+    text-align: center;
+  }
+
+  .stat-number { font-size: 18px; font-weight: 700; }
+  .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Color theming per app */
+  .jisho .module-icon { background: var(--moji-green-light); }
+  .jisho .module-title { color: var(--moji-green); }
+  .jisho .section-title { color: var(--moji-green); }
+  .jisho .app-badge { background: var(--moji-green-light); color: var(--moji-green); }
+  .jisho .stat-number { color: var(--moji-green); }
+  .jisho .scenario-label { color: var(--moji-green); }
+
+  .yomi .module-icon { background: var(--yomi-blue-light); }
+  .yomi .module-title { color: var(--yomi-blue); }
+  .yomi .section-title { color: var(--yomi-blue); }
+  .yomi .app-badge { background: var(--yomi-blue-light); color: var(--yomi-blue); }
+  .yomi .stat-number { color: var(--yomi-blue); }
+  .yomi .scenario-label { color: var(--yomi-blue); }
+
+  .kana .module-icon { background: var(--kana-green-light); }
+  .kana .module-title { color: var(--kana-green); }
+  .kana .section-title { color: var(--kana-green); }
+  .kana .app-badge { background: var(--kana-green-light); color: var(--kana-green); }
+  .kana .stat-number { color: var(--kana-green); }
+  .kana .scenario-label { color: var(--kana-green); }
+
+  .test .module-icon { background: var(--test-red-light); }
+  .test .module-title { color: var(--test-red); }
+  .test .section-title { color: var(--test-red); }
+  .test .app-badge { background: var(--test-red-light); color: var(--test-red); }
+  .test .stat-number { color: var(--test-red); }
+  .test .scenario-label { color: var(--test-red); }
+
+  .kaiwha .module-icon { background: var(--kaiwha-orange-light); }
+  .kaiwha .module-title { color: var(--kaiwha-orange); }
+  .kaiwha .section-title { color: var(--kaiwha-orange); }
+  .kaiwha .app-badge { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
+  .kaiwha .stat-number { color: var(--kaiwha-orange); }
+  .kaiwha .scenario-label { color: var(--kaiwha-orange); }
+
+  .kori .module-icon { background: var(--kori-indigo-light); }
+  .kori .module-title { color: var(--kori-indigo); }
+  .kori .section-title { color: var(--kori-indigo); }
+  .kori .app-badge { background: var(--kori-indigo-light); color: var(--kori-indigo); }
+  .kori .stat-number { color: var(--kori-indigo); }
+  .kori .scenario-label { color: var(--kori-indigo); }
+
+  /* Update notice */
+  .update-notice {
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  @media print {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .product-section { display: block !important; }
+  }
+
+  .nav-parent { cursor:pointer; display:flex; align-items:center; }
+  .nav-arrow { font-size:10px; color:var(--text-muted); margin-left:4px; transition:transform 0.2s; }
+  .nav-arrow.open { transform:rotate(90deg); }
+  .nav-children { display:none; }
+  .nav-children.open { display:block; }
+  .nav-sub { display:block; padding:5px 16px 5px 28px; font-size:12px; color:var(--text-secondary); cursor:pointer; text-decoration:none; }
+  .nav-sub:hover { color:var(--moji-green); background:var(--moji-green-light); }
+  .nav-sub2 { padding-left:40px; font-size:11px; color:var(--text-muted); }
+  .section-block { scroll-margin-top:24px; }
+
+  .sidebar-toggle {
+    position: fixed;
+    top: 50%;
+    left: 260px;
+    transform: translateY(-50%);
+    z-index: 200;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0 6px 6px 0;
+    width: 20px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.25s;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.08);
+    padding: 0;
+  }
+  .sidebar-toggle:hover { color: var(--moji-green); }
+  .sidebar { transition: width 0.25s; overflow: hidden; }
+  .sidebar.collapsed { width: 0 !important; min-width: 0 !important; }
+  .sidebar-toggle.collapsed { left: 0; }
+  .main-content { transition: margin-left 0.25s; }
+</style>
 </head>
 <body>
 
@@ -51,10 +575,12 @@
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-shoucang')">收藏页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-main')">收藏主页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-tingci')">听词</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-beici')">背词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-biji')">笔记</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-huigu')">回顾</a>
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-beici-home')">背词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-home-detail')">背词首页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-more')">更多计划</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-set')">背词设置</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-xuexiliebiao')">学习列表</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-xinxue')">新学</a>
@@ -219,7 +745,7 @@
 
     </div>
   </nav>
-  <div class="update-notice">最后更新：2026年6月（v28：CSS外置 · Kori截图入库 · 点击大图）</div>
+  <div class="update-notice">最后更新：2026年6月</div>
 </aside>
 
 <!-- Main -->
@@ -367,6 +893,15 @@
           <li><span class="feature-name">AI智能解析</span><span class="feature-desc">点击解析按钮进入句子深度分析模式：句子主干黄色高亮，顶部显示整句假名读音；两种视图：日式传统（横排分词标注）/ 导图模式（思维导图展开句子结构）；设置面板可控制假名显示/词汇高亮/词性高亮/动词分类/句子结构开关</span></li>
           <li><span class="feature-name">右上角「···」</span><span class="feature-desc">润色 / 收藏 / 分享 / 反馈</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-fanyi-smart-01.jpeg" alt="dict-fanyi-smart-01" loading="lazy">
+        <img src="images/dict/dict-fanyi-smart-02.jpeg" alt="dict-fanyi-smart-02" loading="lazy">
+        <img src="images/dict/dict-fanyi-smart-03.jpeg" alt="dict-fanyi-smart-03" loading="lazy">
+        <img src="images/dict/dict-fanyi-smart-04.jpeg" alt="dict-fanyi-smart-04" loading="lazy">
+        <img src="images/dict/dict-fanyi-smart-05.jpeg" alt="dict-fanyi-smart-05" loading="lazy">
+        <img src="images/dict/dict-fanyi-smart-06.jpeg" alt="dict-fanyi-smart-06" loading="lazy">
+        <img src="images/dict/dict-fanyi-smart-07.jpeg" alt="dict-fanyi-smart-07" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -386,6 +921,10 @@
           <li><span class="feature-name">点词查词</span><span class="feature-desc">注音后可点击任意词汇直接跳转查词收藏</span></li>
           <li><span class="feature-name">底部跳转</span><span class="feature-desc">跳转MOJi阅读，支持解析epub/txt文件</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-fanyi-zhuyin-01.png" alt="dict-fanyi-zhuyin-01" loading="lazy">
+        <img src="images/dict/dict-fanyi-zhuyin-02.png" alt="dict-fanyi-zhuyin-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -407,6 +946,10 @@
           </ul></span></li>
           <li><span class="feature-name">额度</span><span class="feature-desc">右上角「额度」查看剩余AI批改次数</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-fanyi-pigai-01.jpeg" alt="dict-fanyi-pigai-01" loading="lazy">
+        <img src="images/dict/dict-fanyi-pigai-02.jpeg" alt="dict-fanyi-pigai-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -423,6 +966,10 @@
         <ul class="feature-list">
           <li><span class="feature-name">功能说明</span><span class="feature-desc">跳转MOJi翻译网页版（https://www.mojidict.com），适合电脑端长文翻译场景</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-fanyi-web-01.jpeg" alt="dict-fanyi-web-01" loading="lazy">
+        <img src="images/dict/dict-fanyi-web-02.png" alt="dict-fanyi-web-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -440,11 +987,16 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
+          <li><span class="feature-name">搜索页内容</span><span class="feature-desc">单词以及语法功能；实时热搜；系统学习内容</span></li>
+          <li><span class="feature-name">底部对话框</span><span class="feature-desc">直接搜索，左侧拍照扫描，右侧支持手写</span></li>
           <li><span class="feature-name">搜索方式</span><span class="feature-desc">支持汉字、平假名、片假名、罗马音、中文关键词、混合输入；自动识别输入类型；支持拍照识别（OCR）和语音输入</span></li>
-          <li><span class="feature-name">搜索页内容</span><span class="feature-desc">浏览历史（最近查词记录，右上角「···」可清除）；实时热搜（平台热门查词排行）</span></li>
+          <li><span class="feature-name">搜索页内容（详细）</span><span class="feature-desc">浏览历史（最近查词记录，右上角「···」可清除）；实时热搜（平台热门查词排行）</span></li>
           <li><span class="feature-name">底部搜索栏</span><span class="feature-desc">左侧小组件图标（跳转桌面小组件设置）/ 右侧扫一扫图标（OCR拍照识别）</span></li>
           <li><span class="feature-name">键盘快捷键</span><span class="feature-desc">平板/电脑：1/2/3/4选选项，P播放发音，Q认识/W模糊/E忘记，上下箭头切换词条，Delete标记已掌握</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-sousuo-01.jpeg" alt="dict-sousuo-01" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -459,6 +1011,7 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
+          <li><span class="feature-name">下滑可查看</span><span class="feature-desc">释义、关联词、原声例句、真题</span></li>
           <li><span class="feature-name">顶部信息</span><span class="feature-desc">日文词条大字 + 罗马音 + 声调数字 + 多声优朗读（点击头像切换）；词性标签 + JLPT等级标签（N5-N1）</span></li>
           <li><span class="feature-name">简明释义</span><span class="feature-desc">AI生成，一行简洁中文释义</span></li>
           <li><span class="feature-name">释义</span><span class="feature-desc">中文释义 + 日文释义；支持「自定义」释义；可点击词条来源「W」标跳转查看</span></li>
@@ -466,6 +1019,10 @@
           <li><span class="feature-name">评论区</span><span class="feature-desc">用户评论、助记、造句；右下角数字显示评论数</span></li>
           <li><span class="feature-name">操作按钮</span><span class="feature-desc">底部：笔记 / 评论数 / 收藏；右上角：TV图标（折叠/展开详情）/ 「···」更多操作</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-citiao-01.jpeg" alt="dict-citiao-01" loading="lazy">
+        <img src="images/dict/dict-citiao-02.jpeg" alt="dict-citiao-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -488,6 +1045,10 @@
           <li><span class="feature-name">船友榜TOP50</span><span class="feature-desc">月度用户贡献排行榜，每小时更新，以贡献内容数和获赞收藏数综合计算</span></li>
           <li><span class="feature-name">底部导航栏</span><span class="feature-desc">首页 / 喜欢 / 发帖（红色「+」按钮）/ 通知 / 我的</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-mojiquan-01.jpeg" alt="dict-mojiquan-01" loading="lazy">
+        <img src="images/dict/dict-mojiquan-02.jpeg" alt="dict-mojiquan-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -504,6 +1065,10 @@
         <ul class="feature-list">
           <li><span class="feature-name">功能说明</span><span class="feature-desc">点击跳转MOJi小课堂独立课程平台，详见左侧导航「MOJi小课堂」</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-xiaokeTang-01.jpeg" alt="dict-xiaokeTang-01" loading="lazy">
+        <img src="images/dict/dict-xiaokeTang-02.jpeg" alt="dict-xiaokeTang-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -520,6 +1085,10 @@
         <ul class="feature-list">
           <li><span class="feature-name">功能说明</span><span class="feature-desc">将MOJi阅读的听读内容快捷入口放置在辞書首页，实现跨产品联动；需在设置中开启MOJi阅读功能后显示</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-tingdu-01.jpeg" alt="dict-tingdu-01" loading="lazy">
+        <img src="images/dict/dict-tingdu-02.jpeg" alt="dict-tingdu-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -535,9 +1104,14 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">留学情报</span><span class="feature-desc">日本留学政策、院校资讯、申请时间线等信息汇聚</span></li>
-          <li><span class="feature-name">留学规划</span><span class="feature-desc">提供个性化留学规划建议，覆盖语言准备到申请全流程</span></li>
-          <li><span class="feature-name">留学咨询</span><span class="feature-desc">连接留学顾问，1v1解答留学相关问题</span></li>
+          <li><span class="feature-name">留学测评</span><span class="feature-desc">五道题。学历、日语水平、英文成绩、EJU预估、留学预算。一键生成测评结果。</span></li>
+          <li><span class="feature-name">时间规划</span><span class="feature-desc">八道题。学历、日语、英文、擅长科目，什么时候出发、怎么赴日、怎么申请学校。一键生成时间规划报告。</span></li>
+          <li><span class="feature-name">留学咨询</span><span class="feature-desc">跳转微信添加留学顾问，1v1解答留学相关问题</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-liuxue-01.jpeg" alt="dict-liuxue-01" loading="lazy">
+        <img src="images/dict/dict-liuxue-02.jpeg" alt="dict-liuxue-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -557,6 +1131,10 @@
           <li><span class="feature-name">快捷指令</span><span class="feature-desc">输入框上方横向滑动：查词 / 翻译 / 写作 / 解题 / 会话，一键切换问答模式</span></li>
           <li><span class="feature-name">图片输入</span><span class="feature-desc">输入框左侧相机图标支持拍照或上传图片提问，适合对着教材/试卷/截图直接问AI</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-aiwenda-01.jpeg" alt="dict-aiwenda-01" loading="lazy">
+        <img src="images/dict/dict-aiwenda-02.jpeg" alt="dict-aiwenda-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -575,6 +1153,12 @@
           <li><span class="feature-name">词单分类</span><span class="feature-desc">考级（NHK真人发音精选）/ 文学（夜读/晨读精选）/ 日剧（热门台词）/ ACG（动漫游戏）/ 其他</span></li>
           <li><span class="feature-name">词单详情</span><span class="feature-desc">每词单100+条；可收藏词单；逐条跟读练习，配合真人发音音频</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-yingzi-01.jpeg" alt="dict-yingzi-01" loading="lazy">
+        <img src="images/dict/dict-yingzi-02.jpeg" alt="dict-yingzi-02" loading="lazy">
+        <img src="images/dict/dict-yingzi-03.jpeg" alt="dict-yingzi-03" loading="lazy">
+        <img src="images/dict/dict-yingzi-04.jpeg" alt="dict-yingzi-04" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -592,6 +1176,10 @@
           <li><span class="feature-name">语法词单库</span><span class="feature-desc">按N1-N5分级，汇聚官方和用户共建语法词单；热门词单如「N1语法收录」已达11,000+收藏</span></li>
           <li><span class="feature-name">词单操作</span><span class="feature-desc">背词 / 听词 / 单词导出PDF / 回顾；可收藏词单加入学习计划</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-wenfa-01.jpeg" alt="dict-wenfa-01" loading="lazy">
+        <img src="images/dict/dict-wenfa-02.jpeg" alt="dict-wenfa-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -612,6 +1200,10 @@
           <li><span class="feature-name">例句Tab · 批量添加</span><span class="feature-desc">用#区分原文和翻译，换行符区分每条例句，最多100条；点击「拆分」预览</span></li>
           <li><span class="feature-name">PC端推荐</span><span class="feature-desc">右上角PC图标弹出提示，复杂编辑推荐前往 https://www.mojidict.com/creation/word</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-zichuang-01.jpeg" alt="dict-zichuang-01" loading="lazy">
+        <img src="images/dict/dict-zichuang-02.jpeg" alt="dict-zichuang-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -630,6 +1222,10 @@
           <li><span class="feature-name">问题列表</span><span class="feature-desc">每条显示问题内容 + 围观人数 + 浏览数 + 回答数 + 状态（等待回答/已回答）</span></li>
           <li><span class="feature-name">MO点奖励</span><span class="feature-desc">提供优质回答可获得MO点奖励</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-wenlaoshi-01.jpeg" alt="dict-wenlaoshi-01" loading="lazy">
+        <img src="images/dict/dict-wenlaoshi-02.jpeg" alt="dict-wenlaoshi-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -652,6 +1248,10 @@
           <li><span class="feature-name">筛选与排序</span><span class="feature-desc">点击「全部 · 最新收藏▾」左侧按钮弹出面板：筛选（全部/单词/例句/词单/其他）/ 排序（最新收藏/种类/最近浏览/最早收藏/名称）</span></li>
           <li><span class="feature-name">右上角「···」菜单</span><span class="feature-desc">快速背词 / PDF导出 / 回顾单词 / 隐藏释义 / 隐藏笔记 / 展示评论 / 批量管理</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-shoucang-main-01.jpeg" alt="dict-shoucang-main-01" loading="lazy">
+        <img src="images/dict/dict-shoucang-main-02.png" alt="dict-shoucang-main-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -668,6 +1268,30 @@
         <ul class="feature-list">
           <li><span class="feature-name">功能说明</span><span class="feature-desc">选择任意收藏词单，以卡片形式逐词朗读；顶部下拉可切换词单；卡片显示日文大字+假名注音+词性标签+中文释义；底部：设置/暂停/评论；支持卡片/列表视图切换；进度显示（如1/18）；「详细释义」跳转完整词条</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-shoucang-tingci-01.jpeg" alt="dict-shoucang-tingci-01" loading="lazy">
+        <img src="images/dict/dict-shoucang-tingci-02.jpeg" alt="dict-shoucang-tingci-02" loading="lazy">
+      </div>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="block-shoucang-beici">
+      <div class="module-header">
+        <div class="module-icon">💯</div>
+        <div>
+          <div class="module-title">背词</div>
+          <div class="module-subtitle">选择测试模式进行自测</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「背词」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">点击收藏页背词，选择收藏单词测试范围；选择快速模式/专业模式进行单词自测</span></li>
+        </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-shoucang-beici-01.png" alt="dict-shoucang-beici-01" loading="lazy">
+        <img src="images/dict/dict-shoucang-beici-02.png" alt="dict-shoucang-beici-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -684,6 +1308,10 @@
         <ul class="feature-list">
           <li><span class="feature-name">功能说明</span><span class="feature-desc">在词条下写助记方法、造句、记忆口诀；收藏页统一管理，支持搜索；右下角「+」新建笔记</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-shoucang-biji-01.jpeg" alt="dict-shoucang-biji-01" loading="lazy">
+        <img src="images/dict/dict-shoucang-biji-02.jpeg" alt="dict-shoucang-biji-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -701,6 +1329,10 @@
           <li><span class="feature-name">小组件</span><span class="feature-desc">桌面添加MOJi小组件，每日显示待回顾词汇</span></li>
           <li><span class="feature-name">应用通知</span><span class="feature-desc">可设置每天推送条数（默认每天6条），不打开App也能碎片复习；词单无词时默认推送热搜词汇</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-shoucang-huigu-01.jpeg" alt="dict-shoucang-huigu-01" loading="lazy">
+        <img src="images/dict/dict-shoucang-huigu-02.jpeg" alt="dict-shoucang-huigu-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -718,11 +1350,37 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
-          <li><span class="feature-name">我的计划卡片</span><span class="feature-desc">词书封面+词书名+总词数+预计学完天数+掌握数/已学数+进度条；「学习列表」入口；右侧铅笔图标→背词设置；底部「复习 X」（红色）和「新学」按钮；右上角「更多计划」进入完整计划列表</span></li>
+          <li><span class="feature-name">我的计划卡片</span><span class="feature-desc">词书封面+词书名+总词数+预计学完天数+掌握数/已学数+进度条；右上角「更多计划」进入完整计划列表；「学习列表」入口；右侧铅笔图标→背词设置；底部「复习 X」（红色）和「新学」按钮</span></li>
           <li><span class="feature-name">底部快捷功能区</span><span class="feature-desc">修改计划（调整背词数量/题型/删除计划）/ 玩游戏（消消乐，黄色按钮）/ 词汇量测试（绿色「去测试」按钮）</span></li>
           <li><span class="feature-name">今天学习数据</span><span class="feature-desc">今日学词数 + 累计学词 / 累计打卡 / 连续打卡（天数）；「打卡日历」入口</span></li>
           <li><span class="feature-name">阅读复习生词</span><span class="feature-desc">底部推荐基于MOJi阅读中遇到的生词关联文章，实现辞書与阅读跨产品学习闭环</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-beici-home-01.png" alt="dict-beici-home-01" loading="lazy">
+        <img src="images/dict/dict-beici-home-02.png" alt="dict-beici-home-02" loading="lazy">
+      </div>
+      </div>
+    </div>
+
+    <div class="module-block section-block" id="block-beici-more">
+      <div class="module-header">
+        <div class="module-icon">📋</div>
+        <div>
+          <div class="module-title">更多计划</div>
+          <div class="module-subtitle">全部计划管理 · 创建新计划</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页右上角「更多计划」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">顶部「+ 创建计划」按钮</span><span class="feature-desc">进入「选择背词内容」页面，分为官方推荐（标准日本语、红宝书、大家的日语、新编日语、考前对策、JLPT·考研·高考 背词做题）和我的收藏两个区域，均支持「更多」展开</span></li>
+          <li><span class="feature-name">计划列表</span><span class="feature-desc">每张卡片显示词书封面+词书名+总词数+预估学完天数+进度条+掌握数/已学数；当前学习中的计划显示「学习中」标签，其他计划显示红色「学习」按钮可切换</span></li>
+        </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-beici-more-01.png" alt="dict-beici-more-01" loading="lazy">
+        <img src="images/dict/dict-beici-more-02.png" alt="dict-beici-more-02" loading="lazy">
+        <img src="images/dict/dict-beici-more-03.jpeg" alt="dict-beici-more-03" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -737,14 +1395,22 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
+          <li><span class="feature-name">设置页</span><span class="feature-desc">计划名词/背词任务/题型设置/背词顺序</span></li>
           <li><span class="feature-name">新学Tab</span><span class="feature-desc"><ul>
-            <li><b>测试题型</b>（三选一）：选择题 / 回忆式 / 快速自测</li>
-            <li>选择「选择题」或「回忆式」时，可进一步选「官方题型」（自动生成最佳3种）或「自选题型」</li>
-            <li><b>自选题型分三档</b>：通用（看单词选释义/看释义选单词）/ 重点考察（看假名选释义/看释义选假名/看单词选假名/看单词选错义/听发音选单词/听发音选释义）/ 进阶拼写（看释义拼单词/看单词拼假名/拼写例句）</li>
-            <li>选择「快速自测」时，可选显示部分（单词/单词+假名/假名/释义）</li>
+            <li><b>测试题型</b>：选择题 / 回忆式 / 快速自测</li>
+            <li><b>（1）选择题</b>：官方题型（根据单词特性，生成最佳题型3种）；自选题型：①通用（看单词选释义/看释义选单词）②重点考察（看假名选释义/看释义选假名/看单词选假名/看单词选错义/听发音选单词/听发音选释义）③进阶拼写（看释义拼单词/看单词拼假名/拼写例句）</li>
+            <li><b>（2）选择题</b>（不可选更多内容）</li>
+            <li><b>（3）快速自测</b>：显示部分可选（单词/单词+假名/假名/释义）；例句提示开关</li>
           </ul></span></li>
-          <li><span class="feature-name">复习Tab</span><span class="feature-desc">题型配置与新学Tab相同；快速自测额外提供「例句提示」开关；复习Tab无每组词数和词序设置</span></li>
+          <li><span class="feature-name">复习Tab</span><span class="feature-desc">题型配置与新学Tab相同</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-beici-set-01.png" alt="dict-beici-set-01" loading="lazy">
+        <img src="images/dict/dict-beici-set-02.png" alt="dict-beici-set-02" loading="lazy">
+        <img src="images/dict/dict-beici-set-03.png" alt="dict-beici-set-03" loading="lazy">
+        <img src="images/dict/dict-beici-set-04.png" alt="dict-beici-set-04" loading="lazy">
+        <img src="images/dict/dict-beici-set-05.png" alt="dict-beici-set-05" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -760,9 +1426,17 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">三个Tab</span><span class="feature-desc">未学习（显示总词汇数，底部「听学」按钮）/ 复习中（额外显示绿色分数标签+蓝色周期标签）/ 已掌握（均显示100分标签）</span></li>
-          <li><span class="feature-name">批量管理</span><span class="feature-desc">右上角田字格进入多选模式；操作：已掌握 / 重学</span></li>
-          <li><span class="feature-name">全书重学</span><span class="feature-desc">右上角「···」→ 全书重学；确认按钮有倒计时防误触</span></li>
+          <li><span class="feature-name">①未学习</span><span class="feature-desc">右上角「···」进入批量管理，选择【已掌握 / 重学】</span></li>
+          <li><span class="feature-name">②复习中</span><span class="feature-desc">右上角「···」选择批量管理→选择【已掌握 / 重学】；选择全书重学，确认按钮有倒计时防误触</span></li>
+          <li><span class="feature-name">③已掌握</span><span class="feature-desc">右上角「···」选择批量管理→选择【已掌握 / 重学】；选择全书重学，确认按钮有倒计时防误触</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-xuexilie-01.png" alt="dict-xuexilie-01" loading="lazy">
+        <img src="images/dict/dict-xuexilie-02.png" alt="dict-xuexilie-02" loading="lazy">
+        <img src="images/dict/dict-xuexilie-03.png" alt="dict-xuexilie-03" loading="lazy">
+        <img src="images/dict/dict-xuexilie-04.png" alt="dict-xuexilie-04" loading="lazy">
+        <img src="images/dict/dict-xuexilie-05.png" alt="dict-xuexilie-05" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -778,9 +1452,14 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">词汇列表</span><span class="feature-desc">展示本次新学词汇；每条显示单词+假名+声调+词性+简明释义+发音按钮；左上角「全部▾」切换显示方式（全部/音标/拼写/拼写与音标/解释）</span></li>
-          <li><span class="feature-name">学习（红色）</span><span class="feature-desc">进入听词界面，按顺序朗读本次新学词汇</span></li>
+          <li><span class="feature-name">听词（红色）</span><span class="feature-desc">进入听词界面，按背词顺序朗读本次新学词汇</span></li>
           <li><span class="feature-name">测试（灰色）</span><span class="feature-desc">题型由背词设置决定：选择题（四选一）/ 回忆式（点击翻面，自判认识/模糊/忘记）/ 快速自测（逐条翻面，完成后提交）；右上角「···」：收藏/掌握/帮助/设置/错误反馈</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-xinxue-01.png" alt="dict-xinxue-01" loading="lazy">
+        <img src="images/dict/dict-xinxue-02.png" alt="dict-xinxue-02" loading="lazy">
+        <img src="images/dict/dict-xinxue-03.png" alt="dict-xinxue-03" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -798,8 +1477,16 @@
           <li><span class="feature-name">复习列表</span><span class="feature-desc">展示待复习词汇；每条显示单词+假名+声调+词性+简明释义+绿色分数标签+蓝色周期标签+发音按钮；底部「听词」（红色）和「X 复习」（灰色）</span></li>
           <li><span class="feature-name">左上角「全部▾」</span><span class="feature-desc">切换显示方式：全部/音标/拼写/拼写与音标/解释</span></li>
           <li><span class="feature-name">右上角漏斗筛选</span><span class="feature-desc">排序（新学日期/单词分数）/ 按新学时间批次选择 / 按分数区间过滤（0-20/21-40/41-60…）</span></li>
-          <li><span class="feature-name">右上角田字格</span><span class="feature-desc">多选模式；底部操作：已掌握 / 重学</span></li>
+          <li><span class="feature-name">右上角色块批量管理</span><span class="feature-desc">勾选单词→已掌握/重选</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-fuxi-01.png" alt="dict-fuxi-01" loading="lazy">
+        <img src="images/dict/dict-fuxi-02.png" alt="dict-fuxi-02" loading="lazy">
+        <img src="images/dict/dict-fuxi-03.png" alt="dict-fuxi-03" loading="lazy">
+        <img src="images/dict/dict-fuxi-04.png" alt="dict-fuxi-04" loading="lazy">
+        <img src="images/dict/dict-fuxi-05.png" alt="dict-fuxi-05" loading="lazy">
+        <img src="images/dict/dict-fuxi-06.png" alt="dict-fuxi-06" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -822,6 +1509,10 @@
           <li><span class="feature-name">评论区</span><span class="feature-desc">点击💬进入；展示用户评论及点赞数；可发布评论</span></li>
           <li><span class="feature-name">词条列表弹窗</span><span class="feature-desc">点击底部左侧列表图标，弹出完整词汇列表，可跳转任意词条</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-tingci-01.png" alt="dict-tingci-01" loading="lazy">
+        <img src="images/dict/dict-tingci-02.png" alt="dict-tingci-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -842,6 +1533,11 @@
           <li><span class="feature-name">每日提醒</span><span class="feature-desc">开关控制，开启后按时推送背词提醒</span></li>
           <li><span class="feature-name">每日回顾小组件</span><span class="feature-desc">跳转桌面小组件设置，一键查看当日背词任务</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-daka-01.png" alt="dict-daka-01" loading="lazy">
+        <img src="images/dict/dict-daka-02.png" alt="dict-daka-02" loading="lazy">
+        <img src="images/dict/dict-daka-03.png" alt="dict-daka-03" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -859,6 +1555,11 @@
           <li><span class="feature-name">复习中Tab</span><span class="feature-desc">所有仍在复习周期中的词汇；显示单词+假名+绿色分数标签+蓝色周期标签+词性释义+发音；支持筛选和多选管理</span></li>
           <li><span class="feature-name">已掌握Tab</span><span class="feature-desc">已完成7个复习周期的词汇；显示单词+假名+100分标签+词性释义；支持筛选和多选管理</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-leiji-01.png" alt="dict-leiji-01" loading="lazy">
+        <img src="images/dict/dict-leiji-02.png" alt="dict-leiji-02" loading="lazy">
+        <img src="images/dict/dict-leiji-03.png" alt="dict-leiji-03" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -873,10 +1574,13 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
-          <li><span class="feature-name">测试说明</span><span class="feature-desc">5分钟快速评估日语词汇水平；科学题库结构与动态出题逻辑；461872+人参与；获得针对性学习建议</span></li>
-          <li><span class="feature-name">等级分布</span><span class="feature-desc">N5（800词·生存日语）/ N4（2000词·生活用词）/ N3（3000词·内容消费）/ N2（6000词·职场学术）/ N1（10000词·专业领域）</span></li>
+          <li><span class="feature-name">测试说明</span><span class="feature-desc">5分钟快速评估日语词汇水平；科学题库结构与动态出题逻辑；一键生成五维图学习报告</span></li>
           <li><span class="feature-name">历史记录</span><span class="feature-desc">右上角「历史记录」查看历次结果；页面顶部显示当前等级</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-cihui-test-01.png" alt="dict-cihui-test-01" loading="lazy">
+        <img src="images/dict/dict-cihui-test-02.png" alt="dict-cihui-test-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -892,14 +1596,19 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">入口页</span><span class="feature-desc">主视觉「你是哪种日语人格？」+ 日文副标题「あなたはどのタイプ？」；四类型预览（同人文学 / 番剧日音 / 教材刷题 / 游戏文本）；底部黄色「开始鉴定（テストを始める →）」按钮；标注「3分钟测出你的日语学习人格」</span></li>
-          <li><span class="feature-name">测试问答</span><span class="feature-desc">通过若干道选择题判定用户日语学习偏好，根据答题结果输出人格类型</span></li>
+          <li><span class="feature-name">测试问答</span><span class="feature-desc">通过若干道选择题判定用户日语学习偏好，根据答题结果输出人格类型，8种人格</span></li>
           <li><span class="feature-name">结果页·人格卡</span><span class="feature-desc">顶部「あなたのタイプ · YOUR TYPE」标签；中央人格插画 + 英文人格名（如SHIPPER）+ 中文人格名（如磕学挖掘机）；橙色短描述（如「同人黑话大师，精通各种"脖子以下不可描述"的动词」）</span></li>
           <li><span class="feature-name">扎心鉴定（CHARACTER ANALYSIS）</span><span class="feature-desc">长文描述该人格的学习驱动力、词汇分布、行为特征；语言风格幽默、网感强</span></li>
-          <li><span class="feature-name">DLC礼包</span><span class="feature-desc">人格对应DLC内容包（如「同人磕学DLC」，含同人常见表达 / 小说描写 / 场景表达），可「免费领取」</span></li>
+          <li><span class="feature-name">引流资料宝</span><span class="feature-desc">对应人格内容包（如「同人磕学DLC」，含同人常见表达 / 小说描写 / 场景表达），可「免费领取」</span></li>
           <li><span class="feature-name">属性标签（ATTRIBUTE TAGS）</span><span class="feature-desc">5-6个黄色标签描述该人格特质（如厨力爆表 / 社交牛 / 流行网感 / 敬语达人 / 开口困难户 / 卷王属性）</span></li>
           <li><span class="feature-name">雷达图巅峰属性（PEAK STATS）</span><span class="feature-desc">条状评分图，展示7项属性数值（如正统做题 / 厨力 / 社交牛 / 卷王度 / 网感 / 社畜 / 哑巴度），各项0-100分；不同人格的高低分项不同</span></li>
           <li><span class="feature-name">底部操作</span><span class="feature-desc">黄色「喊搭子来测！」按钮（看看有谁和你是同款日语人格，分享传播）/ 「再测一次」链接 / 右下角「意见反馈」按钮</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-renge-01.png" alt="dict-renge-01" loading="lazy">
+        <img src="images/dict/dict-renge-02.png" alt="dict-renge-02" loading="lazy">
+        <img src="images/dict/dict-renge-03.png" alt="dict-renge-03" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -916,6 +1625,10 @@
         <ul class="feature-list">
           <li><span class="feature-name">模式切换</span><span class="feature-desc">右上角按钮切换：单词消消乐（辞書词汇，辞書默认）/ 50音消消乐（假名练习，MOJiKana默认）；两款App共用同一游戏界面</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-xiaoxiaole-01.png" alt="dict-xiaoxiaole-01" loading="lazy">
+        <img src="images/dict/dict-xiaoxiaole-02.png" alt="dict-xiaoxiaole-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -939,6 +1652,10 @@
           <li><span class="feature-name">快捷工具</span><span class="feature-desc">我的自创 / 小组件 / 每日回顾 / 兑换码 / MO币商店 / 语言切换 / 帮助与反馈 / 关注我们</span></li>
           <li><span class="feature-name">发现MOJi</span><span class="feature-desc">底部展示平台活动推荐内容（词汇量测试/会员优惠/1v1定制课等）</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-wode-01.png" alt="dict-wode-01" loading="lazy">
+        <img src="images/dict/dict-wode-02.png" alt="dict-wode-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -956,6 +1673,10 @@
           <li><span class="feature-name">基本信息</span><span class="feature-desc">头像 / 昵称 / UID / 关注数 / 粉丝数 / 获赞收藏数；右上角「最近来访」查看今日访客</span></li>
           <li><span class="feature-name">三个Tab</span><span class="feature-desc">MOJi圈（发布的帖子）/ 跟读（跟读过的词条列表，可播放）/ 助记（为词条写的助记内容）</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-profile-01.png" alt="dict-profile-01" loading="lazy">
+        <img src="images/dict/dict-profile-02.jpeg" alt="dict-profile-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -974,6 +1695,10 @@
           <li><span class="feature-name">每日回顾</span><span class="feature-desc">随机展示收藏词汇，碎片时间记忆单词；样式可选：黑白纯色/自定义背景/机能风主题；底部「设置回顾范围」入口</span></li>
           <li><span class="feature-name">快捷入口</span><span class="feature-desc">一键跳转功能（听读/收藏/背词/搜索），节省打开App时间；两种样式：快捷方式1（4格图标）/ 快捷方式2（含翻译/打开链接）</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-widget-01.png" alt="dict-widget-01" loading="lazy">
+        <img src="images/dict/dict-widget-02.png" alt="dict-widget-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -991,6 +1716,10 @@
           <li><span class="feature-name">四个分类</span><span class="feature-desc">赞 / 收藏 / @我 / 系统通知；顶部提示「打开通知，接收消息推送」</span></li>
           <li><span class="feature-name">消息列表</span><span class="feature-desc">显示互动用户头像+昵称+互动内容摘要+时间；支持回复和点赞</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-xiaoxi-01.png" alt="dict-xiaoxi-01" loading="lazy">
+        <img src="images/dict/dict-xiaoxi-02.png" alt="dict-xiaoxi-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -1009,6 +1738,10 @@
           <li><span class="feature-name">功能设置</span><span class="feature-desc">发音（声优偏好）/ 主题（5种主题色）/ 搜索页定制 / 高阶玩法</span></li>
           <li><span class="feature-name">系统设置</span><span class="feature-desc">注音模式（假名/罗马音切换）/ 常亮模式（背词时屏幕不息屏）/ 清除缓存 / 个性化内容推荐开关 / 反馈</span></li>
         </ul>
+      <div class="screenshot-gallery">
+        <img src="images/dict/dict-shezhi-01.png" alt="dict-shezhi-01" loading="lazy">
+        <img src="images/dict/dict-shezhi-02.png" alt="dict-shezhi-02" loading="lazy">
+      </div>
       </div>
     </div>
 
@@ -2810,9 +3543,8 @@
     <!-- ========== 翻译页 ========== -->
     <div class="content-divider" id="kori-fanyi-section">翻译页</div>
 
-    <div class="module-block section-block has-thumbs" id="kori-fanyi">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-fanyi">
+      <div class="module-header">
         <div class="module-icon">🌐</div>
         <div>
           <div class="module-title">智能翻译</div>
@@ -2829,22 +3561,13 @@
           <li><span class="feature-name">右上角「···」</span><span class="feature-desc">收藏 / 分享</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-fanyi-1.png" alt="kori-fanyi" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-fanyi-2.png" alt="kori-fanyi" onclick="openModal(this.src)">
-      </div>
     </div>
 
     <!-- ========== 搜索页 ========== -->
     <div class="content-divider" id="kori-search-section">搜索页</div>
 
-    <div class="module-block section-block has-thumbs" id="kori-search">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-search">
+      <div class="module-header">
         <div class="module-icon">🔍</div>
         <div>
           <div class="module-title">搜索</div>
@@ -2859,18 +3582,10 @@
           <li><span class="feature-name">底部搜索栏</span><span class="feature-desc">左侧扫一扫图标（OCR拍照识别）/ 右侧手写图标 / 中间输入或粘贴搜索</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-search-1.png" alt="kori-search" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-citiao">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-citiao">
+      <div class="module-header">
         <div class="module-icon">📖</div>
         <div>
           <div class="module-title">词条详情</div>
@@ -2892,22 +3607,13 @@
           <li><span class="feature-name">操作按钮</span><span class="feature-desc">底部：评论数 / 收藏；「···」更多操作</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-citiao-1.png" alt="kori-citiao" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-citiao-2.png" alt="kori-citiao" onclick="openModal(this.src)">
-      </div>
     </div>
 
     <!-- ========== 收藏页 ========== -->
     <div class="content-divider" id="kori-shoucang-section">收藏页</div>
 
-    <div class="module-block section-block has-thumbs" id="kori-shoucang">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-shoucang">
+      <div class="module-header">
         <div class="module-icon">⭐</div>
         <div>
           <div class="module-title">收藏主页</div>
@@ -2922,19 +3628,10 @@
           <li><span class="feature-name">右上角「··」菜单</span><span class="feature-desc">PDF导出 / 回顾单词 / 隐藏释义 / 展示评论 / 批量管理</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-shoucang-1.png" alt="kori-shoucang" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-shoucang-2.png" alt="kori-shoucang" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-shoucang-tingci">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-shoucang-tingci">
+      <div class="module-header">
         <div class="module-icon">🎧</div>
         <div>
           <div class="module-title">听词</div>
@@ -2947,22 +3644,13 @@
           <li><span class="feature-name">功能说明</span><span class="feature-desc">选择任意收藏词单，以卡片形式逐词朗读；卡片显示韩文大字 + 发音标记 + 词性标签 + 中文释义 + 例句；底部：设置/暂停/评论；支持卡片/列表视图切换；进度显示（如1/73）；「详细释义」跳转完整词条</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-shoucang-tingci-1.png" alt="kori-shoucang-tingci" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-shoucang-tingci-2.png" alt="kori-shoucang-tingci" onclick="openModal(this.src)">
-      </div>
     </div>
 
     <!-- ========== 背词 ========== -->
     <div class="content-divider" id="kori-beici-section">背词</div>
 
-    <div class="module-block section-block has-thumbs" id="kori-beici-home">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-beici-home">
+      <div class="module-header">
         <div class="module-icon">📚</div>
         <div>
           <div class="module-title">背词首页</div>
@@ -2976,19 +3664,10 @@
           <li><span class="feature-name">今天学习数据</span><span class="feature-desc">今日学词数 + 累计学词 / 累计打卡（天数）；「打卡日历」入口</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-beici-home-1.png" alt="kori-beici-home" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-beici-home-2.jpg" alt="kori-beici-home" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-beici-set">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-beici-set">
+      <div class="module-header">
         <div class="module-icon">⚙️</div>
         <div>
           <div class="module-title">背词设置</div>
@@ -3004,19 +3683,10 @@
           <li><span class="feature-name">背词排序</span><span class="feature-desc">词表正序 / 随机排序</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-beici-set-1.png" alt="kori-beici-set" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-beici-set-2.jpg" alt="kori-beici-set" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-xuexiliebiao">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-xuexiliebiao">
+      <div class="module-header">
         <div class="module-icon">📋</div>
         <div>
           <div class="module-title">学习列表</div>
@@ -3031,19 +3701,10 @@
           <li><span class="feature-name">学单词</span><span class="feature-desc">底部「学单词」蓝色按钮，进入学单词模式</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-xuexiliebiao-1.jpg" alt="kori-xuexiliebiao" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-xuexiliebiao-2.jpg" alt="kori-xuexiliebiao" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-xinxue">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-xinxue">
+      <div class="module-header">
         <div class="module-icon">🆕</div>
         <div>
           <div class="module-title">新学</div>
@@ -3058,19 +3719,10 @@
           <li><span class="feature-name">测试（灰色）</span><span class="feature-desc">题型由背词设置决定；右上角「···」：标记掌握 / 帮助 / 设置 / 错误反馈</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-xinxue-1.png" alt="kori-xinxue" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-xinxue-2.jpg" alt="kori-xinxue" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-fuxi">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-fuxi">
+      <div class="module-header">
         <div class="module-icon">🔁</div>
         <div>
           <div class="module-title">复习</div>
@@ -3086,19 +3738,10 @@
           <li><span class="feature-name">右上角田字格</span><span class="feature-desc">多选模式；底部操作：标记掌握</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-fuxi-1.jpg" alt="kori-fuxi" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-fuxi-2.png" alt="kori-fuxi" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-tingci">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-tingci">
+      <div class="module-header">
         <div class="module-icon">🎶</div>
         <div>
           <div class="module-title">听词</div>
@@ -3117,19 +3760,10 @@
           <li><span class="feature-name">词条列表弹窗</span><span class="feature-desc">点击底部左侧列表图标，弹出完整词汇列表，可跳转任意词条</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-tingci-1.jpg" alt="kori-tingci" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-tingci-2.jpg" alt="kori-tingci" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-daka">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-daka">
+      <div class="module-header">
         <div class="module-icon">📅</div>
         <div>
           <div class="module-title">打卡日历</div>
@@ -3146,22 +3780,13 @@
           <li><span class="feature-name">每日回顾</span><span class="feature-desc">小组件跳转桌面小组件设置，一键查看当日背词任务</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-daka-1.png" alt="kori-daka" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-daka-2.png" alt="kori-daka" onclick="openModal(this.src)">
-      </div>
     </div>
 
     <!-- ========== 我的 ========== -->
     <div class="content-divider" id="kori-wode-section">我的</div>
 
-    <div class="module-block section-block has-thumbs" id="kori-wode">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-wode">
+      <div class="module-header">
         <div class="module-icon">👤</div>
         <div>
           <div class="module-title">我的中心</div>
@@ -3177,19 +3802,10 @@
           <li><span class="feature-name">快捷工具</span><span class="feature-desc">小组件 / 每日回顾 / 邀请码 / 语言切换 / 帮助与反馈 / 关注我们</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-wode-1.png" alt="kori-wode" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-wode-2.jpg" alt="kori-wode" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-wode-profile">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-wode-profile">
+      <div class="module-header">
         <div class="module-icon">🌟</div>
         <div>
           <div class="module-title">个人主页</div>
@@ -3203,19 +3819,10 @@
           <li><span class="feature-name">编辑资料</span><span class="feature-desc">可编辑头像 / 昵称 / 性别 / 签名 / 背景</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-wode-profile-1.png" alt="kori-wode-profile" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-wode-profile-2.jpg" alt="kori-wode-profile" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-wode-xiaozujian">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-wode-xiaozujian">
+      <div class="module-header">
         <div class="module-icon">🧩</div>
         <div>
           <div class="module-title">桌面小组件</div>
@@ -3230,19 +3837,10 @@
           <li><span class="feature-name">快捷入口</span><span class="feature-desc">一键跳转功能（翻译/收藏/打开链接/搜索），节省打开App时间；三种样式——快捷方式1（4格图标）/ 快捷方式2（含打开链接/翻译/查词/收藏）/ 快捷方式3（含搜索复制内容/翻译复制内容/搜索收藏）</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-wode-xiaozujian-1.png" alt="kori-wode-xiaozujian" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-wode-xiaozujian-2.jpg" alt="kori-wode-xiaozujian" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-wode-huigu">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-wode-huigu">
+      <div class="module-header">
         <div class="module-icon">🔔</div>
         <div>
           <div class="module-title">每日回顾</div>
@@ -3256,19 +3854,10 @@
           <li><span class="feature-name">应用通知</span><span class="feature-desc">可设置每天推送条数（默认每天6条），不打开App也能碎片复习；词单无词时默认推送热搜词汇</span></li>
         </ul>
       </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-wode-huigu-1.png" alt="kori-wode-huigu" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-wode-huigu-2.jpg" alt="kori-wode-huigu" onclick="openModal(this.src)">
-      </div>
     </div>
 
-    <div class="module-block section-block has-thumbs" id="kori-wode-shezhi">
-      <div class="module-content">
-        <div class="module-header">
+    <div class="module-block section-block" id="kori-wode-shezhi">
+      <div class="module-header">
         <div class="module-icon">⚙️</div>
         <div>
           <div class="module-title">设置</div>
@@ -3282,14 +3871,6 @@
           <li><span class="feature-name">功能设置</span><span class="feature-desc">发音（声优偏好）/ 主题（纯白风格 / 暗黑风格 / 自定义背景）/ 高阶玩法</span></li>
           <li><span class="feature-name">系统设置</span><span class="feature-desc">注音模式（罗马音 / 不注音）/ 常亮模式（背词时屏幕不息屏）/ 清除缓存 / 个性化内容推荐开关 / 反馈</span></li>
         </ul>
-      </div>
-    
-      </div>
-
-    
-      <div class="module-thumbs">
-        <img class="thumb" src="images/kori/kori-wode-shezhi-1.png" alt="kori-wode-shezhi" onclick="openModal(this.src)">
-        <img class="thumb" src="images/kori/kori-wode-shezhi-2.jpg" alt="kori-wode-shezhi" onclick="openModal(this.src)">
       </div>
     </div>
 
@@ -3375,33 +3956,5 @@ function scrollToBlock(blockId) {
   }, 80);
 }
 </script>
-<!-- 截图弹窗 -->
-<div class="modal-overlay" id="imgModal" onclick="closeModal(event)">
-  <button class="modal-close" onclick="closeModal(event)" aria-label="关闭">×</button>
-  <img class="modal-image" id="modalImg" src="" alt="">
-</div>
-
-<script>
-function openModal(src) {
-  document.getElementById('modalImg').src = src;
-  document.getElementById('imgModal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(e) {
-  // only close if clicking overlay or close button (not the image itself)
-  if (e.target.id === 'imgModal' || e.target.classList.contains('modal-close')) {
-    document.getElementById('imgModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-}
-// ESC key closes modal
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.getElementById('imgModal').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-});
-</script>
-
 </body>
 </html>
