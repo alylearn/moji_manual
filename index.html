@@ -4,531 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MOJi 全产品说明书</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
-
-  :root {
-    --moji-green: #1D9E75;
-    --moji-green-light: #E1F5EE;
-    --moji-green-mid: #5DCAA5;
-    --test-red: #E8342A;
-    --test-red-light: #FFF0EF;
-    --yomi-blue: #1A6BAF;
-    --yomi-blue-light: #EAF3FB;
-    --kana-green: #3BAA5C;
-    --kana-green-light: #EBF7EF;
-    --kaiwha-orange: #F07D00;
-    --kaiwha-orange-light: #FFF4E6;
-    --kori-indigo: #5B5FD9;
-    --kori-indigo-light: #ECEDFB;
-    --text-primary: #1a1a1a;
-    --text-secondary: #555;
-    --text-muted: #999;
-    --border: #e8e8e8;
-    --bg: #fafaf8;
-    --white: #ffffff;
-    --sidebar-w: 260px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Noto Sans SC', sans-serif;
-    background: var(--bg);
-    color: var(--text-primary);
-    display: flex;
-    min-height: 100vh;
-  }
-
-  /* Sidebar */
-  .sidebar {
-    width: var(--sidebar-w);
-    background: var(--white);
-    border-right: 1px solid var(--border);
-    position: fixed;
-    top: 0; left: 0;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sidebar-logo {
-    padding: 24px 20px 20px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .sidebar-logo .logo-text {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--moji-green);
-    letter-spacing: -0.5px;
-  }
-
-  .sidebar-logo .logo-sub {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 3px;
-    letter-spacing: 1px;
-  }
-
-  .sidebar-nav { padding: 16px 0; flex: 1; }
-
-  .nav-section { margin-bottom: 8px; }
-
-  .nav-section-title {
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--text-muted);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 8px 20px 4px;
-  }
-
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 9px 20px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.15s;
-    border-left: 3px solid transparent;
-    text-decoration: none;
-  }
-
-  .nav-item:hover { background: var(--bg); color: var(--text-primary); }
-
-  .nav-item.active {
-    color: var(--moji-green);
-    background: var(--moji-green-light);
-    border-left-color: var(--moji-green);
-    font-weight: 500;
-  }
-
-  .nav-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  /* Main content */
-  .main {
-    margin-left: var(--sidebar-w);
-    flex: 1;
-    padding: 0;
-  }
-
-  /* Page header */
-  .page-header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 40px 56px 36px;
-  }
-
-  .page-header h1 {
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.5px;
-  }
-
-  .page-header .subtitle {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 6px;
-  }
-
-  .header-meta {
-    display: flex;
-    gap: 20px;
-    margin-top: 16px;
-  }
-
-  .meta-tag {
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    background: var(--moji-green-light);
-    color: var(--moji-green);
-    font-weight: 500;
-  }
-
-  /* Product sections */
-  .product-section {
-    display: none;
-    padding: 40px 56px 60px;
-  }
-
-  .product-section.active { display: block; }
-
-  /* Overview grid */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin-top: 32px;
-  }
-
-  .product-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    cursor: pointer;
-    transition: all 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .product-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-
-  .product-card.jisho::before { background: var(--moji-green); }
-  .product-card.yomi::before { background: var(--yomi-blue); }
-  .product-card.kana::before { background: var(--kana-green); }
-  .product-card.test::before { background: var(--test-red); }
-  .product-card.kaiwha::before { background: var(--kaiwha-orange); }
-  .product-card.kori::before { background: var(--kori-indigo); }
-
-  .product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
-
-  .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
-
-  .card-name { font-size: 16px; font-weight: 700; }
-  .card-name.jisho { color: var(--moji-green); }
-  .card-name.yomi { color: var(--yomi-blue); }
-  .card-name.kana { color: var(--kana-green); }
-  .card-name.test { color: var(--test-red); }
-  .card-name.kaiwha { color: var(--kaiwha-orange); }
-  .card-name.kori { color: var(--kori-indigo); }
-
-  .card-tag {
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-
-  .card-tag.jisho { background: var(--moji-green-light); color: var(--moji-green); }
-  .card-tag.yomi { background: var(--yomi-blue-light); color: var(--yomi-blue); }
-  .card-tag.kana { background: var(--kana-green-light); color: var(--kana-green); }
-  .card-tag.test { background: var(--test-red-light); color: var(--test-red); }
-  .card-tag.kaiwha { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
-  .card-tag.kori { background: var(--kori-indigo-light); color: var(--kori-indigo); }
-
-  .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-
-  .card-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-  }
-
-  .feature-pill {
-    font-size: 11px;
-    padding: 3px 8px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    color: var(--text-secondary);
-  }
-
-  /* Section title */
-  .section-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .section-title .app-badge {
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-
-  .section-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    max-width: 680px;
-    margin-bottom: 32px;
-  }
-
-  /* Module blocks */
-
-  .screenshot-gallery { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-  .screenshot-gallery img { max-width: 260px; border-radius: 8px; border: 1px solid #e0e0e0; cursor: pointer; }
-  .screenshot-gallery img:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-  .module-block {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 16px;
-    overflow: hidden;
-  }
-
-  .module-header {
-    padding: 18px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .module-icon {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px;
-    flex-shrink: 0;
-  }
-
-  .module-title { font-size: 15px; font-weight: 600; flex: 1; }
-  .module-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
-
-  .path-chain {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 4px;
-    margin-top: 6px;
-  }
-
-  .path-step {
-    font-size: 11px;
-    background: var(--test-red-light);
-    color: var(--test-red);
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  .jisho .path-step { background: var(--moji-green-light); color: var(--moji-green); }
-  .yomi .path-step { background: var(--yomi-blue-light); color: var(--yomi-blue); }
-  .kana .path-step { background: var(--kana-green-light); color: var(--kana-green); }
-  .kaiwha .path-step { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
-
-  .path-arrow {
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-
-  .module-body { padding: 20px 24px; }
-
-  .feature-list { list-style: none; }
-
-  .feature-list li {
-    display: flex;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--bg);
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .feature-list li:last-child { border-bottom: none; }
-
-  .feature-name {
-    font-weight: 500;
-    color: var(--text-primary);
-    min-width: 90px;
-    flex-shrink: 0;
-  }
-
-  .feature-desc { color: var(--text-secondary); }
-  .feature-desc ul { margin: 4px 0 0 0; padding-left: 16px; list-style: disc; }
-  .feature-desc ul li { margin-bottom: 4px; line-height: 1.7; }
-
-  /* Scenario section */
-  .scenario-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-    margin-top: 8px;
-  }
-
-  .scenario-card {
-    background: var(--bg);
-    border-radius: 10px;
-    padding: 16px;
-    border: 1px solid var(--border);
-  }
-
-  .scenario-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
-
-  .scenario-steps { list-style: none; }
-
-  .scenario-steps li {
-    font-size: 12px;
-    color: var(--text-secondary);
-    padding: 3px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
-    line-height: 1.6;
-  }
-
-  .scenario-steps li::before {
-    content: '→';
-    color: var(--text-muted);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  /* Divider */
-  .content-divider {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 32px 0 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .content-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* Stats row */
-  .stats-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-  }
-
-  .stat-item {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 18px;
-    text-align: center;
-  }
-
-  .stat-number { font-size: 18px; font-weight: 700; }
-  .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-
-  /* Color theming per app */
-  .jisho .module-icon { background: var(--moji-green-light); }
-  .jisho .module-title { color: var(--moji-green); }
-  .jisho .section-title { color: var(--moji-green); }
-  .jisho .app-badge { background: var(--moji-green-light); color: var(--moji-green); }
-  .jisho .stat-number { color: var(--moji-green); }
-  .jisho .scenario-label { color: var(--moji-green); }
-
-  .yomi .module-icon { background: var(--yomi-blue-light); }
-  .yomi .module-title { color: var(--yomi-blue); }
-  .yomi .section-title { color: var(--yomi-blue); }
-  .yomi .app-badge { background: var(--yomi-blue-light); color: var(--yomi-blue); }
-  .yomi .stat-number { color: var(--yomi-blue); }
-  .yomi .scenario-label { color: var(--yomi-blue); }
-
-  .kana .module-icon { background: var(--kana-green-light); }
-  .kana .module-title { color: var(--kana-green); }
-  .kana .section-title { color: var(--kana-green); }
-  .kana .app-badge { background: var(--kana-green-light); color: var(--kana-green); }
-  .kana .stat-number { color: var(--kana-green); }
-  .kana .scenario-label { color: var(--kana-green); }
-
-  .test .module-icon { background: var(--test-red-light); }
-  .test .module-title { color: var(--test-red); }
-  .test .section-title { color: var(--test-red); }
-  .test .app-badge { background: var(--test-red-light); color: var(--test-red); }
-  .test .stat-number { color: var(--test-red); }
-  .test .scenario-label { color: var(--test-red); }
-
-  .kaiwha .module-icon { background: var(--kaiwha-orange-light); }
-  .kaiwha .module-title { color: var(--kaiwha-orange); }
-  .kaiwha .section-title { color: var(--kaiwha-orange); }
-  .kaiwha .app-badge { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
-  .kaiwha .stat-number { color: var(--kaiwha-orange); }
-  .kaiwha .scenario-label { color: var(--kaiwha-orange); }
-
-  .kori .module-icon { background: var(--kori-indigo-light); }
-  .kori .module-title { color: var(--kori-indigo); }
-  .kori .section-title { color: var(--kori-indigo); }
-  .kori .app-badge { background: var(--kori-indigo-light); color: var(--kori-indigo); }
-  .kori .stat-number { color: var(--kori-indigo); }
-  .kori .scenario-label { color: var(--kori-indigo); }
-
-  /* Update notice */
-  .update-notice {
-    font-size: 11px;
-    color: var(--text-muted);
-    padding: 12px 20px;
-    border-top: 1px solid var(--border);
-    text-align: center;
-  }
-
-  @media print {
-    .sidebar { display: none; }
-    .main { margin-left: 0; }
-    .product-section { display: block !important; }
-  }
-
-  .nav-parent { cursor:pointer; display:flex; align-items:center; }
-  .nav-arrow { font-size:10px; color:var(--text-muted); margin-left:4px; transition:transform 0.2s; }
-  .nav-arrow.open { transform:rotate(90deg); }
-  .nav-children { display:none; }
-  .nav-children.open { display:block; }
-  .nav-sub { display:block; padding:5px 16px 5px 28px; font-size:12px; color:var(--text-secondary); cursor:pointer; text-decoration:none; }
-  .nav-sub:hover { color:var(--moji-green); background:var(--moji-green-light); }
-  .nav-sub2 { padding-left:40px; font-size:11px; color:var(--text-muted); }
-  .section-block { scroll-margin-top:24px; }
-
-  .sidebar-toggle {
-    position: fixed;
-    top: 50%;
-    left: 260px;
-    transform: translateY(-50%);
-    z-index: 200;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 0 6px 6px 0;
-    width: 20px;
-    height: 48px;
-    cursor: pointer;
-    font-size: 14px;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: left 0.25s;
-    box-shadow: 2px 0 6px rgba(0,0,0,0.08);
-    padding: 0;
-  }
-  .sidebar-toggle:hover { color: var(--moji-green); }
-  .sidebar { transition: width 0.25s; overflow: hidden; }
-  .sidebar.collapsed { width: 0 !important; min-width: 0 !important; }
-  .sidebar-toggle.collapsed { left: 0; }
-  .main-content { transition: margin-left 0.25s; }
-</style>
+<link rel="stylesheet" href="manual_style.css">
 </head>
 <body>
 
@@ -745,7 +221,7 @@
 
     </div>
   </nav>
-  <div class="update-notice">最后更新：2026年6月</div>
+  <div class="update-notice">最后更新：2026年6月（v28：CSS外置 · Kori截图入库 · 点击大图）</div>
 </aside>
 
 <!-- Main -->
@@ -1243,9 +719,9 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
-          <li><span class="feature-name">收藏列表</span><span class="feature-desc">按时间分组显示（昨天/近一周/月份），每条显示词单封面+词单名称+收藏星标；底部「查找收藏内容」搜索栏；右下角红色「+」新建</span></li>
-          <li><span class="feature-name">顶部5个快捷入口</span><span class="feature-desc">收藏夹 / 背词 / 听词 / 笔记 / 回顾</span></li>
-          <li><span class="feature-name">筛选与排序</span><span class="feature-desc">点击「全部 · 最新收藏▾」左侧按钮弹出面板：筛选（全部/单词/例句/词单/其他）/ 排序（最新收藏/种类/最近浏览/最早收藏/名称）</span></li>
+          <li><span class="feature-name">收藏列表</span><span class="feature-desc">按时间分组显示（昨天/近一周/月份），每条显示词单封面+词单名称+收藏星标；底部「查找收藏内容」搜索栏</span></li>
+          <li><span class="feature-name">顶部快捷入口</span><span class="feature-desc">收藏夹、词单、听词、背词、单词导出、回顾、笔记</span></li>
+          <li><span class="feature-name">新建、排序、批量管理</span><span class="feature-desc">圆形「+」，搜索内容、新建收藏夹、笔记、自创；筛选（全部/单词/例句/词单/其他）；批量管理（删除、移动收藏夹）</span></li>
           <li><span class="feature-name">右上角「···」菜单</span><span class="feature-desc">快速背词 / PDF导出 / 回顾单词 / 隐藏释义 / 隐藏笔记 / 展示评论 / 批量管理</span></li>
         </ul>
       <div class="screenshot-gallery">
@@ -3543,8 +3019,9 @@
     <!-- ========== 翻译页 ========== -->
     <div class="content-divider" id="kori-fanyi-section">翻译页</div>
 
-    <div class="module-block section-block" id="kori-fanyi">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-fanyi">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🌐</div>
         <div>
           <div class="module-title">智能翻译</div>
@@ -3561,13 +3038,22 @@
           <li><span class="feature-name">右上角「···」</span><span class="feature-desc">收藏 / 分享</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-fanyi-1.png" alt="kori-fanyi" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-fanyi-2.png" alt="kori-fanyi" onclick="openModal(this.src)">
+      </div>
     </div>
 
     <!-- ========== 搜索页 ========== -->
     <div class="content-divider" id="kori-search-section">搜索页</div>
 
-    <div class="module-block section-block" id="kori-search">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-search">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🔍</div>
         <div>
           <div class="module-title">搜索</div>
@@ -3582,10 +3068,18 @@
           <li><span class="feature-name">底部搜索栏</span><span class="feature-desc">左侧扫一扫图标（OCR拍照识别）/ 右侧手写图标 / 中间输入或粘贴搜索</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-search-1.png" alt="kori-search" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-citiao">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-citiao">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">📖</div>
         <div>
           <div class="module-title">词条详情</div>
@@ -3607,13 +3101,22 @@
           <li><span class="feature-name">操作按钮</span><span class="feature-desc">底部：评论数 / 收藏；「···」更多操作</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-citiao-1.png" alt="kori-citiao" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-citiao-2.png" alt="kori-citiao" onclick="openModal(this.src)">
+      </div>
     </div>
 
     <!-- ========== 收藏页 ========== -->
     <div class="content-divider" id="kori-shoucang-section">收藏页</div>
 
-    <div class="module-block section-block" id="kori-shoucang">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-shoucang">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">⭐</div>
         <div>
           <div class="module-title">收藏主页</div>
@@ -3628,10 +3131,19 @@
           <li><span class="feature-name">右上角「··」菜单</span><span class="feature-desc">PDF导出 / 回顾单词 / 隐藏释义 / 展示评论 / 批量管理</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-shoucang-1.png" alt="kori-shoucang" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-shoucang-2.png" alt="kori-shoucang" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-shoucang-tingci">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-shoucang-tingci">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🎧</div>
         <div>
           <div class="module-title">听词</div>
@@ -3644,13 +3156,22 @@
           <li><span class="feature-name">功能说明</span><span class="feature-desc">选择任意收藏词单，以卡片形式逐词朗读；卡片显示韩文大字 + 发音标记 + 词性标签 + 中文释义 + 例句；底部：设置/暂停/评论；支持卡片/列表视图切换；进度显示（如1/73）；「详细释义」跳转完整词条</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-shoucang-tingci-1.png" alt="kori-shoucang-tingci" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-shoucang-tingci-2.png" alt="kori-shoucang-tingci" onclick="openModal(this.src)">
+      </div>
     </div>
 
     <!-- ========== 背词 ========== -->
     <div class="content-divider" id="kori-beici-section">背词</div>
 
-    <div class="module-block section-block" id="kori-beici-home">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-beici-home">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">📚</div>
         <div>
           <div class="module-title">背词首页</div>
@@ -3664,10 +3185,19 @@
           <li><span class="feature-name">今天学习数据</span><span class="feature-desc">今日学词数 + 累计学词 / 累计打卡（天数）；「打卡日历」入口</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-beici-home-1.png" alt="kori-beici-home" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-beici-home-2.jpg" alt="kori-beici-home" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-beici-set">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-beici-set">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">⚙️</div>
         <div>
           <div class="module-title">背词设置</div>
@@ -3683,10 +3213,19 @@
           <li><span class="feature-name">背词排序</span><span class="feature-desc">词表正序 / 随机排序</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-beici-set-1.png" alt="kori-beici-set" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-beici-set-2.jpg" alt="kori-beici-set" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-xuexiliebiao">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-xuexiliebiao">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">📋</div>
         <div>
           <div class="module-title">学习列表</div>
@@ -3701,10 +3240,19 @@
           <li><span class="feature-name">学单词</span><span class="feature-desc">底部「学单词」蓝色按钮，进入学单词模式</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-xuexiliebiao-1.jpg" alt="kori-xuexiliebiao" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-xuexiliebiao-2.jpg" alt="kori-xuexiliebiao" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-xinxue">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-xinxue">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🆕</div>
         <div>
           <div class="module-title">新学</div>
@@ -3719,10 +3267,19 @@
           <li><span class="feature-name">测试（灰色）</span><span class="feature-desc">题型由背词设置决定；右上角「···」：标记掌握 / 帮助 / 设置 / 错误反馈</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-xinxue-1.png" alt="kori-xinxue" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-xinxue-2.jpg" alt="kori-xinxue" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-fuxi">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-fuxi">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🔁</div>
         <div>
           <div class="module-title">复习</div>
@@ -3738,10 +3295,19 @@
           <li><span class="feature-name">右上角田字格</span><span class="feature-desc">多选模式；底部操作：标记掌握</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-fuxi-1.jpg" alt="kori-fuxi" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-fuxi-2.png" alt="kori-fuxi" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-tingci">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-tingci">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🎶</div>
         <div>
           <div class="module-title">听词</div>
@@ -3760,10 +3326,19 @@
           <li><span class="feature-name">词条列表弹窗</span><span class="feature-desc">点击底部左侧列表图标，弹出完整词汇列表，可跳转任意词条</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-tingci-1.jpg" alt="kori-tingci" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-tingci-2.jpg" alt="kori-tingci" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-daka">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-daka">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">📅</div>
         <div>
           <div class="module-title">打卡日历</div>
@@ -3780,13 +3355,22 @@
           <li><span class="feature-name">每日回顾</span><span class="feature-desc">小组件跳转桌面小组件设置，一键查看当日背词任务</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-daka-1.png" alt="kori-daka" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-daka-2.png" alt="kori-daka" onclick="openModal(this.src)">
+      </div>
     </div>
 
     <!-- ========== 我的 ========== -->
     <div class="content-divider" id="kori-wode-section">我的</div>
 
-    <div class="module-block section-block" id="kori-wode">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-wode">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">👤</div>
         <div>
           <div class="module-title">我的中心</div>
@@ -3802,10 +3386,19 @@
           <li><span class="feature-name">快捷工具</span><span class="feature-desc">小组件 / 每日回顾 / 邀请码 / 语言切换 / 帮助与反馈 / 关注我们</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-wode-1.png" alt="kori-wode" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-wode-2.jpg" alt="kori-wode" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-wode-profile">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-wode-profile">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🌟</div>
         <div>
           <div class="module-title">个人主页</div>
@@ -3819,10 +3412,19 @@
           <li><span class="feature-name">编辑资料</span><span class="feature-desc">可编辑头像 / 昵称 / 性别 / 签名 / 背景</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-wode-profile-1.png" alt="kori-wode-profile" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-wode-profile-2.jpg" alt="kori-wode-profile" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-wode-xiaozujian">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-wode-xiaozujian">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🧩</div>
         <div>
           <div class="module-title">桌面小组件</div>
@@ -3837,10 +3439,19 @@
           <li><span class="feature-name">快捷入口</span><span class="feature-desc">一键跳转功能（翻译/收藏/打开链接/搜索），节省打开App时间；三种样式——快捷方式1（4格图标）/ 快捷方式2（含打开链接/翻译/查词/收藏）/ 快捷方式3（含搜索复制内容/翻译复制内容/搜索收藏）</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-wode-xiaozujian-1.png" alt="kori-wode-xiaozujian" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-wode-xiaozujian-2.jpg" alt="kori-wode-xiaozujian" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-wode-huigu">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-wode-huigu">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">🔔</div>
         <div>
           <div class="module-title">每日回顾</div>
@@ -3854,10 +3465,19 @@
           <li><span class="feature-name">应用通知</span><span class="feature-desc">可设置每天推送条数（默认每天6条），不打开App也能碎片复习；词单无词时默认推送热搜词汇</span></li>
         </ul>
       </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-wode-huigu-1.png" alt="kori-wode-huigu" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-wode-huigu-2.jpg" alt="kori-wode-huigu" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="kori-wode-shezhi">
-      <div class="module-header">
+    <div class="module-block section-block has-thumbs" id="kori-wode-shezhi">
+      <div class="module-content">
+        <div class="module-header">
         <div class="module-icon">⚙️</div>
         <div>
           <div class="module-title">设置</div>
@@ -3871,6 +3491,14 @@
           <li><span class="feature-name">功能设置</span><span class="feature-desc">发音（声优偏好）/ 主题（纯白风格 / 暗黑风格 / 自定义背景）/ 高阶玩法</span></li>
           <li><span class="feature-name">系统设置</span><span class="feature-desc">注音模式（罗马音 / 不注音）/ 常亮模式（背词时屏幕不息屏）/ 清除缓存 / 个性化内容推荐开关 / 反馈</span></li>
         </ul>
+      </div>
+    
+      </div>
+
+    
+      <div class="module-thumbs">
+        <img class="thumb" src="images/kori/kori-wode-shezhi-1.png" alt="kori-wode-shezhi" onclick="openModal(this.src)">
+        <img class="thumb" src="images/kori/kori-wode-shezhi-2.jpg" alt="kori-wode-shezhi" onclick="openModal(this.src)">
       </div>
     </div>
 
@@ -3956,5 +3584,33 @@ function scrollToBlock(blockId) {
   }, 80);
 }
 </script>
+<!-- 截图弹窗 -->
+<div class="modal-overlay" id="imgModal" onclick="closeModal(event)">
+  <button class="modal-close" onclick="closeModal(event)" aria-label="关闭">×</button>
+  <img class="modal-image" id="modalImg" src="" alt="">
+</div>
+
+<script>
+function openModal(src) {
+  document.getElementById('modalImg').src = src;
+  document.getElementById('imgModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  // only close if clicking overlay or close button (not the image itself)
+  if (e.target.id === 'imgModal' || e.target.classList.contains('modal-close')) {
+    document.getElementById('imgModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+// ESC key closes modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('imgModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+</script>
+
 </body>
 </html>
