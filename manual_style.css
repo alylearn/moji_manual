@@ -513,7 +513,7 @@
     padding: 0;
   }
   .sidebar-toggle:hover { color: var(--moji-green); }
-  .sidebar { transition: width 0.25s; overflow: hidden; }
+  .sidebar { transition: width 0.25s; overflow-x: hidden; overflow-y: auto; }
   .sidebar.collapsed { width: 0 !important; min-width: 0 !important; }
   .sidebar-toggle.collapsed { left: 0; }
   .main-content { transition: margin-left 0.25s; }
