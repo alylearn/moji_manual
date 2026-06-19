@@ -11,7 +11,7 @@ MOJi 产品矩阵内部说明手册，供新人 / 实习生 / 跨部门同事了
 ├── moji_manual_v28.html      # 主文件（入口）
 ├── manual_style.css           # 样式文件
 ├── images/                    # 截图文件夹（按产品分子目录）
-│   ├── dict/                  # MOJi辞书
+│   ├── dict/                  # MOJi辞书（已完成）
 │   ├── read/                  # MOJi阅读
 │   ├── kana/                  # MOJiKana
 │   ├── test/                  # MOJiTest
