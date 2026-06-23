@@ -40,6 +40,7 @@
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-search-detail')">搜索</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-citiao')">词条详情</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-mojiquan')">MOJi圈</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-cidan')">词单</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-xiaoke')">小课堂</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-tingdu')">听读</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-liuxue')">留学</a>
@@ -50,7 +51,6 @@
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-wenlaoshi')">问老师</a>
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-shoucang')">收藏页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-main')">收藏主页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-cidan')">词单</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-shoucangjia')">收藏夹</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-tingci')">听词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-beici')">背词</a>
@@ -555,6 +555,35 @@
     
     </div>
 
+    <div class="module-block section-block has-thumbs" id="block-cidan">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📋</div>
+        <div>
+          <div class="module-title">词单</div>
+          <div class="module-subtitle">浏览公开词单 · 收藏使用 · 自建发布</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">搜索页顶部快捷栏「词单」</span><span class="path-sep">·</span><span class="path-step">收藏Tab顶部「词单」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">词单列表</span><span class="feature-desc">按分类标签浏览：教材 / 考级 / 生活 / 行业 / 娱乐 / 基础 / 其他；每条显示封面图、名称、创建者、内容数量、简介</span></li>
+          <li><span class="feature-name">词单详情</span><span class="feature-desc">未收藏显示「收藏」按钮，收藏后解锁操作栏：听单词 / 背词 / 单词导出 / 回顾 / 评论；右上角 ··· 菜单：分享词单 / 取消收藏</span></li>
+          <li><span class="feature-name">筛选排序</span><span class="feature-desc">内容类型：全部 / 单词 / 例句 / 词单 / 其他；排序：作者指定排序 / 最新收藏 / 最早收藏 / 数据类型 / 拼写</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-shoucang-cidan-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-cidan-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-cidan-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-cidan-04.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-daochu-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-daochu-02.png" onclick="openModal(this.src)">
+      </div>
+    
+    </div>
+
     <div class="module-block section-block has-thumbs" id="block-xiaoke">
         <div class="module-content">
       <div class="module-header">
@@ -779,36 +808,7 @@
       </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-main-01.jpeg" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-main-02.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/dict/dict-shoucang-main-03.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-shoucang-cidan">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📋</div>
-        <div>
-          <div class="module-title">词单</div>
-          <div class="module-subtitle">浏览公开词单 · 收藏使用 · 自建发布</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">搜索页顶部快捷栏「词单」</span><span class="path-sep">·</span><span class="path-step">收藏Tab顶部「词单」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">词单列表</span><span class="feature-desc">按分类标签浏览：教材 / 考级 / 生活 / 行业 / 娱乐 / 基础 / 其他；每条显示封面图、名称、创建者、内容数量、简介</span></li>
-          <li><span class="feature-name">词单详情</span><span class="feature-desc">未收藏显示「收藏」按钮，收藏后解锁操作栏：听单词 / 背词 / 单词导出 / 回顾 / 评论；右上角 ··· 菜单：分享词单 / 取消收藏</span></li>
-          <li><span class="feature-name">筛选排序</span><span class="feature-desc">内容类型：全部 / 单词 / 例句 / 词单 / 其他；排序：作者指定排序 / 最新收藏 / 最早收藏 / 数据类型 / 拼写</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-cidan-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-cidan-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-cidan-03.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-cidan-04.png" onclick="openModal(this.src)">
       </div>
     
     </div>
