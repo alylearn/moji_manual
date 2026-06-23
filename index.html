@@ -51,13 +51,13 @@
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-wenlaoshi')">问老师</a>
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-shoucang')">收藏页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-main')">收藏主页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-chuangjian')">创建词单</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-shoucangjia')">收藏夹</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-tingci')">听词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-beici')">背词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-daochu')">单词导出</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-chuangjian')">创建词单</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-biji')">笔记</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-huigu')">回顾</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-biji')">笔记</a>
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-beici-home')">背词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-home-detail')">背词首页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-more')">更多计划</a>
@@ -803,7 +803,6 @@
           <li><span class="feature-name">收藏列表</span><span class="feature-desc">按时间分组显示（昨天/近一周/月份），每条显示词单封面+词单名称+收藏星标；底部「查找收藏内容」搜索栏</span></li>
           <li><span class="feature-name">顶部快捷入口</span><span class="feature-desc">收藏夹、词单、听词、背词、单词导出；右侧可左右滑动查看更多</span></li>
           <li><span class="feature-name">新建、排序、批量管理</span><span class="feature-desc">圆形「+」，搜索内容、新建收藏夹、笔记、自创；筛选（全部/单词/例句/词单/其他）；批量管理（删除、移动收藏夹）</span></li>
-          <li><span class="feature-name">右上角「···」菜单</span><span class="feature-desc">快速背词 / PDF导出 / 回顾单词 / 隐藏释义 / 隐藏笔记 / 展示评论 / 批量管理</span></li>
         </ul>
       </div>
       </div>
@@ -813,101 +812,6 @@
     
     </div>
 
-    <div class="module-block section-block has-thumbs" id="block-shoucang-shoucangjia">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📁</div>
-        <div>
-          <div class="module-title">收藏夹</div>
-          <div class="module-subtitle">创建收藏夹 · 分类管理词单</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「收藏夹」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">收藏夹列表</span><span class="feature-desc">显示用户创建的所有收藏夹，支持搜索（6万＋词单可搜索）；分「我收藏的 / 我创建的 / 我发布的」三个子tab</span></li>
-          <li><span class="feature-name">新建收藏夹</span><span class="feature-desc">收藏页点击「+」→ 收藏夹，填写标题和简介，可更换封面图</span></li>
-          <li><span class="feature-name">移动单词</span><span class="feature-desc">词单目录内勾选单词后点击「移动到…」，可将单词移入指定收藏夹，支持按名称搜索，筛选当前 / 最近 / 全部</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-shoucangjia-01.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-shoucang-tingci">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">🎧</div>
-        <div>
-          <div class="module-title">听词</div>
-          <div class="module-subtitle">收藏词单朗读 · 卡片/列表模式</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「听词」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">功能说明</span><span class="feature-desc">选择任意收藏词单，以卡片形式逐词朗读；顶部下拉可切换词单；卡片显示日文大字+假名注音+词性标签+中文释义；底部：设置/暂停/评论；支持卡片/列表视图切换；进度显示（如1/18）；「详细释义」跳转完整词条</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-tingci-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-tingci-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-shoucang-beici">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">💯</div>
-        <div>
-          <div class="module-title">背词</div>
-          <div class="module-subtitle">选择测试模式进行自测</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「背词」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">功能说明</span><span class="feature-desc">点击收藏页背词，选择收藏单词测试范围；选择快速模式/专业模式进行单词自测</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-beici-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-beici-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-shoucang-daochu">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📄</div>
-        <div>
-          <div class="module-title">单词导出</div>
-          <div class="module-subtitle">词单导出PDF · 自定义样式</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「单词导出」</span><span class="path-sep">·</span><span class="path-step">词单详情页操作栏「单词导出」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">选择范围</span><span class="feature-desc">按章节勾选，支持展开逐条选择</span></li>
-          <li><span class="feature-name">推荐样式</span><span class="feature-desc">单词浏览（单词信息＋快速刷词）/ 单词回忆（单词信息＋书写空间）/ 多日背诵（单词信息＋日期勾选）</span></li>
-          <li><span class="feature-name">自定义字段</span><span class="feature-desc">序号、发音、音调、单词（可设重复次数）、词性、释义、例句、日期勾选、词条笔记</span></li>
-          <li><span class="feature-name">纸张方向</span><span class="feature-desc">竖向 / 横向；点击「导出」生成PDF</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-daochu-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-daochu-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
 
     <div class="module-block section-block has-thumbs" id="block-shoucang-chuangjian">
         <div class="module-content">
@@ -939,28 +843,105 @@
     
     </div>
 
-    <div class="module-block section-block has-thumbs" id="block-shoucang-biji">
+
+    <div class="module-block section-block has-thumbs" id="block-shoucang-shoucangjia">
         <div class="module-content">
       <div class="module-header">
-        <div class="module-icon">📝</div>
+        <div class="module-icon">📁</div>
         <div>
-          <div class="module-title">笔记</div>
-          <div class="module-subtitle">助记 · 造句 · 记忆口诀</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「笔记」</span></div>
+          <div class="module-title">收藏夹</div>
+          <div class="module-subtitle">创建收藏夹 · 分类管理词单</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「收藏夹」</span></div>
         </div>
       </div>
       <div class="module-body">
         <ul class="feature-list">
-          <li><span class="feature-name">功能说明</span><span class="feature-desc">在词条下写助记方法、造句、记忆口诀；收藏页统一管理，支持搜索；右下角「+」新建笔记</span></li>
+          <li><span class="feature-name">收藏夹列表</span><span class="feature-desc">显示用户创建的所有收藏夹，支持搜索（6万＋词单可搜索）；分「我收藏的 / 我创建的 / 我发布的」三个子tab</span></li>
         </ul>
       </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-biji-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-biji-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-shoucangjia-01.png" onclick="openModal(this.src)">
       </div>
     
     </div>
+
+
+    <div class="module-block section-block has-thumbs" id="block-shoucang-tingci">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🎧</div>
+        <div>
+          <div class="module-title">听词</div>
+          <div class="module-subtitle">收藏词单朗读 · 卡片/列表模式</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「听词」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">选择任意收藏词单，以卡片形式逐词朗读；顶部下拉可切换词单；卡片显示日文大字+假名注音+词性标签+中文释义；底部：设置/暂停/评论；支持卡片/列表视图切换；进度显示（如1/18）；「详细释义」跳转完整词条</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-shoucang-tingci-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-tingci-02.png" onclick="openModal(this.src)">
+      </div>
+    
+    </div>
+
+
+    <div class="module-block section-block has-thumbs" id="block-shoucang-beici">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">💯</div>
+        <div>
+          <div class="module-title">背词</div>
+          <div class="module-subtitle">选择测试模式进行自测</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「背词」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">点击收藏页背词，选择收藏单词测试范围；选择快速模式/专业模式进行单词自测</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-shoucang-beici-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-beici-02.png" onclick="openModal(this.src)">
+      </div>
+    
+    </div>
+
+
+    <div class="module-block section-block has-thumbs" id="block-shoucang-daochu">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📄</div>
+        <div>
+          <div class="module-title">单词导出</div>
+          <div class="module-subtitle">词单导出PDF · 自定义样式</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「单词导出」</span><span class="path-sep">·</span><span class="path-step">词单详情页操作栏「单词导出」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">选择范围</span><span class="feature-desc">按章节勾选，支持展开逐条选择</span></li>
+          <li><span class="feature-name">推荐样式</span><span class="feature-desc">单词浏览（单词信息＋快速刷词）/ 单词回忆（单词信息＋书写空间）/ 多日背诵（单词信息＋日期勾选）</span></li>
+          <li><span class="feature-name">自定义字段</span><span class="feature-desc">序号、发音、音调、单词（可设重复次数）、词性、释义、例句、日期勾选、词条笔记</span></li>
+          <li><span class="feature-name">纸张方向</span><span class="feature-desc">竖向 / 横向；点击「导出」生成PDF</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-shoucang-daochu-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-daochu-02.png" onclick="openModal(this.src)">
+      </div>
+    
+    </div>
+
+
 
     <div class="module-block section-block has-thumbs" id="block-shoucang-huigu">
         <div class="module-content">
@@ -986,337 +967,34 @@
     
     </div>
 
-    <!-- ========== 背词 ========== -->
+
+        <!-- ========== 背词 ========== -->
     <div class="content-divider" id="block-beici-home">背词</div>
 
-    <div class="module-block section-block has-thumbs" id="block-beici-home-detail">
+
+    <div class="module-block section-block has-thumbs" id="block-shoucang-biji">
         <div class="module-content">
       <div class="module-header">
-        <div class="module-icon">🏠</div>
+        <div class="module-icon">📝</div>
         <div>
-          <div class="module-title">背词首页</div>
-          <div class="module-subtitle">计划总览 · 今日数据 · 快捷功能</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页功能区「背词」</span></div>
+          <div class="module-title">笔记</div>
+          <div class="module-subtitle">助记 · 造句 · 记忆口诀</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「笔记」</span></div>
         </div>
       </div>
       <div class="module-body">
         <ul class="feature-list">
-          <li><span class="feature-name">我的计划卡片</span><span class="feature-desc">词书封面+词书名+总词数+预计学完天数+掌握数/已学数+进度条；右上角「更多计划」进入完整计划列表；「学习列表」入口；右侧铅笔图标→背词设置；底部「复习 X」（红色）和「新学」按钮</span></li>
-          <li><span class="feature-name">底部快捷功能区</span><span class="feature-desc">修改计划（调整背词数量/题型/删除计划）/ 玩游戏（消消乐，黄色按钮）/ 词汇量测试（绿色「去测试」按钮）</span></li>
-          <li><span class="feature-name">今天学习数据</span><span class="feature-desc">今日学词数 + 累计学词 / 累计打卡 / 连续打卡（天数）；「打卡日历」入口</span></li>
-          <li><span class="feature-name">阅读复习生词</span><span class="feature-desc">底部推荐基于MOJi阅读中遇到的生词关联文章，实现辞書与阅读跨产品学习闭环</span></li>
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">在词条下写助记方法、造句、记忆口诀；收藏页统一管理，支持搜索；右下角「+」新建笔记</span></li>
         </ul>
       </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-beici-home-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-home-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-biji-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-biji-02.png" onclick="openModal(this.src)">
       </div>
     
     </div>
 
-    <div class="module-block section-block has-thumbs" id="block-beici-more">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📋</div>
-        <div>
-          <div class="module-title">更多计划</div>
-          <div class="module-subtitle">全部计划管理 · 创建新计划</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页右上角「更多计划」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">顶部「+ 创建计划」按钮</span><span class="feature-desc">进入「选择背词内容」页面，分为官方推荐（标准日本语、红宝书、大家的日语、新编日语、考前对策、JLPT·考研·高考 背词做题）和我的收藏两个区域，均支持「更多」展开</span></li>
-          <li><span class="feature-name">计划列表</span><span class="feature-desc">每张卡片显示词书封面+词书名+总词数+预估学完天数+进度条+掌握数/已学数；当前学习中的计划显示「学习中」标签，其他计划显示红色「学习」按钮可切换</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-beici-more-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-more-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-more-03.jpeg" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-beici-set">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">⚙️</div>
-        <div>
-          <div class="module-title">背词设置</div>
-          <div class="module-subtitle">题型配置 · 新学/复习分开设置</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片右侧「铅笔图标」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">设置页</span><span class="feature-desc">计划名词/背词任务/题型设置/背词顺序</span></li>
-          <li><span class="feature-name">新学Tab</span><span class="feature-desc"><ul>
-            <li><b>测试题型</b>：选择题 / 回忆式 / 快速自测</li>
-            <li><b>（1）选择题</b>：官方题型（根据单词特性，生成最佳题型3种）；自选题型：①通用（看单词选释义/看释义选单词）②重点考察（看假名选释义/看释义选假名/看单词选假名/看单词选错义/听发音选单词/听发音选释义）③进阶拼写（看释义拼单词/看单词拼假名/拼写例句）</li>
-            <li><b>（2）选择题</b>（不可选更多内容）</li>
-            <li><b>（3）快速自测</b>：显示部分可选（单词/单词+假名/假名/释义）；例句提示开关</li>
-          </ul></span></li>
-          <li><span class="feature-name">复习Tab</span><span class="feature-desc">题型配置与新学Tab相同</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-beici-set-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-set-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-set-03.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-set-04.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-beici-set-05.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-xuexiliebiao">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📋</div>
-        <div>
-          <div class="module-title">学习列表</div>
-          <div class="module-subtitle">未学习 · 复习中 · 已掌握 · 批量管理</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片「学习列表」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">三个Tab</span><span class="feature-desc">未学习（显示总词汇数，底部「听学」按钮）/ 复习中（额外显示绿色分数标签+蓝色周期标签）/ 已掌握（均显示100分标签）</span></li>
-          <li><span class="feature-name">①未学习</span><span class="feature-desc">右上角「···」进入批量管理，选择【已掌握 / 重学】</span></li>
-          <li><span class="feature-name">②复习中</span><span class="feature-desc">右上角「···」选择批量管理→选择【已掌握 / 重学】；选择全书重学，确认按钮有倒计时防误触</span></li>
-          <li><span class="feature-name">③已掌握</span><span class="feature-desc">右上角「···」选择批量管理→选择【已掌握 / 重学】；选择全书重学，确认按钮有倒计时防误触</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-xuexilie-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xuexilie-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xuexilie-03.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xuexilie-04.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xuexilie-05.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-xinxue">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">🆕</div>
-        <div>
-          <div class="module-title">新学</div>
-          <div class="module-subtitle">词汇列表 · 学习 · 测试（题型由设置决定）</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片「新学」按钮</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">词汇列表</span><span class="feature-desc">展示本次新学词汇；每条显示单词+假名+声调+词性+简明释义+发音按钮；左上角「全部▾」切换显示方式（全部/音标/拼写/拼写与音标/解释）</span></li>
-          <li><span class="feature-name">听词（红色）</span><span class="feature-desc">进入听词界面，按背词顺序朗读本次新学词汇</span></li>
-          <li><span class="feature-name">测试（灰色）</span><span class="feature-desc">题型由背词设置决定：选择题（四选一）/ 回忆式（点击翻面，自判认识/模糊/忘记）/ 快速自测（逐条翻面，完成后提交）；右上角「···」：收藏/掌握/帮助/设置/错误反馈</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-xinxue-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xinxue-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xinxue-03.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-fuxi">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">🔁</div>
-        <div>
-          <div class="module-title">复习</div>
-          <div class="module-subtitle">复习列表 · 筛选排序 · 多选管理</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">词书卡片「复习 X」按钮</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">复习列表</span><span class="feature-desc">展示待复习词汇；每条显示单词+假名+声调+词性+简明释义+绿色分数标签+蓝色周期标签+发音按钮；底部「听词」（红色）和「X 复习」（灰色）</span></li>
-          <li><span class="feature-name">左上角「全部▾」</span><span class="feature-desc">切换显示方式：全部/音标/拼写/拼写与音标/解释</span></li>
-          <li><span class="feature-name">右上角漏斗筛选</span><span class="feature-desc">排序（新学日期/单词分数）/ 按新学时间批次选择 / 按分数区间过滤（0-20/21-40/41-60…）</span></li>
-          <li><span class="feature-name">右上角色块批量管理</span><span class="feature-desc">勾选单词→已掌握/重选</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-fuxi-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-fuxi-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-fuxi-03.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-fuxi-04.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-fuxi-05.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-fuxi-06.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-tingci">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">🎧</div>
-        <div>
-          <div class="module-title">听词</div>
-          <div class="module-subtitle">卡片/列表模式 · 播放设置 · 遮挡 · 详细释义 · 评论</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">新学「学习」</span><span class="path-arrow">/</span><span class="path-step">复习「听词」</span><span class="path-arrow">/</span><span class="path-step">学习列表「听学」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">卡片模式</span><span class="feature-desc">单词卡片逐词朗读；显示日文大字+假名注音+词性标签+简明释义+例句；顶部声优胶囊（如「七海 朗读」）可点击切换声优；进度显示；右下角切换「列表」视图</span></li>
-          <li><span class="feature-name">列表模式</span><span class="feature-desc">灰色背景滚动列表，多词同屏显示，当前播放词居中高亮；右下角切换「卡片」视图</span></li>
-          <li><span class="feature-name">播放设置</span><span class="feature-desc">顺序（顺序/随机）/ 倍速 / 间隔；定时关闭 / 循环设置 / 发音设置；播放词条解释（开关）/ 播放例句（日语/中文独立勾选）</span></li>
-          <li><span class="feature-name">遮挡功能</span><span class="feature-desc">点击眼睛图标：遮挡全部 / 遮挡释义例句 / 遮挡单词</span></li>
-          <li><span class="feature-name">详细释义</span><span class="feature-desc">点击「详细释义 →」跳转词条详情页</span></li>
-          <li><span class="feature-name">评论区</span><span class="feature-desc">点击💬进入；展示用户评论及点赞数；可发布评论</span></li>
-          <li><span class="feature-name">词条列表弹窗</span><span class="feature-desc">点击底部左侧列表图标，弹出完整词汇列表，可跳转任意词条</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-tingci-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-tingci-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-daka">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📅</div>
-        <div>
-          <div class="module-title">打卡日历</div>
-          <div class="module-subtitle">学习记录 · 回顾与预测 · 每日提醒</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">今天学习数据区「打卡日历」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">顶部状态栏</span><span class="feature-desc">累计天数 / 连续天数 / 累计学时；未完成时显示「去背词」红色按钮</span></li>
-          <li><span class="feature-name">日历视图</span><span class="feature-desc">月历展示；内圈=新学完成，外圈=复习完成，浅色=当天未完成；可按月翻页</span></li>
-          <li><span class="feature-name">回顾与预测</span><span class="feature-desc">周/月/年切换柱状图；蓝色柱=预估复习量，绿色柱=计划新学量；底部：计划新学词数/预估复习词数/预估时长</span></li>
-          <li><span class="feature-name">每日提醒</span><span class="feature-desc">开关控制，开启后按时推送背词提醒</span></li>
-          <li><span class="feature-name">每日回顾小组件</span><span class="feature-desc">跳转桌面小组件设置，一键查看当日背词任务</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-daka-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-daka-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-daka-03.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-leiji">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📊</div>
-        <div>
-          <div class="module-title">累计学词</div>
-          <div class="module-subtitle">复习中 · 已掌握 · 全量词汇管理</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">打卡日历</span><span class="path-arrow">→</span><span class="path-step">「累计学词 X词」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">复习中Tab</span><span class="feature-desc">所有仍在复习周期中的词汇；显示单词+假名+绿色分数标签+蓝色周期标签+词性释义+发音；支持筛选和多选管理</span></li>
-          <li><span class="feature-name">已掌握Tab</span><span class="feature-desc">已完成7个复习周期的词汇；显示单词+假名+100分标签+词性释义；支持筛选和多选管理</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-leiji-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-leiji-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-leiji-03.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-cihui-test">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📈</div>
-        <div>
-          <div class="module-title">词汇水平测试</div>
-          <div class="module-subtitle">5分钟评估 · N5-N1分级 · 历史记录</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">快捷功能区「词汇量测试」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">测试说明</span><span class="feature-desc">5分钟快速评估日语词汇水平；科学题库结构与动态出题逻辑；一键生成五维图学习报告</span></li>
-          <li><span class="feature-name">历史记录</span><span class="feature-desc">右上角「历史记录」查看历次结果；页面顶部显示当前等级</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-cihui-test-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-cihui-test-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-renge-test">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">🎭</div>
-        <div>
-          <div class="module-title">日语人格测试</div>
-          <div class="module-subtitle">3分钟测出你的日语学习人格 · 趣味鉴定</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">MOJi圈</span><span class="path-arrow">→</span><span class="path-step">顶部功能区「日语人格·去测试」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">入口页</span><span class="feature-desc">主视觉「你是哪种日语人格？」+ 日文副标题「あなたはどのタイプ？」；四类型预览（同人文学 / 番剧日音 / 教材刷题 / 游戏文本）；底部黄色「开始鉴定（テストを始める →）」按钮；标注「3分钟测出你的日语学习人格」</span></li>
-          <li><span class="feature-name">测试问答</span><span class="feature-desc">通过若干道选择题判定用户日语学习偏好，根据答题结果输出人格类型，8种人格</span></li>
-          <li><span class="feature-name">结果页·人格卡</span><span class="feature-desc">顶部「あなたのタイプ · YOUR TYPE」标签；中央人格插画 + 英文人格名（如SHIPPER）+ 中文人格名（如磕学挖掘机）；橙色短描述（如「同人黑话大师，精通各种"脖子以下不可描述"的动词」）</span></li>
-          <li><span class="feature-name">扎心鉴定（CHARACTER ANALYSIS）</span><span class="feature-desc">长文描述该人格的学习驱动力、词汇分布、行为特征；语言风格幽默、网感强</span></li>
-          <li><span class="feature-name">引流资料宝</span><span class="feature-desc">对应人格内容包（如「同人磕学DLC」，含同人常见表达 / 小说描写 / 场景表达），可「免费领取」</span></li>
-          <li><span class="feature-name">属性标签（ATTRIBUTE TAGS）</span><span class="feature-desc">5-6个黄色标签描述该人格特质（如厨力爆表 / 社交牛 / 流行网感 / 敬语达人 / 开口困难户 / 卷王属性）</span></li>
-          <li><span class="feature-name">雷达图巅峰属性（PEAK STATS）</span><span class="feature-desc">条状评分图，展示7项属性数值（如正统做题 / 厨力 / 社交牛 / 卷王度 / 网感 / 社畜 / 哑巴度），各项0-100分；不同人格的高低分项不同</span></li>
-          <li><span class="feature-name">底部操作</span><span class="feature-desc">黄色「喊搭子来测！」按钮（看看有谁和你是同款日语人格，分享传播）/ 「再测一次」链接 / 右下角「意见反馈」按钮</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-renge-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-renge-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-renge-03.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
-
-    <div class="module-block section-block has-thumbs" id="block-xiaoxiao">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">🎮</div>
-        <div>
-          <div class="module-title">消消乐</div>
-          <div class="module-subtitle">单词/50音模式 · 辞書与MOJiKana联通</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">快捷功能区「玩游戏·消消乐」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">模式切换</span><span class="feature-desc">右上角按钮切换：单词消消乐（辞書词汇，辞書默认）/ 50音消消乐（假名练习，MOJiKana默认）；两款App共用同一游戏界面</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-xiaoxiaole-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-xiaoxiaole-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
 
     <!-- ========== 我的 ========== -->
     <div class="content-divider" id="block-wode">我的</div>
