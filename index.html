@@ -99,26 +99,26 @@
           <span style="flex:1">MOJi阅读</span><span class="nav-arrow" id="arrow-yomi-nav">▸</span>
         </a>
         <div class="nav-children" id="yomi-nav">
-          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('yomi-faxian')">发现</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-faxian')">发现页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-dangan')">阅读档案</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-fenlei')">分类页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-quanzi')">圈子</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-jihua')">阅读计划</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-reader')">文章详情页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-jujie')">注音分析</a>
-          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('yomi-yueduqi')">阅读器</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-bendiwenjian')">本地文件导入</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-qingkong')">青空文库</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-wangye')">浏览网页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-yueduqi')">书籍阅读器</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-duanpian')">短篇辅助阅读</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-paizhao')">拍照提取</a>
-          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('yomi-xuexi')">学习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-xuexi')">计划 / 订阅</a>
-          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('yomi-wode')">我的</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-wode')">我的页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('yomi-vip')">订阅会员权益</a>
+          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-faxian')">发现</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-faxian')">发现页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-dangan')">阅读档案</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-fenlei')">分类页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-quanzi')">圈子</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-jihua')">阅读计划</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-reader')">文章详情页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-jujie')">注音分析</a>
+          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-yueduqi')">阅读器</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-bendiwenjian')">本地文件导入</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-qingkong')">青空文库</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-wangye')">浏览网页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-yueduqi')">书籍阅读器</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-duanpian')">短篇辅助阅读</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-paizhao')">拍照提取</a>
+          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-xuexi')">学习</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-xuexi')">计划 / 订阅</a>
+          <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-wode')">我的</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-wode')">我的页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-vip')">订阅会员权益</a>
         </div>
       </div>
 
@@ -1525,7 +1525,8 @@
       专注日语有声精读，每日更新备考、时事、生活、文学、娱乐等分级阅读内容，配备完整辅助阅读工具链。覆盖发现、阅读器、学习、个人中心四大板块，支持圈子社区互动与系统化阅读计划。当前版本 v3.4.5。
     </div>
     <div class="content-divider">发现</div>
-    <div class="module-block section-block" id="yomi-faxian">
+    <div class="module-block section-block has-thumbs" id="read-faxian">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">🏠</div>
         <div>
@@ -1566,9 +1567,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-faxian-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-faxian-2.png" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="yomi-bofang">
+    <div class="module-block section-block has-thumbs" id="read-bofang">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">▶️</div>
         <div>
@@ -1593,9 +1600,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-bofang-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-bofang-2.png" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="yomi-dangan">
+    <div class="module-block section-block has-thumbs" id="read-dangan">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">📋</div>
         <div>
@@ -1620,9 +1633,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-dangan-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-dangan-2.png" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="yomi-fenlei">
+    <div class="module-block section-block has-thumbs" id="read-fenlei">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">📂</div>
         <div>
@@ -1649,8 +1668,14 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-fenlei-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-fenlei-2.png" onclick="openModal(this.src)">
+      </div>
     </div>
-    <div class="module-block section-block" id="yomi-quanzi">
+    <div class="module-block section-block has-thumbs" id="read-quanzi">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">🔵</div>
         <div>
@@ -1671,7 +1696,7 @@
           </li>
           <li>
             <span class="feature-name">翻訳圈</span>
-            <span class="feature-desc">专栏（截至2026年5月，共5个）：天声人语 / 翻译备考 / 解词解字 / 翻译研修 / 文字研；翻译备考专栏适用于考研、CATTI、专四专八等备考场景</span>
+            <span class="feature-desc">专栏（截至2026年5月，共5个）：社会新语 / 翻译备考 / 解词解字 / 翻译研修 / 文字研；翻译备考专栏适用于考研、CATTI、专四专八等备考场景</span>
           </li>
           <li>
             <span class="feature-name">留学圈</span>
@@ -1691,8 +1716,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-quanzi-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-quanzi-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-quanzi-3.png" onclick="openModal(this.src)">
+      </div>
     </div>
-    <div class="module-block section-block" id="yomi-reader">
+    <div class="module-block section-block has-thumbs" id="read-reader">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">📄</div>
         <div>
@@ -1761,9 +1793,16 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-reader-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-reader-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-reader-3.png" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="yomi-jujie">
+    <div class="module-block section-block has-thumbs" id="read-jujie">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">🔬</div>
         <div>
@@ -1793,8 +1832,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-jujie-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-jujie-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-jujie-3.png" onclick="openModal(this.src)">
+      </div>
     </div>
-    <div class="module-block section-block" id="yomi-jihua">
+    <div class="module-block section-block has-thumbs" id="read-jihua">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">📅</div>
         <div>
@@ -1842,9 +1888,17 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-jihua-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-jihua-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-jihua-3.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-jihua-4.png" onclick="openModal(this.src)">
+      </div>
     </div>
     <div class="content-divider">阅读器</div>
-    <div class="module-block section-block" id="yomi-yueduqi">
+    <div class="module-block section-block has-thumbs" id="read-yueduqi">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">📚</div>
         <div>
@@ -1873,8 +1927,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-yueduqi-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-yueduqi-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-yueduqi-3.png" onclick="openModal(this.src)">
+      </div>
     </div>
-    <div class="module-block section-block" id="yomi-xuexi">
+    <div class="module-block section-block has-thumbs" id="read-xuexi">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">🎯</div>
         <div>
@@ -1899,9 +1960,14 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-xuexi-1.png" onclick="openModal(this.src)">
+      </div>
     </div>
     <div class="content-divider">我的</div>
-    <div class="module-block section-block" id="yomi-wode">
+    <div class="module-block section-block has-thumbs" id="read-wode">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">👤</div>
         <div>
@@ -1946,9 +2012,15 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-wode-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-wode-2.png" onclick="openModal(this.src)">
+      </div>
     </div>
 
-    <div class="module-block section-block" id="yomi-shezhi">
+    <div class="module-block section-block has-thumbs" id="read-shezhi">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">⚙️</div>
         <div>
@@ -1977,8 +2049,14 @@
           </li>
         </ul>
       </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-shezhi-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-shezhi-2.png" onclick="openModal(this.src)">
+      </div>
     </div>
-    <div class="module-block section-block" id="yomi-vip">
+    <div class="module-block section-block has-thumbs" id="read-vip">
+      <div class="module-content">
       <div class="module-header">
         <div class="module-icon">💎</div>
         <div>
@@ -2000,6 +2078,10 @@
           <li><span class="feature-name">无广告</span><span class="feature-desc">享受纯净阅读体验</span></li>
           <li><span class="feature-name">字体设置</span><span class="feature-desc">自由更改字体大小</span></li>
         </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-vip-1.png" onclick="openModal(this.src)">
       </div>
     </div>
     <div class="content-divider">使用场景</div>
