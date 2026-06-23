@@ -56,8 +56,8 @@
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-tingci')">听词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-beici')">背词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-daochu')">单词导出</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-huigu')">回顾</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-biji')">笔记</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-shoucang-huigu')">回顾</a>
           <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-beici-home')">背词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-home-detail')">背词首页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-beici-more')">更多计划</a>
@@ -903,7 +903,7 @@
       </div>
       <div class="module-body">
         <ul class="feature-list">
-          <li><span class="feature-name">功能说明</span><span class="feature-desc">点击收藏页背词，选择收藏单词测试范围；选择快速模式/专业模式进行单词自测</span></li>
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">点击收藏页背词，选择收藏单词测试范围；选择快速模式-快速自测、专业模式-创建背词计划</span></li>
         </ul>
       </div>
       </div>
@@ -943,6 +943,31 @@
 
 
 
+    <div class="module-block section-block has-thumbs" id="block-shoucang-biji">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📝</div>
+        <div>
+          <div class="module-title">笔记</div>
+          <div class="module-subtitle">助记 · 造句 · 记忆口诀</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「笔记」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">功能说明</span><span class="feature-desc">在词条下写助记方法、造句、记忆口诀；收藏页统一管理，支持搜索；右下角「+」新建笔记</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-shoucang-biji-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-shoucang-biji-02.png" onclick="openModal(this.src)">
+      </div>
+    
+    </div>
+
+
+
     <div class="module-block section-block has-thumbs" id="block-shoucang-huigu">
         <div class="module-content">
       <div class="module-header">
@@ -970,30 +995,6 @@
 
         <!-- ========== 背词 ========== -->
     <div class="content-divider" id="block-beici-home">背词</div>
-
-
-    <div class="module-block section-block has-thumbs" id="block-shoucang-biji">
-        <div class="module-content">
-      <div class="module-header">
-        <div class="module-icon">📝</div>
-        <div>
-          <div class="module-title">笔记</div>
-          <div class="module-subtitle">助记 · 造句 · 记忆口诀</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏Tab顶部「笔记」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">功能说明</span><span class="feature-desc">在词条下写助记方法、造句、记忆口诀；收藏页统一管理，支持搜索；右下角「+」新建笔记</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-shoucang-biji-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/dict/dict-shoucang-biji-02.png" onclick="openModal(this.src)">
-      </div>
-    
-    </div>
 
 
     <!-- ========== 我的 ========== -->
