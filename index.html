@@ -155,7 +155,9 @@
           <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-beici')">背词页主页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-cishu')">选择词书</a>
           <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-shezhi')">背词设置</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-xuexilie')">学习列表·单词详情</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-xuexilie')">学习列表</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-xinxue')">新学</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-fuxi')">复习</a>
           <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-tingci')">听词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-jizhi')">科学背词机制</a>
           <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-daka')">打卡日历</a>
@@ -2389,610 +2391,604 @@
     <div class="content-divider">对策</div>
 
     <!-- 对策页 -->
-    <div class="module-block section-block" id="test-duice">
-      <div class="module-header">
-        <div class="module-icon">🎯</div>
-        <div>
-          <div class="module-title">对策</div>
-          <div class="module-subtitle">等级备考总览 · 考试倒计时 · 专项入口</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">打开App</span><span class="path-arrow">→</span>
-            <span class="path-step">底部Tab「对策」</span>
+    <div class="module-block section-block has-thumbs" id="test-duice">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🎯</div>
+          <div>
+            <div class="module-title">对策</div>
+            <div class="module-subtitle">等级备考总览 · 考试倒计时 · 专项入口</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">打开App</span><span class="path-arrow">→</span>
+              <span class="path-step">底部Tab「对策」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">顶部信息区</span><span class="feature-desc">当前备考等级显示（如N2）+ 切换按钮，右上角显示「距JLPT/考研 ×天」实时倒计时</span></li>
+            <li><span class="feature-name">等级选择器</span><span class="feature-desc">可选：N1 / N2 / N3 / N4 / N5 / 研（考研），切换后页面内容同步更新为对应等级的备考模块</span></li>
+            <li><span class="feature-name">文字词汇</span><span class="feature-desc">显示掌握数/已学数 + 进度条；「背单词」按钮（跳转背词流程）/ 「专项试题练习」按钮（跳转专项题列表）；下方关联文章推荐（带封面图、标题、日期）</span></li>
+            <li><span class="feature-name">语法</span><span class="feature-desc">显示掌握数/已学数 + 进度条；「背语法」按钮 / 「专项试题练习」按钮；下方关联专栏推荐（显示订阅人数）</span></li>
+            <li><span class="feature-name">阅读理解</span><span class="feature-desc">「专项试题练习」按钮；下方关联文章推荐。⚠️ 仅JLPT等级显示，考研模式无此模块</span></li>
+            <li><span class="feature-name">听力</span><span class="feature-desc">「专项试题练习」按钮；下方关联专栏推荐（如「NHK日语听力」）+ MOJi阅读APP跳转入口。⚠️ 仅JLPT等级显示，考研模式无此模块</span></li>
+            <li><span class="feature-name">综合实战</span><span class="feature-desc">显示完成数/剩余数；「综合实战」按钮；下方小课堂课程推荐（如「N2全享班，72节直播课」）</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">顶部信息区</span>
-            <span class="feature-desc">当前备考等级显示（如N2）+ 切换按钮，右上角显示「距JLPT/考研 ×天」实时倒计时</span>
-          </li>
-          <li>
-            <span class="feature-name">等级选择器</span>
-            <span class="feature-desc">可选：N1 / N2 / N3 / N4 / N5 / 研（考研），切换后页面内容同步更新为对应等级的备考模块</span>
-          </li>
-          <li>
-            <span class="feature-name">文字词汇</span>
-            <span class="feature-desc">显示掌握数/已学数 + 进度条；「背单词」按钮（跳转背词流程）/ 「专项试题练习」按钮（跳转专项题列表）；下方关联文章推荐（带封面图、标题、日期）</span>
-          </li>
-          <li>
-            <span class="feature-name">语法</span>
-            <span class="feature-desc">显示掌握数/已学数 + 进度条；「背语法」按钮 / 「专项试题练习」按钮；下方关联专栏推荐（显示订阅人数）</span>
-          </li>
-          <li>
-            <span class="feature-name">阅读理解</span>
-            <span class="feature-desc">「专项试题练习」按钮；下方关联文章推荐。⚠️ 仅JLPT等级显示，考研模式无此模块</span>
-          </li>
-          <li>
-            <span class="feature-name">听力</span>
-            <span class="feature-desc">「专项试题练习」按钮；下方关联专栏推荐（如「NHK日语听力」）+ MOJi阅读APP跳转入口。⚠️ 仅JLPT等级显示，考研模式无此模块</span>
-          </li>
-          <li>
-            <span class="feature-name">综合实战</span>
-            <span class="feature-desc">显示完成数/剩余数；「综合实战」按钮；下方小课堂课程推荐（如「N2全享班，72节直播课」）</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-duice-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-duice-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <div class="module-block section-block" id="test-zhuanxiang">
-      <div class="module-header">
-        <div class="module-icon">🎯</div>
-        <div>
-          <div class="module-title">专项试题练习</div>
-          <div class="module-subtitle">按科目专项刷题 · 历年真题专项版</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">对策</span><span class="path-arrow">→</span>
-            <span class="path-step">各模块「专项试题练习」按钮</span><span class="path-arrow">→</span>
-            <span class="path-step">选择年份</span>
+    <!-- 专项试题练习 -->
+    <div class="module-block section-block has-thumbs" id="test-zhuanxiang">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🎯</div>
+          <div>
+            <div class="module-title">专项试题练习</div>
+            <div class="module-subtitle">按科目专项刷题 · 历年真题专项版</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">对策</span><span class="path-arrow">→</span>
+              <span class="path-step">各模块「专项试题练习」按钮</span><span class="path-arrow">→</span>
+              <span class="path-step">选择年份</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">专项列表</span><span class="feature-desc">页面标题为对应科目（如「文字词汇专项」），按年份分组展示；右侧标注题数或完成状态</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">专项列表</span>
-            <span class="feature-desc">页面标题为对应科目（如「文字词汇专项」），按年份分组展示；右侧标注题数或完成状态</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-zhuanxiang-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-zhuanxiang-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <!-- 答题界面 -->
     <div class="content-divider">背词</div>
 
     <!-- 背词页主页 -->
-    <div class="module-block section-block" id="test-beici">
-      <div class="module-header">
-        <div class="module-icon">📖</div>
-        <div>
-          <div class="module-title">背词页主页</div>
-          <div class="module-subtitle">词书卡片 · 打卡日历 · 学习入口</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">底部Tab「背词」</span>
+    <div class="module-block section-block has-thumbs" id="test-beici">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📖</div>
+          <div>
+            <div class="module-title">背词页主页</div>
+            <div class="module-subtitle">词书卡片 · 打卡日历 · 学习入口</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">底部Tab「背词」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">顶部搜索区</span><span class="feature-desc">搜索框「搜索单词·语法·试题」；右侧拍照识题图标；「距JLPT ×天」倒计时 + 「选择词书」入口</span></li>
+            <li><span class="feature-name">当前词书卡片</span><span class="feature-desc">最多同时展示3本词书卡片；每张显示词书封面图 + 名称 + 总词数 + 预计学完天数（可点击铅笔图标修改每日目标）+ 学习进度条 + 掌握数/已学数 + 「学习列表」入口；底部「复习」「新学」两个按钮</span></li>
+            <li><span class="feature-name">横幅</span><span class="feature-desc">近期主推活动快捷入口</span></li>
+            <li><span class="feature-name">打卡日历</span><span class="feature-desc">按周显示（日-土），今日标红高亮；点击日历区域进入打卡日历详情页</span></li>
+            <li><span class="feature-name">底部功能区</span><span class="feature-desc">MOJi自习室（一起来学日语吧）/ 收藏夹（显示收藏数量）/ 笔记本</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">顶部搜索区</span>
-            <span class="feature-desc">搜索框「搜索单词·语法·试题」；右侧拍照识题图标；「距JLPT ×天」倒计时 + 「选择词书」入口</span>
-          </li>
-          <li>
-            <span class="feature-name">当前词书卡片</span>
-            <span class="feature-desc">最多同时展示3本词书卡片；每张显示词书封面图 + 名称 + 总词数 + 预计学完天数（可点击铅笔图标修改每日目标）+ 学习进度条 + 掌握数/已学数 + 「学习列表」入口；底部「复习」「新学」两个按钮</span>
-          </li>
-          <li>
-            <span class="feature-name">词汇量测试</span>
-            <span class="feature-desc">「5分钟，测出你的日语词汇真实水平」横幅入口</span>
-          </li>
-          <li>
-            <span class="feature-name">打卡日历</span>
-            <span class="feature-desc">按周显示（日-土），今日标红高亮；点击日历区域进入打卡日历详情页</span>
-          </li>
-          <li>
-            <span class="feature-name">底部功能区</span>
-            <span class="feature-desc">MOJi自习室（一起来学日语吧）/ 收藏夹（显示收藏数量）/ 笔记本</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-beici-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-beici-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 选择词书 -->
-    <div class="module-block section-block" id="test-cishu">
-      <div class="module-header">
-        <div class="module-icon">📚</div>
-        <div>
-          <div class="module-title">选择词书</div>
-          <div class="module-subtitle">10大词书系列 · 100+册 · 免费与付费</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">顶部「选择词书」</span>
+    <div class="module-block section-block has-thumbs" id="test-cishu">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📚</div>
+          <div>
+            <div class="module-title">选择词书</div>
+            <div class="module-subtitle">10大词书系列 · 100+册 · 免费与付费</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">顶部「选择词书」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li>
+              <span class="feature-name">词书系列</span>
+              <span class="feature-desc">
+                <ul>
+                  <li>免费词书（14本）</li>
+                  <li>绿宝书官方合作词条（13本）</li>
+                  <li>红宝书（5本）</li>
+                  <li>新完全掌握（8本）</li>
+                  <li>JLPT试题词汇（21本）</li>
+                  <li>宵寒考研白宝书（12本）</li>
+                  <li>考研日语（3本）</li>
+                  <li>高中日语（5本）</li>
+                  <li>MOJi分类词汇 N1-N5（49本）</li>
+                  <li>收藏夹（基于个人收藏创建学习计划）</li>
+                </ul>
+              </span>
+            </li>
+            <li><span class="feature-name">使用方式</span><span class="feature-desc">选中想学习的词书即可加入背词首页，最多同时展示3本；有过学习记录的词书进度会自动保留</span></li>
+            <li><span class="feature-name">背词帮助</span><span class="feature-desc">右上角「帮助」入口，含7条背词FAQ（打卡规则 / 复习周期 / 进度共享机制 / 已掌握单词管理等）</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">词书系列</span>
-            <span class="feature-desc">
-              <ul>
-                <li>免费词书（14本）</li>
-                <li>绿宝书官方合作词条 🆕（13本）</li>
-                <li>红宝书（5本）</li>
-                <li>新完全掌握（8本）</li>
-                <li>JLPT试题词汇 🆕（21本）</li>
-                <li>宵寒考研白宝书（12本）</li>
-                <li>考研日语（3本）</li>
-                <li>高中日语 🆕（5本）</li>
-                <li>MOJi分类词汇 N1-N5（49本）</li>
-                <li>收藏夹（基于个人收藏创建学习计划）</li>
-              </ul>
-            </span>
-          </li>
-          <li>
-            <span class="feature-name">使用方式</span>
-            <span class="feature-desc">选中想学习的词书即可加入背词首页，最多同时展示3本；有过学习记录的词书进度会自动保留</span>
-          </li>
-          <li>
-            <span class="feature-name">背词帮助</span>
-            <span class="feature-desc">右上角「帮助」入口，含7条背词FAQ（打卡规则 / 复习周期 / 进度共享机制 / 已掌握单词管理等）</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-cishu-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-cishu-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-cishu-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 背词设置 -->
-    <div class="module-block section-block" id="test-shezhi">
-      <div class="module-header">
-        <div class="module-icon">⚙️</div>
-        <div>
-          <div class="module-title">背词设置</div>
-          <div class="module-subtitle">每组词数 · 题型 · 词序 · 新学/复习分开配置</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">词书卡片右侧「铅笔图标」</span>
+    <div class="module-block section-block has-thumbs" id="test-shezhi">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">⚙️</div>
+          <div>
+            <div class="module-title">背词设置</div>
+            <div class="module-subtitle">每组词数 · 题型 · 词序 · 新学/复习分开配置</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">词书卡片右侧「铅笔图标」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li>
+              <span class="feature-name">新学Tab</span>
+              <span class="feature-desc">
+                <ul>
+                  <li><b>每组词数</b>：滑动条选择，档位5~100，默认10</li>
+                  <li><b>测试题型</b>（三选一）：选择题 / 回忆式 / 快速自测
+                    <ul>
+                      <li>选择题：「官方题型」（自动生成最佳3种）或「自选题型」（至少选1种）：<br>a. 看单词选释义 / 看释义选单词 / 看假名选释义 / 看释义选假名<br>b. 听发音选释义 / 听发音选单词<br>c. 看单词选错义</li>
+                      <li>回忆式：不可选更多内容</li>
+                      <li>快速自测：显示部分可选1种（单词 / 单词+假名 / 假名 / 释义）</li>
+                    </ul>
+                  </li>
+                  <li><b>生成词序</b>：五十音序开关</li>
+                </ul>
+              </span>
+            </li>
+            <li><span class="feature-name">复习Tab</span><span class="feature-desc">仅配置测试题型（同新学），无每组词数和生成词序设置；右上角「下一步」保存</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">新学Tab</span>
-            <span class="feature-desc">
-              <ul>
-                <li><b>每组词数</b>：滑动条选择，档位5 / 10 / 15 / 20 / 30 / 40，默认10</li>
-                <li><b>测试题型</b>（三选一）：选择题 / 回忆式 / 快速自测</li>
-                <li>选择「选择题」或「回忆式」时，可进一步选「官方题型」（自动生成最佳3种）或「自选题型」（看单词选释义 / 看释义选单词 / 看假名选释义 / 看释义选假名 / 听发音选释义 / 听发音选单词 / 看单词选错义）</li>
-                <li>选择「快速自测」时，可选显示部分：单词 / 单词+假名 / 假名 / 释义</li>
-                <li><b>生成词序</b>（三选一）：原书序 / 五十音序 / 乱序</li>
-              </ul>
-            </span>
-          </li>
-          <li>
-            <span class="feature-name">复习Tab</span>
-            <span class="feature-desc">仅配置测试题型（同新学），无每组词数和生成词序设置；右上角「下一步」保存</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-shezhi-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-shezhi-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-shezhi-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <!-- 学习列表与单词详情 -->
-    <div class="module-block section-block" id="test-xuexilie">
-      <div class="module-header">
-        <div class="module-icon">📝</div>
-        <div>
-          <div class="module-title">学习列表 · 单词详情</div>
-          <div class="module-subtitle">词条释义 · 例句 · 搜试题 · 收藏 · 听词</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">词书卡片「新学/复习」</span><span class="path-arrow">→</span>
-            <span class="path-step">学习列表</span><span class="path-arrow">→</span>
-            <span class="path-step">「开始学习」</span><span class="path-arrow">→</span>
-            <span class="path-step">单词详情页</span>
+    <!-- 学习列表 -->
+    <div class="module-block section-block has-thumbs" id="test-xuexilie">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📋</div>
+          <div>
+            <div class="module-title">学习列表</div>
+            <div class="module-subtitle">未学习 · 复习中 · 已掌握 · 批量管理</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">词书卡片「学习列表」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">三个Tab</span><span class="feature-desc">未学习（显示总词汇数，底部「听学」按钮）/ 复习中（额外显示绿色分数标签+蓝色周期标签）/ 已掌握（均显示100分标签）</span></li>
+            <li>
+              <span class="feature-name">批量管理</span>
+              <span class="feature-desc">
+                <ul>
+                  <li>未学习右上角「···」→ 批量管理 → 选择【已掌握】</li>
+                  <li>复习中右上角「···」→ 批量管理 → 选择【已掌握 / 重学】；选择全书重学，确认按钮有倒计时防误触</li>
+                  <li>已掌握右上角「···」→ 批量管理 → 选择【已掌握 / 重学】；选择全书重学，确认按钮有倒计时防误触</li>
+                </ul>
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">学习列表</span>
-            <span class="feature-desc">展示当组所有单词，每条显示单词 + 假名 + 声调 + 词性 + 简明释义 + 发音按钮；右上角「靶心」图标进入批量已掌握模式（可全选或逐条勾选后一键标为已掌握）；底部「开始学习」/ 「开始测试」两个入口</span>
-          </li>
-          <li>
-            <span class="feature-name">单词详情页</span>
-            <span class="feature-desc">
-              <ul>
-                <li>单词大字 + 声调标注 + 假名读音 + 发音按钮</li>
-                <li>词性标签 + 词书来源标签（如「绿宝书词条」）</li>
-                <li>释义 + 例句（带注音）+ 例句中文翻译 + 例句发音</li>
-                <li>近义词区域</li>
-                <li>底部进度显示（如1/7）</li>
-              </ul>
-            </span>
-          </li>
-          <li>
-            <span class="feature-name">词条设置</span>
-            <span class="feature-desc">右上角「···」弹出设置面板：反馈 / 举报；发音设置 / 平滑翻页 / 假名开关 / 小技巧；5种主题色切换</span>
-          </li>
-          <li>
-            <span class="feature-name">搜试题</span>
-            <span class="feature-desc">底部「搜试题（数字）」按钮，搜索该单词在历年真题中的出现记录，结果分单词 / 语法 / 试题三个Tab；单词Tab下方可跳转「在MOJi辞書中查看」</span>
-          </li>
-          <li>
-            <span class="feature-name">收藏</span>
-            <span class="feature-desc">底部收藏按钮，点击后变红色「已收藏」，提示「收藏成功」；已收藏单词可在收藏夹管理</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-kuaisu-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-kuaisu-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-kuaisu-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-kuaisu-04.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-kuaisu-05.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-kuaisu-06.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 新学 -->
+    <div class="module-block section-block has-thumbs" id="test-xinxue">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📝</div>
+          <div>
+            <div class="module-title">新学</div>
+            <div class="module-subtitle">词汇列表 · 学习 · 测试（题型由设置决定）</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">词书卡片「新学」</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">学习列表</span><span class="feature-desc">展示当组所有单词，每条显示单词 + 假名 + 声调 + 词性 + 简明释义 + 发音按钮；右上角「靶心」图标进入批量已掌握模式（可全选或逐条勾选后一键标为已掌握）；底部「开始学习」/ 「开始测试」两个入口</span></li>
+            <li><span class="feature-name">「开始学习」</span><span class="feature-desc">进入单词详情页，单词大字 + 声调标注 + 假名读音 + 发音按钮；词性标签 + 词书来源标签（如「绿宝书词条」）；释义 + 例句（带注音）+ 例句中文翻译 + 例句发音；近义词区域；底部进度显示</span></li>
+            <li><span class="feature-name">「开始测试」</span><span class="feature-desc">题型由背词设置决定；右上角「···」：收藏/掌握/帮助/设置/错误反馈</span></li>
+            <li><span class="feature-name">单词详情页设置</span><span class="feature-desc">右上角「···」弹出设置面板：分享 / 反馈 / 举报；模块设置 / 发音设置 / 平滑翻页 / 假名开关 / 小技巧；5种主题色切换；左右滑动切换单词</span></li>
+            <li><span class="feature-name">底部Tab</span><span class="feature-desc">笔记；搜试题（搜索该单词在历年真题中的出现记录，分三个Tab：①单词 ②语法 ③试题：显示含该词条的真题列表）；收藏（点击后变红色「已收藏」，已收藏单词可在收藏夹管理）；听学</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-xinxue-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-xinxue-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-xinxue-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-xinxue-04.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-xinxue-05.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-xinxue-06.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 复习 -->
+    <div class="module-block section-block has-thumbs" id="test-fuxi">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🔄</div>
+          <div>
+            <div class="module-title">复习</div>
+            <div class="module-subtitle">复习列表 · 筛选排序 · 多选管理</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span>
+              <span class="path-step">词书卡片「复习 X」按钮</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">复习列表</span><span class="feature-desc">展示待复习词汇；每条显示单词+假名+声调+词性+简明释义+绿色分数标签+蓝色周期标签+发音按钮</span></li>
+            <li><span class="feature-name">开始测试</span><span class="feature-desc">底部红色按钮，点击进入复习测试界面，题型由背词设置决定</span></li>
+            <li><span class="feature-name">右上角漏斗</span><span class="feature-desc">按周期（1 ~ 7）筛选待复习</span></li>
+            <li><span class="feature-name">右上角箭靶</span><span class="feature-desc">批量管理，勾选单词 → 已掌握</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-fuxi-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-fuxi-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-fuxi-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-fuxi-04.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-fuxi-05.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 听词 -->
-    <div class="module-block section-block" id="test-tingci">
-      <div class="module-header">
-        <div class="module-icon">🎧</div>
-        <div>
-          <div class="module-title">听词</div>
-          <div class="module-subtitle">卡片/列表模式 · 声优朗读 · 盲听练习</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">词书卡片「新学/复习」</span><span class="path-arrow">→</span>
-            <span class="path-step">学习列表</span><span class="path-arrow">→</span>
-            <span class="path-step">「开始学习」</span><span class="path-arrow">→</span>
-            <span class="path-step">单词详情页底部「听词」</span>
+    <div class="module-block section-block has-thumbs" id="test-tingci">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🎧</div>
+          <div>
+            <div class="module-title">听词</div>
+            <div class="module-subtitle">卡片/列表模式 · 声优朗读 · 盲听练习</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">词书卡片「新学/复习」</span><span class="path-arrow">→</span>
+              <span class="path-step">学习列表</span><span class="path-arrow">→</span>
+              <span class="path-step">「开始学习」</span><span class="path-arrow">→</span>
+              <span class="path-step">单词详情页底部「听词」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">卡片模式</span><span class="feature-desc">顶部显示词书名 + 声优选择（如「七海 朗读」）；卡片展示单词（红色大字）+ 假名 + 词性 + 释义 + 例句（日中对照）+ 发音图标；点击「详细释义」跳转完整词条；右下角眼睛图标隐藏全部内容进入盲听模式（只显示序号，凭发音回忆单词）</span></li>
+            <li><span class="feature-name">列表模式</span><span class="feature-desc">右下角「列表」切换；深色背景，滚动显示所有单词；当前播放词高亮大字显示（单词+假名+词性+释义），后续词目灰色预览</span></li>
+            <li><span class="feature-name">词单目录</span><span class="feature-desc">左下角「≡」图标弹出当组全部单词列表，当前单词红点标注，可点击快速跳转到任意单词</span></li>
+            <li><span class="feature-name">播放设置</span><span class="feature-desc">底部齿轮图标：顺序（正序/乱序）/ 倍速 / 循环次数 / 间隔时长 / 定时关闭 / 发音设置（打断音乐播放）/ 播放词条解释（开关）/ 播放例句（日语/中文单选）</span></li>
+            <li><span class="feature-name">进度与倍速</span><span class="feature-desc">左下角「≡」显示听词进度；右侧倍速按钮可直接调整播放速度（0.6x、0.8x、1.0x、1.2x、1.4x）</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">卡片模式</span>
-            <span class="feature-desc">顶部显示词书名 + 声优选择（如「七海 朗读」）；卡片展示单词（红色大字）+ 假名 + 词性 + 释义 + 例句（日中对照）+ 发音图标；点击「详细释义」跳转完整词条；右下角眼睛图标隐藏全部内容进入盲听模式（只显示序号，凭发音回忆单词）</span>
-          </li>
-          <li>
-            <span class="feature-name">列表模式</span>
-            <span class="feature-desc">右下角「列表」切换；深色背景，滚动显示所有单词；当前播放词高亮大字显示（单词+假名+词性+释义），后续词目灰色预览</span>
-          </li>
-          <li>
-            <span class="feature-name">词单目录</span>
-            <span class="feature-desc">左下角「≡」图标弹出当组全部单词列表，当前单词红点标注，可点击快速跳转到任意单词</span>
-          </li>
-          <li>
-            <span class="feature-name">播放设置</span>
-            <span class="feature-desc">底部齿轮图标：顺序（正序/乱序）/ 倍速 / 循环次数 / 间隔时长 / 定时关闭 / 发音设置（打断音乐播放）/ 播放词条解释（开关）/ 播放例句（日语/中文单选）</span>
-          </li>
-          <li>
-            <span class="feature-name">进度与倍速</span>
-            <span class="feature-desc">左下角显示进度（如1/7）；右侧倍速按钮可直接调整播放速度（1.0x）</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-tingci-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-tingci-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 科学背词机制 -->
-    <div class="module-block section-block" id="test-jizhi">
-      <div class="module-header">
-        <div class="module-icon">🔁</div>
-        <div>
-          <div class="module-title">科学背词机制</div>
-          <div class="module-subtitle">艾宾浩斯7周期 · 进度全局共享</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">词书卡片「选择词书」</span><span class="path-arrow">→</span>
-            <span class="path-step">右上角「帮助」</span>
+    <div class="module-block section-block has-thumbs" id="test-jizhi">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🔁</div>
+          <div>
+            <div class="module-title">科学背词机制</div>
+            <div class="module-subtitle">艾宾浩斯7周期 · 进度全局共享</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">词书卡片「选择词书」</span><span class="path-arrow">→</span>
+              <span class="path-step">右上角「帮助」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">7个复习周期</span><span class="feature-desc">1→2→4→7→10→15→20天后依次复习；每次全对进入下一周期，答错停留当前周期；第7周期全对标记为「已掌握」</span></li>
+            <li><span class="feature-name">进度全局共享</span><span class="feature-desc">同一单词在所有词书中复习周期保持一致，跨词书进度自动同步，避免重复背已掌握的单词</span></li>
+            <li><span class="feature-name">打卡条件</span><span class="feature-desc">完成任意1本词书的复习和1组新学即可打卡；每日打卡截止时间为第二天凌晨4点（照顾夜猫子）</span></li>
+            <li><span class="feature-name">新词复习时间</span><span class="feature-desc">当天新学的单词，统一在第二天凌晨4点进入复习队列</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">7个复习周期</span>
-            <span class="feature-desc">1→2→4→7→10→15→20天后依次复习；每次全对进入下一周期，答错停留当前周期；第7周期全对标记为「已掌握」</span>
-          </li>
-          <li>
-            <span class="feature-name">进度全局共享</span>
-            <span class="feature-desc">同一单词在所有词书中复习周期保持一致，跨词书进度自动同步，避免重复背已掌握的单词</span>
-          </li>
-          <li>
-            <span class="feature-name">打卡条件</span>
-            <span class="feature-desc">完成任意1本词书的复习和1组新学即可打卡；每日打卡截止时间为第二天凌晨4点（照顾夜猫子）</span>
-          </li>
-          <li>
-            <span class="feature-name">新词复习时间</span>
-            <span class="feature-desc">当天新学的单词，统一在第二天凌晨4点进入复习队列</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-jizhi-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-jizhi-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-jizhi-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-jizhi-04.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 打卡日历 -->
-    <div class="module-block section-block" id="test-daka">
-      <div class="module-header">
-        <div class="module-icon">📅</div>
-        <div>
-          <div class="module-title">打卡日历</div>
-          <div class="module-subtitle">学习统计 · 回顾与预测 · 勋章系统 · 分享</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">点击打卡日历区域</span>
+    <div class="module-block section-block has-thumbs" id="test-daka">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📅</div>
+          <div>
+            <div class="module-title">打卡日历</div>
+            <div class="module-subtitle">学习统计 · 回顾与预测 · 勋章系统 · 分享</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">点击打卡日历区域</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">统计数据</span><span class="feature-desc">累计学词数 / 累计天数 / 连续天数 / 累计学时（小时）</span></li>
+            <li><span class="feature-name">回顾与预测</span><span class="feature-desc">右上角入口；周/月/年三档切换；月视图显示计划新学量/预估复习量/预估时长；年视图显示新学/复习/掌握/时长四项数据，柱状图按月分布</span></li>
+            <li>
+              <span class="feature-name">我的勋章</span>
+              <span class="feature-desc">
+                <ul>
+                  <li>累计学词勋章：您能百分百（100词）/ 周伍佰烂（500词）/ 背词人（1000词）/ 千与千词（2000词）/ 三千世界（3000词）/ 全词猎人（5000词）</li>
+                  <li>已掌握词书勋章：1本超人 / 中2病也要背词（2本）/ 背词3部曲（3本）/ 5等分词书 / 命运10之门 / 成神之日（15本）</li>
+                </ul>
+              </span>
+            </li>
+            <li><span class="feature-name">月历视图</span><span class="feature-desc">按月展示，可切换上下月；今日学习显示小红勾；点击具体日期显示当日学习详情</span></li>
+            <li><span class="feature-name">分享打卡</span><span class="feature-desc">右上角刷新/分享图标，生成包含累计数据+月历+用户信息+二维码的分享卡片，可保存图片或分享至微信/朋友圈</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">统计数据</span>
-            <span class="feature-desc">累计学词数 / 累计天数 / 连续天数 / 累计学时（小时）</span>
-          </li>
-          <li>
-            <span class="feature-name">月历视图</span>
-            <span class="feature-desc">按月展示，可切换上下月；今日标红圆圈「今」；点击具体日期显示当日学习详情</span>
-          </li>
-          <li>
-            <span class="feature-name">回顾与预测</span>
-            <span class="feature-desc">右上角入口；周/月/年三档切换；月视图显示计划新学量/预估复习量/预估时长；年视图显示新学/复习/掌握/时长四项数据，柱状图按月分布</span>
-          </li>
-          <li>
-            <span class="feature-name">我的勋章</span>
-            <span class="feature-desc">
-              <ul>
-                <li>累计学词勋章：您能百分百（100词）/ 周伍佰烂（500词）/ 背词人（1000词）/ 千与千词（2000词）/ 三千世界（3000词）/ 全词猎人（5000词）</li>
-                <li>已掌握词书勋章：1本超人 / 中2病也要背词（2本）/ 背词3部曲（3本）/ 5等分词书 / 命运10之门 / 成神之日（15本）</li>
-              </ul>
-            </span>
-          </li>
-          <li>
-            <span class="feature-name">分享打卡</span>
-            <span class="feature-desc">右上角刷新/分享图标，生成包含累计数据+月历+用户信息+二维码的分享卡片，可保存图片或分享至微信/朋友圈/QQ/QQ空间</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-daka-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-daka-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- MOJi自习室 -->
-    <div class="module-block section-block" id="test-zixishi">
-      <div class="module-header">
-        <div class="module-icon">🏫</div>
-        <div>
-          <div class="module-title">MOJi自习室</div>
-          <div class="module-subtitle">学习班级 · 互相监督 · 排行激励</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">底部「MOJi自习室」</span>
+    <div class="module-block section-block has-thumbs" id="test-zixishi">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🏫</div>
+          <div>
+            <div class="module-title">MOJi自习室</div>
+            <div class="module-subtitle">学习班级 · 互相监督 · 排行激励</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">底部「MOJi自习室」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">班级分类</span><span class="feature-desc">三个Tab：日语考试（JLPT / 考研 / 留学 / 高考 / 其他考试）/ 兴趣爱好（ACG / Vtuber / 日娱 / 其他爱好）/ 班级排行；展示当前分类的班级数 + 学员总数</span></li>
+            <li><span class="feature-name">班级卡片</span><span class="feature-desc">显示班级等级（Lv×）+ 班级名 + 当前人数/上限（如20/20），满员时无法加入</span></li>
+            <li><span class="feature-name">班级排行</span><span class="feature-desc">今日排行（当日班级总背词数）/ 累计排行（历史总词数）；部分班级有🔒上锁标志（需申请加入）</span></li>
+            <li><span class="feature-name">班级内页</span><span class="feature-desc">展示班级Lv / 目标 / 本周任务进度（词数/目标 + 进度条）/ 累计学词数 / 班级ID；两个入口：毕业墙（共同奋斗的回忆）/ 日语角（备考经验/兴趣分享）；成员排行榜（今日/累计）显示名次+昵称+当日词数+所用词书+积分，班长有红色标注</span></li>
+            <li><span class="feature-name">创建班级</span><span class="feature-desc">底部「创建」按钮；填写班级名（8字）/ 目标（15字）/ 类型 / 每周目标词数（每7天可改1次）/ 班级上限人数 / 上锁开关 / 班长寄语（30字）；班级封面图需Lv5解锁</span></li>
+            <li><span class="feature-name">公告栏</span><span class="feature-desc">右上角小黑板图标弹出班级公告；右上角时钟图标进入「毕业班级记录」，查看历史毕业班级</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">班级分类</span>
-            <span class="feature-desc">三个Tab：日语考试（JLPT / 考研 / 留学 / 高考 / 其他考试）/ 兴趣爱好（ACG / Vtuber / 日娱 / 其他爱好）/ 班级排行；展示当前分类的班级数 + 学员总数</span>
-          </li>
-          <li>
-            <span class="feature-name">班级卡片</span>
-            <span class="feature-desc">显示班级等级（Lv×）+ 班级名 + 当前人数/上限（如20/20），满员时无法加入</span>
-          </li>
-          <li>
-            <span class="feature-name">班级排行</span>
-            <span class="feature-desc">今日排行（当日班级总背词数）/ 累计排行（历史总词数）；部分班级有🔒上锁标志（需申请加入）</span>
-          </li>
-          <li>
-            <span class="feature-name">班级内页</span>
-            <span class="feature-desc">展示班级Lv / 目标 / 本周任务进度（词数/目标 + 进度条）/ 累计学词数 / 班级ID；两个入口：毕业墙（共同奋斗的回忆）/ 日语角（备考经验/兴趣分享）；成员排行榜（今日/累计）显示名次+昵称+当日词数+所用词书+积分，班长有红色标注</span>
-          </li>
-          <li>
-            <span class="feature-name">创建班级</span>
-            <span class="feature-desc">底部「创建」按钮；填写班级名（8字）/ 目标（15字）/ 类型 / 每周目标词数（每7天可改1次）/ 班级上限人数 / 上锁开关 / 班长寄语（30字）；班级封面图需Lv5解锁</span>
-          </li>
-          <li>
-            <span class="feature-name">公告栏</span>
-            <span class="feature-desc">右上角小黑板图标弹出班级公告；右上角时钟图标进入「毕业班级记录」，查看历史毕业班级</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-zixishi-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-zixishi-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <div class="content-divider">考试</div>
 
     <!-- 历年真题 -->
-    <div class="module-block section-block" id="test-zhenti">
-      <div class="module-header">
-        <div class="module-icon">📋</div>
-        <div>
-          <div class="module-title">历年真题</div>
-          <div class="module-subtitle">按年份分组 · 得分记录 · 多等级覆盖</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">底部Tab「考试」</span><span class="path-arrow">→</span>
-            <span class="path-step">选择等级</span><span class="path-arrow">→</span>
-            <span class="path-step">点击任意年份试题</span>
+    <div class="module-block section-block has-thumbs" id="test-zhenti">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📋</div>
+          <div>
+            <div class="module-title">历年真题</div>
+            <div class="module-subtitle">按年份分组 · 得分记录 · 多等级覆盖</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">底部Tab「考试」</span><span class="path-arrow">→</span>
+              <span class="path-step">选择等级</span><span class="path-arrow">→</span>
+              <span class="path-step">点击任意年份试题</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">等级选择</span><span class="feature-desc">顶部选择N1 / N2 / N3 / N4 / N5 / 研，右上角「题目册」「统计」两个功能入口</span></li>
+            <li><span class="feature-name">真题列表</span><span class="feature-desc">按试题、模拟题分组展示宫格图，格式为「XXXX年X月 NX」；宫格内显示历史得分（如154）</span></li>
+            <li><span class="feature-name">得分统计</span><span class="feature-desc">右上角「统计」进入详情：显示试题名 + 合格线（绿色标注，如N1合格线100分）+ 最高得分 + 历次得分折线图 + 各科正确率（文字词汇/语法/阅读/听力）；正确率说明「考场与专项模式正确次数之和/总次数」</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">等级选择</span>
-            <span class="feature-desc">顶部选择N1 / N2 / N3 / N4 / N5 / 研，右上角「题目册」「统计」两个功能入口</span>
-          </li>
-          <li>
-            <span class="feature-name">真题列表</span>
-            <span class="feature-desc">按年份分组展示，格式为「XXXX年X月 NX试题」；右侧显示历史得分（如154）或完成状态（蓝色「✓ 专项」）</span>
-          </li>
-          <li>
-            <span class="feature-name">得分统计</span>
-            <span class="feature-desc">右上角「统计」进入详情：显示试题名 + 合格线（绿色标注，如N1合格线100分）+ 最高得分 + 历次得分折线图 + 各科正确率（文字词汇/语法/阅读/听力）；正确率说明「考场与专项模式正确次数之和/总次数」</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-zhenti-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-zhenti-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-zhenti-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <!-- 专项试题练习 -->
-    <div class="module-block section-block" id="test-dati">
-      <div class="module-header">
-        <div class="module-icon">✏️</div>
-        <div>
-          <div class="module-title">答题界面</div>
-          <div class="module-subtitle">沉浸答题 · 音频播放 · 答题卡 · AI解析</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">考试Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">选择等级</span><span class="path-arrow">→</span>
-            <span class="path-step">点击任意试题</span>
+    <!-- 答题界面 -->
+    <div class="module-block section-block has-thumbs" id="test-dati">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">✏️</div>
+          <div>
+            <div class="module-title">答题界面</div>
+            <div class="module-subtitle">沉浸答题 · 音频播放 · 答题卡 · AI解析</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">考试Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">选择等级</span><span class="path-arrow">→</span>
+              <span class="path-step">点击任意试题</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">试题卷</span><span class="feature-desc">显示答题项目、总分、时长、看解析、开始考试、历史做题记录</span></li>
+            <li><span class="feature-name">答题区</span><span class="feature-desc">顶部显示考试倒计时；已答/总题数（如0/30）+ 「提交」按钮；题目正文（日语）+ 4个选项竖排；听力题底部左侧红色播放按钮（AI生成音频，发音仅供参考）</span></li>
+            <li><span class="feature-name">答题卡</span><span class="feature-desc">底部第一个按钮（方格图标）；弹出全部题目编号，按题型分区（如「― 听力 ―」），已答题目高亮，显示总题数；可在此处收藏当前题（提示「收藏成功」）</span></li>
+            <li><span class="feature-name">标记</span><span class="feature-desc">底部第二个按钮（标记图标），可在答题卡查看全部标记题目</span></li>
+            <li><span class="feature-name">收藏</span><span class="feature-desc">底部第三个按钮（收藏图标），点击收藏当前题，已收藏变为金色实心星；收藏的题目进入「题目册」</span></li>
+            <li><span class="feature-name">更多设置</span><span class="feature-desc">右上角「···」弹出错题反馈</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">答题区</span>
-            <span class="feature-desc">顶部显示已答/总题数（如0/30）+ 「提交」按钮；题目正文（日语）+ 4个选项竖排；听力题底部左侧红色播放按钮（AI生成音频，发音仅供参考）</span>
-          </li>
-          <li>
-            <span class="feature-name">答题卡</span>
-            <span class="feature-desc">底部第一个按钮（方格图标）；弹出全部题目编号，按题型分区（如「— 听力 —」），已答题目高亮，显示总题数；可在此处收藏当前题（提示「收藏成功」）</span>
-          </li>
-          <li>
-            <span class="feature-name">收藏题目</span>
-            <span class="feature-desc">底部第二个按钮（星形图标）；点击收藏当前题，已收藏变为金色实心星；收藏的题目进入「题目册」</span>
-          </li>
-          <li>
-            <span class="feature-name">AI解析</span>
-            <span class="feature-desc">底部第三个按钮（Ai图标）；进入AI对话界面，可输入问题或选中题目文本直接提问；右上角「额度」显示剩余使用次数</span>
-          </li>
-          <li>
-            <span class="feature-name">更多设置</span>
-            <span class="feature-desc">右上角「···」弹出菜单：说明 / 注音开关（开启后题目和选项文字上方显示假名注音，当前状态红色字标注）/ 错题反馈</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-dati-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-dati-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-dati-03.jpeg" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 统计 -->
+    <div class="module-block section-block has-thumbs" id="test-tongji">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📊</div>
+          <div>
+            <div class="module-title">统计</div>
+            <div class="module-subtitle">历次得分记录 · 各科正确率 · 趋势折线图</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">考试</span><span class="path-arrow">→</span>
+              <span class="path-step">右上角「统计」</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">得分折线图</span><span class="feature-desc">横轴为做题日期，纵轴为得分；可查看历次得分变化趋势；标注合格线（绿色「合格线100分」）</span></li>
+            <li><span class="feature-name">最高得分</span><span class="feature-desc">显示历史最高得分（如154分）；绿色圆点表示达到合格线</span></li>
+            <li><span class="feature-name">各科正确率</span><span class="feature-desc">2×2宫格展示四科正确率：文字词汇 / 语法 / 阅读 / 听力；正确率说明：「考场与专项模式正确次数之和 / 总次数」</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-tongji-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-tongji-02.jpeg" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 题目册 -->
-    <div class="module-block section-block" id="test-tongji">
-      <div class="module-header">
-        <div class="module-icon">📊</div>
-        <div>
-          <div class="module-title">统计</div>
-          <div class="module-subtitle">历次得分记录 · 各科正确率 · 趋势折线图</div>
-          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">考试</span><span class="path-arrow">→</span><span class="path-step">右上角「统计」</span></div>
-        </div>
-      </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li><span class="feature-name">得分折线图</span><span class="feature-desc">横轴为做题日期，纵轴为得分；可查看历次得分变化趋势；标注合格线（绿色「合格线100分」）</span></li>
-          <li><span class="feature-name">最高得分</span><span class="feature-desc">显示历史最高得分（如154分）；绿色圆点表示达到合格线</span></li>
-          <li><span class="feature-name">各科正确率</span><span class="feature-desc">2×2宫格展示四科正确率：文字词汇 / 语法 / 阅读 / 听力；正确率说明：「考场与专项模式正确次数之和 / 总次数」</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="module-block section-block" id="test-timuce">
-      <div class="module-header">
-        <div class="module-icon">⭐</div>
-        <div>
-          <div class="module-title">题目册</div>
-          <div class="module-subtitle">收藏错题 · 答案解析 · 重做练习</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">考试Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">选择等级</span><span class="path-arrow">→</span>
-            <span class="path-step">右上角「题目册」</span>
+    <div class="module-block section-block has-thumbs" id="test-timuce">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">⭐</div>
+          <div>
+            <div class="module-title">题目册</div>
+            <div class="module-subtitle">收藏错题 · 答案解析 · 重做练习</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">考试Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">选择等级</span><span class="path-arrow">→</span>
+              <span class="path-step">右上角「题目册」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">题目列表</span><span class="feature-desc">顶部「文字词汇」/「听力」Tab切换；每条显示金色星形 + 题目文字（截断）+ 来源场次；最近收藏的题目排在最前；做错过的题目以粉色背景高亮</span></li>
+            <li><span class="feature-name">答案解析</span><span class="feature-desc">点击眼睛图标（隐藏→显示）展示正确答案（绿色高亮）+ 做错次数（红色「做错X次」）+ 答案解析文本；再次点击隐藏，重做不计入正确率统计</span></li>
+            <li><span class="feature-name">AI解析</span><span class="feature-desc">底部Ai图标，同答题界面AI解析功能</span></li>
+            <li><span class="feature-name">右上角「···」</span><span class="feature-desc">说明（使用指引弹窗）：推荐「一键收藏」错题；最近收藏排最前，及时复习；点击眼睛隐藏解析可重做（不计入正确率）；取消收藏已掌握题目，集中攻克薄弱项；注音开关；错题反馈</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">题目列表</span>
-            <span class="feature-desc">顶部「文字词汇」/「听力」Tab切换；每条显示金色星形 + 题目文字（截断）+ 来源场次；最近收藏的题目排在最前；做错过的题目以粉色背景高亮</span>
-          </li>
-          <li>
-            <span class="feature-name">答案解析</span>
-            <span class="feature-desc">点击眼睛图标（隐藏→显示）展示正确答案（绿色高亮）+ 做错次数（红色「做错X次」）+ 答案解析文本；再次点击隐藏，重做不计入正确率统计</span>
-          </li>
-          <li>
-            <span class="feature-name">注音/设置</span>
-            <span class="feature-desc">右上角「···」：说明（使用指引弹窗）/ 注音开关 / 错题反馈；右上角列表图标切换题目列表视图</span>
-          </li>
-          <li>
-            <span class="feature-name">AI解析</span>
-            <span class="feature-desc">底部Ai图标，同答题界面AI解析功能</span>
-          </li>
-          <li>
-            <span class="feature-name">使用建议</span>
-            <span class="feature-desc">推荐「一键收藏」错题；最近收藏排最前，及时复习；点击眼睛隐藏解析可重做（不计入正确率）；取消收藏已掌握题目，集中攻克薄弱项</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-timuce-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-timuce-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-timuce-03.jpeg" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-timuce-04.jpeg" onclick="openModal(this.src)">
       </div>
     </div>
 
     <div class="content-divider">设置</div>
 
-    <!-- 设置页 -->
-    <div class="module-block section-block" id="test-shezhi2">
-      <div class="module-header">
-        <div class="module-icon">👤</div>
-        <div>
-          <div class="module-title">个人中心</div>
-          <div class="module-subtitle">个人信息 · 功能配置 · 会员管理</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">底部Tab「设置」</span>
+    <!-- 个人中心 -->
+    <div class="module-block section-block has-thumbs" id="test-shezhi2">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">👤</div>
+          <div>
+            <div class="module-title">个人中心</div>
+            <div class="module-subtitle">个人信息 · 功能配置 · 会员管理</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">底部Tab「设置」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">个人信息区</span><span class="feature-desc">头像 + 昵称 + UID；「钱包」按钮 + 扫码图标；个性签名入口；会员横幅（N1-N5·高考·考研 Pro）+ 「解锁」按钮；词汇量测试横幅入口</span></li>
+            <li><span class="feature-name">功能设置</span><span class="feature-desc">小课堂 / 兑换码 / 小组件 / 学习提醒时间（开关）/ 主题与显示 / 发音设置 / 单词详情切换动画（滑动）/ 清除缓存</span></li>
+            <li><span class="feature-name">其他入口</span><span class="feature-desc">更多应用 / 联系我们（微信 / bilibili / 微博 / Twitter）/ 给MOJi评分 / 一键反馈 / 邀请好友（一起来MOJi备考吧）/ 关于我们</span></li>
+            <li><span class="feature-name">绑定安全邮箱</span><span class="feature-desc">底部悬浮按钮，点击绑定账号安全邮箱</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">个人信息区</span>
-            <span class="feature-desc">头像 + 昵称 + UID；「钱包」按钮 + 扫码图标；个性签名入口；会员横幅（N1-N5·高考·考研 Pro）+ 「解锁」按钮；词汇量测试横幅入口</span>
-          </li>
-          <li>
-            <span class="feature-name">功能设置</span>
-            <span class="feature-desc">小课堂 / 兑换码 / 小组件 / 学习提醒时间（开关）/ 主题与显示 / 发音设置 / 单词详情切换动画（滑动）/ 清除缓存</span>
-          </li>
-          <li>
-            <span class="feature-name">其他入口</span>
-            <span class="feature-desc">更多应用 / 联系我们（微信 / bilibili / 微博 / Twitter）/ 给MOJi评分 / 一键反馈 / 邀请好友（一起来MOJi备考吧）/ 关于我们</span>
-          </li>
-          <li>
-            <span class="feature-name">绑定安全邮箱</span>
-            <span class="feature-desc">底部悬浮按钮，点击绑定账号安全邮箱</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-shezhi2-01.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- MOJiTest Pro -->
-    <div class="module-block section-block" id="test-pro">
-      <div class="module-header">
-        <div class="module-icon">👑</div>
-        <div>
-          <div class="module-title">MOJiTest Pro 购买中心</div>
-          <div class="module-subtitle">套餐购买 · 词书解锁 · 试题权限</div>
-          <div class="path-chain">
-            <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">设置Tab</span><span class="path-arrow">→</span>
-            <span class="path-step">会员横幅「解锁」</span>
+    <div class="module-block section-block has-thumbs" id="test-pro">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">👑</div>
+          <div>
+            <div class="module-title">MOJiTest Pro 购买中心</div>
+            <div class="module-subtitle">套餐购买 · 词书解锁 · 试题权限</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">设置Tab</span><span class="path-arrow">→</span>
+              <span class="path-step">会员横幅「解锁」</span>
+            </div>
           </div>
         </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">精选套餐</span><span class="feature-desc">JLPT套餐（N1-N5 Pro，人气No.1）/ 绿宝书套餐（官方合作，绿宝书N1-N5）/ 考研套餐（N1-N2 Pro + 考研Pro）/ 高考套餐（N2-N5 Pro + 高考Pro）</span></li>
+            <li><span class="feature-name">单独购买·官方原版书</span><span class="feature-desc">无敌绿宝书 N1-N2（4本）/ 无敌绿宝书 N3-N5（5本）/ 宵寒白宝书 考研（12本）/ 无敌绿宝书 考研（2本）/ 无敌绿宝书 高考（2本）</span></li>
+            <li><span class="feature-name">单独购买·JLPT分级</span><span class="feature-desc">N1 Pro（22本词书、30套试题）/ N2 Pro（22本词书、30套试题）/ N3 Pro（13本词书、28套试题）/ N4 Pro（5本词书、5套试题）/ N5 Pro（5本词书、3套试题）</span></li>
+            <li><span class="feature-name">单独购买·其他</span><span class="feature-desc">考研 Pro（3本词书、17套试题）/ 高考 Pro（5本词书）</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="module-body">
-        <ul class="feature-list">
-          <li>
-            <span class="feature-name">精选套餐</span>
-            <span class="feature-desc">JLPT套餐（N1-N5 Pro，人气No.1）/ 绿宝书套餐（官方合作，绿宝书N1-N5）/ 考研套餐（N1-N2 Pro + 考研Pro）/ 高考套餐（N2-N5 Pro + 高考Pro）</span>
-          </li>
-          <li>
-            <span class="feature-name">单独购买·官方原版书</span>
-            <span class="feature-desc">无敌绿宝书 N1-N2（4本）/ 无敌绿宝书 N3-N5（5本）/ 宵寒白宝书 考研（12本）/ 无敌绿宝书 考研（2本）/ 无敌绿宝书 高考（2本）</span>
-          </li>
-          <li>
-            <span class="feature-name">单独购买·JLPT分级</span>
-            <span class="feature-desc">N1 Pro（22本词书、30套试题）/ N2 Pro（22本词书、30套试题）/ N3 Pro（13本词书、28套试题）/ N4 Pro（5本词书、5套试题）/ N5 Pro（5本词书、3套试题）</span>
-          </li>
-          <li>
-            <span class="feature-name">单独购买·其他</span>
-            <span class="feature-desc">考研 Pro（3本词书、17套试题）/ 高考 Pro（5本词书）</span>
-          </li>
-        </ul>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-pro-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-pro-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-pro-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
