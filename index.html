@@ -3668,7 +3668,7 @@ function toggleNav(groupId) {
   if(!g) return;
   var isOpen = g.classList.contains('open');
   // 收起所有
-  ['jisho-nav','xiaoke-nav','yomi-nav','kana-nav','test-nav','kaiwha-nav'].forEach(function(id){
+  ['jisho-nav','xiaoke-nav','yomi-nav','kana-nav','test-nav','kaiwha-nav','kori-nav'].forEach(function(id){
     var el = document.getElementById(id);
     var ar = document.getElementById('arrow-' + id);
     if(el) el.classList.remove('open');
