@@ -1,6 +1,12 @@
 
 # 变更记录
+## 2026-06-23
 
+### index.html — MOJi阅读更新
+- **Block ID 重命名**：MOJi阅读所有模块 ID 从 `yomi-` 统一改为 `read-`，导航 scrollToBlock 同步更新
+- **图片入库**：30张截图，覆盖全部13个模块，存放于 `images/read/`
+- **文字更新**：翻訳圈专栏「天声人语」更正为「社会新语」
+- 
 ## 2026-06-18
 
 ### moji_manual_v28.html — MOJi辞書更新
