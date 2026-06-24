@@ -11,13 +11,13 @@ MOJi 产品矩阵内部说明手册，供新人 / 实习生 / 跨部门同事了
 ├── index.html                 # 主文件（入口，GitHub Pages部署用）
 ├── manual_style.css           # 样式文件
 ├── images/                    # 截图文件夹（按产品分子目录）
-│   ├── dict/                  # MOJi辞书（已完成）
-│   ├── read/                  # MOJi阅读（已完成）
+│   ├── dict/                  # MOJi辞书
+│   ├── read/                  # MOJi阅读
 │   ├── kana/                  # MOJiKana
-│   ├── test/                  # MOJiTest（已完成）
-│   ├── kaiwa/                 # MOJi会话（已完成）
+│   ├── test/                  # MOJiTest
+│   ├── kaiwa/                 # MOJi会话
 │   ├── school/                # MOJi小课堂
-│   └── kori/                  # Kori辞书（已完成）
+│   └── kori/                  # Kori辞书
 └── README.md                  # 本说明
 ```
 
