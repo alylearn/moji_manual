@@ -1,3 +1,9 @@
+## 2026-06-25
+### index.html — MOJi辞書「背词」板块内容补全
+- 新增12个模块卡片（原section仅有content-divider占位，内容全部缺失）：背词首页、更多计划、背词设置、学习列表、新学、复习、听词、打卡日历、累计学词、词汇水平测试、日语人格测试、消消乐
+- 内容依据《MOJi辞書产品说明书》PDF p25-37，与现有导航id（block-beici-home-detail等）完全对齐
+- 所有模块暂无截图（无has-thumbs），待截图上传后补充
+
 ## 2026-06-23
 ### index.html — MOJiTest更新
 - 插入55张MOJiTest截图（images/test/），覆盖对策、专项试题、背词全流程、考试、设置、Pro购买共16个模块
@@ -9,4 +15,3 @@
 - 答题界面：还原标记（第二按钮）/收藏（第三按钮）顺序
 - 导航新增：学习列表、新学、复习三个nav-sub2链接
 - 所有test模块block添加has-thumbs + module-content + module-thumbs结构
-
