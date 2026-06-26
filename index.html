@@ -68,6 +68,7 @@
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-tingci')">听词</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-daka')">打卡日历</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-leiji')">累计学词</a>
+          <a class="nav-sub" onclick="showSection('jisho'); scrollToBlock('block-youxi')">趣味游戏/测试</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-cihui-test')">词汇水平测试</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-renge-test')">日语人格测试</a>
           <a class="nav-sub nav-sub2" onclick="showSection('jisho'); scrollToBlock('block-xiaoxiao')">消消乐</a>
@@ -498,7 +499,7 @@
         <ul class="feature-list">
           <li><span class="feature-name">搜索页内容</span><span class="feature-desc">单词以及语法功能；实时热搜；系统学习内容</span></li>
           <li><span class="feature-name">底部对话框</span><span class="feature-desc">直接搜索，左侧拍照扫描，右侧支持手写</span></li>
-          <li><span class="feature-name">搜索方式</span><span class="feature-desc">支持汉字、平假名、片假名、罗马音、中文关键词、混合输入；自动识别输入类型；支持拍照识别（OCR）和语音输入</span></li>
+          <li><span class="feature-name">搜索方式</span><span class="feature-desc">支持汉字、平假名、片假名、罗马音、中文关键词、混合输入；自动识别输入类型；支持拍照识别（OCR）</span></li>
           <li><span class="feature-name">搜索页内容（详细）</span><span class="feature-desc">浏览历史（最近查词记录，右上角「···」可清除）；实时热搜（平台热门查词排行）</span></li>
           <li><span class="feature-name">底部搜索栏</span><span class="feature-desc">左侧小组件图标（跳转桌面小组件设置）/ 右侧扫一扫图标（OCR拍照识别）</span></li>
           <li><span class="feature-name">键盘快捷键</span><span class="feature-desc">平板/电脑：1/2/3/4选选项，P播放发音，Q认识/W模糊/E忘记，上下箭头切换词条，Delete标记已掌握</span></li>
@@ -524,9 +525,9 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">下滑可查看</span><span class="feature-desc">释义、关联词、原声例句、真题</span></li>
-          <li><span class="feature-name">顶部信息</span><span class="feature-desc">日文词条大字 + 罗马音 + 声调数字 + 多声优朗读（点击头像切换）；词性标签 + JLPT等级标签（N5-N1）</span></li>
+          <li><span class="feature-name">顶部信息</span><span class="feature-desc">词条条目 + 读音 + 声调 + 词类标签 + JLPT等级标签（N5-N1）；词源标注（仅外来语）；词条配音及声优朗读设置（点击小头像进入）</span></li>
           <li><span class="feature-name">简明释义</span><span class="feature-desc">AI生成，一行简洁中文释义</span></li>
-          <li><span class="feature-name">释义</span><span class="feature-desc">中文释义 + 日文释义；支持「自定义」释义；可点击词条来源「W」标跳转查看</span></li>
+          <li><span class="feature-name">释义</span><span class="feature-desc">中、日文释义；语法词条额外显示中、日文使用语境及接续；支持「自定义」释义与例句</span></li>
           <li><span class="feature-name">关联词</span><span class="feature-desc">近义词 / 反义词 / 话题词（AI生成）</span></li>
           <li><span class="feature-name">评论区</span><span class="feature-desc">用户评论、助记、造句；右下角数字显示评论数</span></li>
           <li><span class="feature-name">操作按钮</span><span class="feature-desc">底部：笔记 / 评论数 / 收藏；右上角：TV图标（折叠/展开详情）/ 「···」更多操作</span></li>
@@ -815,7 +816,7 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">收藏列表</span><span class="feature-desc">按时间分组显示（昨天/近一周/月份），每条显示词单封面+词单名称+收藏星标；底部「查找收藏内容」搜索栏</span></li>
-          <li><span class="feature-name">顶部快捷入口</span><span class="feature-desc">收藏夹、词单、听词、背词、单词导出；右侧可左右滑动查看更多</span></li>
+          <li><span class="feature-name">顶部快捷入口</span><span class="feature-desc">收藏夹、词单、听词、背词、单词导出、回顾、笔记</span></li>
           <li><span class="feature-name">新建、排序、批量管理</span><span class="feature-desc">圆形「+」，搜索内容、新建收藏夹、笔记、自创；筛选（全部/单词/例句/词单/其他）；批量管理（删除、移动收藏夹）</span></li>
         </ul>
       </div>
@@ -1240,6 +1241,9 @@
         <img class="thumb" src="images/dict/dict-leiji-02.png" onclick="openModal(this.src)">
       </div>
     </div>
+
+    <!-- ========== 趣味游戏/测试 ========== -->
+    <div class="content-divider" id="block-youxi">趣味游戏/测试</div>
 
     <!-- 词汇水平测试 -->
     <div class="module-block section-block has-thumbs" id="block-cihui-test">
