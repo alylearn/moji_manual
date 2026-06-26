@@ -4212,14 +4212,11 @@ function closeMobileSidebar() {
 }
 function scrollToBlock(blockId) {
   closeMobileSidebar();
-  window.scrollTo(0, 0);
   requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-      var el = document.getElementById(blockId);
-      if (!el) return;
-      var top = el.getBoundingClientRect().top + window.pageYOffset - 16;
-      window.scrollTo({ top: top, behavior: 'instant' });
-    });
+    var el = document.getElementById(blockId);
+    if (!el) return;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - 16;
+    window.scrollTo({ top: top, behavior: 'instant' });
   });
 }
 </script>
