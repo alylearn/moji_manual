@@ -114,14 +114,11 @@
           <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-yueduqi')">阅读器</a>
           <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-bendiwenjian')">本地文件导入</a>
           <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-qingkong')">青空文库</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-wangye')">浏览网页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-yueduqi')">书籍阅读器</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-liulanwangye')">浏览网页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-duanpian')">短篇辅助阅读</a>
           <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-paizhao')">拍照提取</a>
           <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-xuexi')">学习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-xuexi')">计划 / 订阅</a>
           <a class="nav-sub" onclick="showSection('yomi'); scrollToBlock('read-wode')">我的</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-wode')">我的页</a>
           <a class="nav-sub nav-sub2" onclick="showSection('yomi'); scrollToBlock('read-vip')">订阅会员权益</a>
         </div>
       </div>
@@ -2053,15 +2050,7 @@
           </li>
           <li>
             <span class="feature-name">添加书籍来源</span>
-            <span class="feature-desc">点击「+」展开五个来源：
-              <ul>
-                <li><b>本地文件导入</b>：调用系统文件选择器（iOS显示最近项目/共享/浏览三Tab，Android为系统文件管理器），支持搜索，显示文件名+日期+大小</li>
-                <li><b>青空文库</b>：搜索框输入书名或作者（日文）；热门作者快捷标签（太宰治/夏目漱石/芥川竜之介/谷崎潤一郎/宮沢賢治等）；底部「热门作品」列表，右侧「+」一键加入书架</li>
-                <li><b>浏览网页</b>：输入网址以阅读器模式展示网页内容；可添加书签（输入网址+自定义名称，限10字）；底部工具栏含上一页/下一页/添加书签/「分析」按钮（进入句子解析）</li>
-                <li><b>短篇辅助阅读</b>：输入框支持手动输入或粘贴日语句子（上限1000字）；右上角拍照图标可拍照识别文字；点击「分析」进入句子解析界面</li>
-                <li><b>拍照提取</b>：调用摄像头拍照识别图片中的日文文字后导入阅读器；底部有拍照按钮和「相册」入口可选已有图片</li>
-              </ul>
-            </span>
+            <span class="feature-desc">点击「+」展开五个来源：本地文件导入 / 青空文库 / 浏览网页 / 短篇辅助阅读 / 拍照提取</span>
           </li>
         </ul>
       </div>
@@ -2070,6 +2059,208 @@
         <img class="thumb" src="images/read/read-yueduqi-1.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/read/read-yueduqi-2.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/read/read-yueduqi-3.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+    <div class="module-block section-block has-thumbs" id="read-bendiwenjian">
+      <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📁</div>
+        <div>
+          <div class="module-title">本地文件导入</div>
+          <div class="module-subtitle">支持主流电子书格式 · 两种导入路径</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">阅读器书架</span><span class="path-arrow">→</span><span class="path-step">「+」</span><span class="path-arrow">→</span><span class="path-step">「本地文件导入」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li>
+            <span class="feature-name">路径一：文件管理器</span>
+            <span class="feature-desc">调用系统文件选择器（iOS：最近项目/共享/浏览三Tab），支持搜索，显示文件名+时间+大小，点击文件直接导入书架</span>
+          </li>
+          <li>
+            <span class="feature-name">路径二：从其他App投送</span>
+            <span class="feature-desc">在微信/网盘中点击打开文件，进入文件预览页后点「用其他应用打开」，在列表中选择「MOJi阅读」，文件自动导入书架</span>
+          </li>
+          <li>
+            <span class="feature-name">支持格式</span>
+            <span class="feature-desc">epub / txt / pdf 等主流电子书格式</span>
+          </li>
+          <li>
+            <span class="feature-name">导入结果</span>
+            <span class="feature-desc">导入成功后书籍出现在书架「全部」Tab首位</span>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-bendiwenjian-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-bendiwenjian-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-bendiwenjian-3.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-bendiwenjian-4.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-bendiwenjian-5.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-bendiwenjian-6.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+    <div class="module-block section-block has-thumbs" id="read-qingkong">
+      <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📖</div>
+        <div>
+          <div class="module-title">青空文库</div>
+          <div class="module-subtitle">内置日本公版文学书库 · 免费一键加入书架</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">阅读器书架</span><span class="path-arrow">→</span><span class="path-step">「+」</span><span class="path-arrow">→</span><span class="path-step">「青空文库」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li>
+            <span class="feature-name">搜索</span>
+            <span class="feature-desc">顶部搜索框输入书名或作者（日文），返回匹配列表，显示书名+作者名，右侧「书架+」图标一键加入书架</span>
+          </li>
+          <li>
+            <span class="feature-name">热门作者快捷标签</span>
+            <span class="feature-desc">太宰治 / 夏目漱石 / 芥川竜之介 / 谷崎潤一郎 / 宮沢賢治 / 岡本かの子 / 中島敦 / 佐藤春夫，点击直接展示该作者作品列表</span>
+          </li>
+          <li>
+            <span class="feature-name">热门作品榜</span>
+            <span class="feature-desc">底部上拉展开Top10排行列表（书名+作者），右侧「书架+」一键加入，点击后图标变灰并提示「已加入书架」</span>
+          </li>
+          <li>
+            <span class="feature-name">导入结果</span>
+            <span class="feature-desc">加入后书籍出现在书架「全部」Tab首位</span>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-qingkong-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-qingkong-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-qingkong-3.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-qingkong-4.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-qingkong-5.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-qingkong-6.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+    <div class="module-block section-block has-thumbs" id="read-liulanwangye">
+      <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🌐</div>
+        <div>
+          <div class="module-title">浏览网页</div>
+          <div class="module-subtitle">内置浏览器 · 阅读器模式 · 支持句子解析</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">阅读器书架</span><span class="path-arrow">→</span><span class="path-step">「+」</span><span class="path-arrow">→</span><span class="path-step">「浏览网页」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li>
+            <span class="feature-name">输入网址</span>
+            <span class="feature-desc">弹出输入框填入网址，以阅读器模式加载网页内容</span>
+          </li>
+          <li>
+            <span class="feature-name">底部工具栏</span>
+            <span class="feature-desc">上一页 / 下一页 / 添加书签 / 「分析」按钮</span>
+          </li>
+          <li>
+            <span class="feature-name">添加书签</span>
+            <span class="feature-desc">点击书签图标，填入自定义名称（限10字）→「添加」，保存为书架卡片，封面显示首字母+🌐图标</span>
+          </li>
+          <li>
+            <span class="feature-name">分析</span>
+            <span class="feature-desc">解析网页全文前1000字，进入句子解析界面；超出时提示「字数过多，将解析前1000字」</span>
+          </li>
+          <li>
+            <span class="feature-name">重点词汇</span>
+            <span class="feature-desc">解析后右上角「单词」入口，按等级筛选（N1-N5/全部），可勾选收藏</span>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-liulanwangye-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-3.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-4.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-5.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-6.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-7.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-8.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-liulanwangye-9.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+    <div class="module-block section-block has-thumbs" id="read-duanpian">
+      <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📝</div>
+        <div>
+          <div class="module-title">短篇辅助阅读</div>
+          <div class="module-subtitle">手动输入/粘贴日语句子 · 直接进入句子解析</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">阅读器书架</span><span class="path-arrow">→</span><span class="path-step">「+」</span><span class="path-arrow">→</span><span class="path-step">「短篇辅助阅读」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li>
+            <span class="feature-name">输入框</span>
+            <span class="feature-desc">支持手动输入或粘贴日语句子，上限1000字，右下角实时显示字数（如27/1000）；左下角「×」清除内容；右下角「分析」按钮提交</span>
+          </li>
+          <li>
+            <span class="feature-name">历史记录</span>
+            <span class="feature-desc">输入框下方显示历史分析记录，点击可快速重新加载；右侧「更多」查看完整记录</span>
+          </li>
+          <li>
+            <span class="feature-name">右上角拍照图标</span>
+            <span class="feature-desc">调用相机/相册拍照识别日文文字后填入输入框</span>
+          </li>
+          <li>
+            <span class="feature-name">分析结果</span>
+            <span class="feature-desc">点击「分析」进入句子解析界面，逐词拆分并标注罗马音；动词显示活用类别（一类/二类）；顶部「句子主干」提示条可关闭</span>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-duanpian-1.jpg" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-duanpian-2.jpg" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-duanpian-3.jpg" onclick="openModal(this.src)">
+      </div>
+    </div>
+    <div class="module-block section-block has-thumbs" id="read-paizhao">
+      <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📷</div>
+        <div>
+          <div class="module-title">拍照提取</div>
+          <div class="module-subtitle">拍照识别日文 · 自动提取文字进入解析</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">阅读器书架</span><span class="path-arrow">→</span><span class="path-step">「+」</span><span class="path-arrow">→</span><span class="path-step">「拍照提取」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li>
+            <span class="feature-name">拍照界面</span>
+            <span class="feature-desc">调用相机实时取景，底部中央为拍照按钮，右侧「相册」入口可选已有图片</span>
+          </li>
+          <li>
+            <span class="feature-name">识别结果</span>
+            <span class="feature-desc">拍摄后自动识别图中日文，以红框标注识别区域，右下角显示「A 查看文字」按钮</span>
+          </li>
+          <li>
+            <span class="feature-name">编辑文字页</span>
+            <span class="feature-desc">点击「查看文字」进入编辑页，显示OCR提取的完整文字内容，支持手动修改；底部「分析」按钮提交</span>
+          </li>
+          <li>
+            <span class="feature-name">分析结果</span>
+            <span class="feature-desc">点击「分析」进入句子解析界面，与短篇辅助阅读的解析界面一致（逐词拆分+罗马音标注+词性色块+动词活用类别）</span>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/read/read-paizhao-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-paizhao-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-paizhao-3.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-paizhao-4.png" onclick="openModal(this.src)">
       </div>
     </div>
     <div class="module-block section-block has-thumbs" id="read-xuexi">
@@ -2101,6 +2292,9 @@
       </div>
       <div class="module-thumbs">
         <img class="thumb" src="images/read/read-xuexi-1.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-xuexi-2.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-xuexi-3.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/read/read-xuexi-4.png" onclick="openModal(this.src)">
       </div>
     </div>
     <div class="content-divider">我的</div>
