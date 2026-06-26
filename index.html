@@ -4212,15 +4212,13 @@ function closeMobileSidebar() {
 }
 function scrollToBlock(blockId) {
   closeMobileSidebar();
-  // 先瞬间跳到顶部（不带动画），确保 getBoundingClientRect 计算的是 section 顶部为基准的位置
   window.scrollTo(0, 0);
-  // 两帧后浏览器完成布局重排，再平滑滚动到目标
   requestAnimationFrame(function() {
     requestAnimationFrame(function() {
       var el = document.getElementById(blockId);
       if (!el) return;
       var top = el.getBoundingClientRect().top + window.pageYOffset - 16;
-      window.scrollTo({ top: top, behavior: 'smooth' });
+      window.scrollTo({ top: top, behavior: 'instant' });
     });
   });
 }
