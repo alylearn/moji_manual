@@ -8,8 +8,19 @@
 </head>
 <body>
 
+<!-- 移动端顶部 header -->
+<div class="mobile-header">
+  <button class="mobile-hamburger" onclick="toggleMobileSidebar()" aria-label="打开导航">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="mobile-header-title">MOJi 产品说明书</span>
+</div>
+
+<!-- 移动端sidebar遮罩 -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileSidebar()"></div>
+
 <!-- Sidebar -->
-<aside class="sidebar">
+<aside class="sidebar" id="mainSidebar">
   <div class="sidebar-logo">
     <div class="logo-text">MOJi 产品说明书</div>
     <div class="logo-sub">内部文档 · 仅供参考</div>
@@ -4160,7 +4171,6 @@ function showSection(id) {
   document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
   var sec = document.getElementById('section-' + id);
   if(sec) sec.classList.add('active');
-  window.scrollTo(0,0);
 }
 function toggleNav(groupId) {
   var g = document.getElementById(groupId);
@@ -4188,11 +4198,31 @@ function toggleSidebar() {
   btn.textContent = collapsed ? '›' : '‹';
   btn.style.left = collapsed ? '0' : '260px';
 }
+function toggleMobileSidebar() {
+  var sidebar = document.getElementById('mainSidebar');
+  var overlay = document.getElementById('sidebarOverlay');
+  sidebar.classList.toggle('mobile-open');
+  overlay.classList.toggle('active');
+}
+function closeMobileSidebar() {
+  var sidebar = document.getElementById('mainSidebar');
+  var overlay = document.getElementById('sidebarOverlay');
+  sidebar.classList.remove('mobile-open');
+  overlay.classList.remove('active');
+}
 function scrollToBlock(blockId) {
-  setTimeout(function(){
-    var el = document.getElementById(blockId);
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 80);
+  closeMobileSidebar();
+  // 先瞬间跳到顶部（不带动画），确保 getBoundingClientRect 计算的是 section 顶部为基准的位置
+  window.scrollTo(0, 0);
+  // 两帧后浏览器完成布局重排，再平滑滚动到目标
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      var el = document.getElementById(blockId);
+      if (!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - 16;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
 }
 </script>
 <!-- 截图弹窗 -->

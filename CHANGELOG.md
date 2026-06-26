@@ -1,4 +1,16 @@
 ## 2026-06-26
+### index.html + manual_style.css — 移动端适配 + 锚点滚动修复
+
+**滚动定位修复（index.html）**
+- `showSection` 不再主动 `scrollTo(0,0)`，避免与 `scrollToBlock` 竞争
+- `scrollToBlock` 改用 `scrollTo(0,0)` 瞬间回顶 + 双 `requestAnimationFrame` 确保布局完成后再平滑滚动，彻底解决点击「日语人格测试」「消消乐」等跳转落点错误的问题
+
+**移动端适配（index.html + manual_style.css）**
+- index.html：新增移动端顶部 header（`.mobile-header`）含汉堡菜单按钮；新增 sidebar 遮罩层（`.sidebar-overlay`）；sidebar 加 `id="mainSidebar"` 供 JS 操作
+- index.html：新增 `toggleMobileSidebar()` / `closeMobileSidebar()` 函数；点导航项时自动关闭抽屉
+- manual_style.css：新增 `@media (max-width: 768px)` 响应式规则：sidebar 变为 80vw 宽抽屉式 overlay、主内容全宽、顶部 header sticky、各间距收窄适配手机屏幕
+
+## 2026-06-26
 ### index.html — MOJi辞書内容修订（依PDF v8.40.0）
 - 搜索页「搜索方式」：删除无依据的「语音输入」
 - 词条详情「顶部信息」：修正为「词条条目 + 读音 + 声调 + 词类标签 + JLPT等级标签」，补「词源标注（仅外来语）」和「声优朗读设置（点击小头像进入）」

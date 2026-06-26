@@ -620,3 +620,117 @@
   .modal-close:hover {
     background: rgba(255,255,255,0.25);
   }
+
+  /* ============================================
+     移动端响应式适配（≤768px）
+     ============================================ */
+  @media (max-width: 768px) {
+    /* 隐藏桌面端折叠按钮 */
+    .sidebar-toggle { display: none; }
+
+    /* sidebar 变为全屏抽屉，默认隐藏 */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 80vw !important;
+      max-width: 300px;
+      height: 100vh;
+      z-index: 300;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    }
+    .sidebar.mobile-open {
+      transform: translateX(0);
+    }
+
+    /* 遮罩层 */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 299;
+    }
+    .sidebar-overlay.active { display: block; }
+
+    /* 移动端顶部 header */
+    .mobile-header {
+      display: flex !important;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      height: 52px;
+    }
+    .mobile-hamburger {
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .mobile-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .mobile-header-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* 主内容区全宽 */
+    .main {
+      margin-left: 0 !important;
+    }
+
+    /* 隐藏桌面端 page-header（内容重叠） */
+    .page-header {
+      padding: 20px 16px 16px;
+    }
+    .page-header h1 { font-size: 22px; }
+    .page-header p { font-size: 13px; }
+
+    /* 内容区左右边距收窄 */
+    .content-area,
+    .product-section { padding: 0 4px; }
+
+    .content-divider {
+      margin: 20px 12px 0;
+      font-size: 13px;
+    }
+
+    .module-block {
+      margin: 8px 12px;
+      border-radius: 10px;
+    }
+
+    .module-header { padding: 14px 14px 0; }
+    .module-title { font-size: 15px; }
+    .module-body { padding: 8px 14px 14px; }
+
+    .feature-list li { padding: 5px 0; font-size: 12.5px; }
+    .feature-name { min-width: 80px; font-size: 12px; }
+
+    /* 缩略图在移动端稍小 */
+    .thumb { width: 80px !important; }
+  }
+
+  /* 桌面端隐藏移动端元素 */
+  .mobile-header { display: none; }
+  .sidebar-overlay { display: none; }
