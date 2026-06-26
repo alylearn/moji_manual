@@ -686,7 +686,6 @@
       height: 2px;
       background: var(--text-primary);
       border-radius: 2px;
-      transition: all 0.2s;
     }
     .mobile-header-title {
       font-size: 15px;
@@ -694,41 +693,83 @@
       color: var(--text-primary);
     }
 
-    /* 主内容区全宽 */
+    /* 主内容区全宽，防止横向溢出 */
     .main {
       margin-left: 0 !important;
+      width: 100%;
+      overflow-x: hidden;
     }
+    body { overflow-x: hidden; }
 
-    /* 隐藏桌面端 page-header（内容重叠） */
+    /* page-header */
     .page-header {
-      padding: 20px 16px 16px;
+      padding: 16px 16px 14px;
     }
-    .page-header h1 { font-size: 22px; }
+    .page-header h1 { font-size: 20px; }
     .page-header p { font-size: 13px; }
 
-    /* 内容区左右边距收窄 */
-    .content-area,
-    .product-section { padding: 0 4px; }
+    /* 覆盖桌面端 56px 左右 padding */
+    .product-section {
+      padding: 0 0 40px !important;
+    }
 
+    /* content-divider */
     .content-divider {
       margin: 20px 12px 0;
       font-size: 13px;
     }
 
+    /* 卡片 */
     .module-block {
       margin: 8px 12px;
       border-radius: 10px;
+      overflow: hidden;
     }
 
-    .module-header { padding: 14px 14px 0; }
-    .module-title { font-size: 15px; }
-    .module-body { padding: 8px 14px 14px; }
+    .module-header {
+      padding: 14px 14px 12px;
+      align-items: flex-start;
+    }
+    .module-title { font-size: 14px; }
+    .module-subtitle { font-size: 11px; }
 
-    .feature-list li { padding: 5px 0; font-size: 12.5px; }
-    .feature-name { min-width: 80px; font-size: 12px; }
+    .path-chain { flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+    .path-step { font-size: 10px; white-space: normal; }
 
-    /* 缩略图在移动端稍小 */
+    .module-body { padding: 6px 14px 14px; }
+
+    /* 核心修复：feature-list 改竖向堆叠，解决横向溢出 */
+    .feature-list li {
+      display: block;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+    .feature-name {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      min-width: unset;
+    }
+    .feature-desc {
+      display: block;
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      word-break: break-all;
+    }
+
+    /* 缩略图 */
+    .module-thumbs { padding: 4px 14px 14px; }
     .thumb { width: 80px !important; }
+
+    /* scenario-grid 单列 */
+    .scenario-grid {
+      grid-template-columns: 1fr !important;
+      gap: 10px !important;
+      padding: 12px !important;
+    }
   }
 
   /* 桌面端隐藏移动端元素 */
