@@ -6,12 +6,12 @@
     --moji-green-mid: #5DCAA5;
     --test-red: #E8342A;
     --test-red-light: #FFF0EF;
-    --yomi-blue: #1A6BAF;
-    --yomi-blue-light: #EAF3FB;
+    --read-blue: #1A6BAF;
+    --read-blue-light: #EAF3FB;
     --kana-green: #3BAA5C;
     --kana-green-light: #EBF7EF;
-    --kaiwha-orange: #F07D00;
-    --kaiwha-orange-light: #FFF4E6;
+    --kaiwa-orange: #F07D00;
+    --kaiwa-orange-light: #FFF4E6;
     --kori-indigo: #5B5FD9;
     --kori-indigo-light: #ECEDFB;
     --text-primary: #1a1a1a;
@@ -183,11 +183,11 @@
     height: 3px;
   }
 
-  .product-card.jisho::before { background: var(--moji-green); }
-  .product-card.yomi::before { background: var(--yomi-blue); }
+  .product-card.dict::before { background: var(--moji-green); }
+  .product-card.read::before { background: var(--read-blue); }
   .product-card.kana::before { background: var(--kana-green); }
   .product-card.test::before { background: var(--test-red); }
-  .product-card.kaiwha::before { background: var(--kaiwha-orange); }
+  .product-card.kaiwa::before { background: var(--kaiwa-orange); }
   .product-card.kori::before { background: var(--kori-indigo); }
 
   .product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
@@ -195,11 +195,11 @@
   .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
 
   .card-name { font-size: 16px; font-weight: 700; }
-  .card-name.jisho { color: var(--moji-green); }
-  .card-name.yomi { color: var(--yomi-blue); }
+  .card-name.dict { color: var(--moji-green); }
+  .card-name.read { color: var(--read-blue); }
   .card-name.kana { color: var(--kana-green); }
   .card-name.test { color: var(--test-red); }
-  .card-name.kaiwha { color: var(--kaiwha-orange); }
+  .card-name.kaiwa { color: var(--kaiwa-orange); }
   .card-name.kori { color: var(--kori-indigo); }
 
   .card-tag {
@@ -209,11 +209,11 @@
     font-weight: 500;
   }
 
-  .card-tag.jisho { background: var(--moji-green-light); color: var(--moji-green); }
-  .card-tag.yomi { background: var(--yomi-blue-light); color: var(--yomi-blue); }
+  .card-tag.dict { background: var(--moji-green-light); color: var(--moji-green); }
+  .card-tag.read { background: var(--read-blue-light); color: var(--read-blue); }
   .card-tag.kana { background: var(--kana-green-light); color: var(--kana-green); }
   .card-tag.test { background: var(--test-red-light); color: var(--test-red); }
-  .card-tag.kaiwha { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
+  .card-tag.kaiwa { background: var(--kaiwa-orange-light); color: var(--kaiwa-orange); }
   .card-tag.kori { background: var(--kori-indigo-light); color: var(--kori-indigo); }
 
   .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
@@ -306,10 +306,10 @@
     white-space: nowrap;
   }
 
-  .jisho .path-step { background: var(--moji-green-light); color: var(--moji-green); }
-  .yomi .path-step { background: var(--yomi-blue-light); color: var(--yomi-blue); }
+  .dict .path-step { background: var(--moji-green-light); color: var(--moji-green); }
+  .read .path-step { background: var(--read-blue-light); color: var(--read-blue); }
   .kana .path-step { background: var(--kana-green-light); color: var(--kana-green); }
-  .kaiwha .path-step { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
+  .kaiwa .path-step { background: var(--kaiwa-orange-light); color: var(--kaiwa-orange); }
 
   .path-arrow {
     font-size: 11px;
@@ -424,19 +424,19 @@
   .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
   /* Color theming per app */
-  .jisho .module-icon { background: var(--moji-green-light); }
-  .jisho .module-title { color: var(--moji-green); }
-  .jisho .section-title { color: var(--moji-green); }
-  .jisho .app-badge { background: var(--moji-green-light); color: var(--moji-green); }
-  .jisho .stat-number { color: var(--moji-green); }
-  .jisho .scenario-label { color: var(--moji-green); }
+  .dict .module-icon { background: var(--moji-green-light); }
+  .dict .module-title { color: var(--moji-green); }
+  .dict .section-title { color: var(--moji-green); }
+  .dict .app-badge { background: var(--moji-green-light); color: var(--moji-green); }
+  .dict .stat-number { color: var(--moji-green); }
+  .dict .scenario-label { color: var(--moji-green); }
 
-  .yomi .module-icon { background: var(--yomi-blue-light); }
-  .yomi .module-title { color: var(--yomi-blue); }
-  .yomi .section-title { color: var(--yomi-blue); }
-  .yomi .app-badge { background: var(--yomi-blue-light); color: var(--yomi-blue); }
-  .yomi .stat-number { color: var(--yomi-blue); }
-  .yomi .scenario-label { color: var(--yomi-blue); }
+  .read .module-icon { background: var(--read-blue-light); }
+  .read .module-title { color: var(--read-blue); }
+  .read .section-title { color: var(--read-blue); }
+  .read .app-badge { background: var(--read-blue-light); color: var(--read-blue); }
+  .read .stat-number { color: var(--read-blue); }
+  .read .scenario-label { color: var(--read-blue); }
 
   .kana .module-icon { background: var(--kana-green-light); }
   .kana .module-title { color: var(--kana-green); }
@@ -452,12 +452,12 @@
   .test .stat-number { color: var(--test-red); }
   .test .scenario-label { color: var(--test-red); }
 
-  .kaiwha .module-icon { background: var(--kaiwha-orange-light); }
-  .kaiwha .module-title { color: var(--kaiwha-orange); }
-  .kaiwha .section-title { color: var(--kaiwha-orange); }
-  .kaiwha .app-badge { background: var(--kaiwha-orange-light); color: var(--kaiwha-orange); }
-  .kaiwha .stat-number { color: var(--kaiwha-orange); }
-  .kaiwha .scenario-label { color: var(--kaiwha-orange); }
+  .kaiwa .module-icon { background: var(--kaiwa-orange-light); }
+  .kaiwa .module-title { color: var(--kaiwa-orange); }
+  .kaiwa .section-title { color: var(--kaiwa-orange); }
+  .kaiwa .app-badge { background: var(--kaiwa-orange-light); color: var(--kaiwa-orange); }
+  .kaiwa .stat-number { color: var(--kaiwa-orange); }
+  .kaiwa .scenario-label { color: var(--kaiwa-orange); }
 
   .kori .module-icon { background: var(--kori-indigo-light); }
   .kori .module-title { color: var(--kori-indigo); }
