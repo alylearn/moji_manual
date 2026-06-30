@@ -536,7 +536,7 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">下滑可查看</span><span class="feature-desc">释义、关联词、原声例句、真题</span></li>
-          <li><span class="feature-name">顶部信息</span><span class="feature-desc">词条条目 + 读音 + 声调 + 词类标签 + JLPT等级标签（N5-N1）；词源标注（仅外来语）；词条配音及声优朗读设置（点击小头像进入）</span></li>
+          <li><span class="feature-name">顶部信息</span><span class="feature-desc">词条条目 + 读音 + 声调 + 词类标签 + 词源（仅外来语） + JLPT等级标签（N5-N1）；词条配音及声优朗读设置（点击小头像进入）</span></li>
           <li><span class="feature-name">简明释义</span><span class="feature-desc">AI生成，一行简洁中文释义</span></li>
           <li><span class="feature-name">释义</span><span class="feature-desc">中、日文释义；语法词条额外显示中、日文使用语境及接续；支持「自定义」释义与例句</span></li>
           <li><span class="feature-name">关联词</span><span class="feature-desc">近义词 / 反义词 / 话题词（AI生成）</span></li>
@@ -1256,6 +1256,29 @@
     <!-- ========== 趣味游戏/测试 ========== -->
     <div class="content-divider" id="block-youxi">趣味游戏/测试</div>
 
+    <!-- 消消乐 -->
+    <div class="module-block section-block has-thumbs" id="block-xiaoxiao">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🎮</div>
+          <div>
+            <div class="module-title">消消乐</div>
+            <div class="module-subtitle">单词/50音模式 · 辞書与MOJiKana联通</div>
+            <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">快捷功能区「玩游戏·消消乐」</span><span class="path-arrow">、</span><span class="path-step">MOJi圈</span><span class="path-arrow">→</span><span class="path-step">顶部功能区「玩游戏·消消乐」</span></div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">模式切换</span><span class="feature-desc">右上角按钮切换：单词消消乐（辞書词汇，辞書默认）/ 50音消消乐（假名练习，MOJiKana默认）；两款App共用同一游戏界面</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-xiaoxiao-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-xiaoxiao-02.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
     <!-- 词汇水平测试 -->
     <div class="module-block section-block has-thumbs" id="block-cihui-test">
       <div class="module-content">
@@ -1264,7 +1287,7 @@
           <div>
             <div class="module-title">词汇水平测试</div>
             <div class="module-subtitle">5分钟评估 · N5-N1分级 · 历史记录</div>
-            <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">快捷功能区「词汇量测试」</span></div>
+            <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">快捷功能区「词汇量测试」</span><span class="path-arrow">、</span><span class="path-step">MOJi圈</span><span class="path-arrow">→</span><span class="path-step">顶部功能区「词汇水平·去评估」</span></div>
           </div>
         </div>
         <div class="module-body">
@@ -1277,6 +1300,7 @@
       <div class="module-thumbs">
         <img class="thumb" src="images/dict/dict-cihui-test-01.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/dict/dict-cihui-test-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-cihui-test-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
@@ -1304,28 +1328,6 @@
       <div class="module-thumbs">
         <img class="thumb" src="images/dict/dict-renge-test-01.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/dict/dict-renge-test-02.png" onclick="openModal(this.src)">
-      </div>
-    </div>
-
-    <!-- 消消乐 -->
-    <div class="module-block section-block has-thumbs" id="block-xiaoxiao">
-      <div class="module-content">
-        <div class="module-header">
-          <div class="module-icon">🎮</div>
-          <div>
-            <div class="module-title">消消乐</div>
-            <div class="module-subtitle">单词/50音模式 · 辞書与MOJiKana联通</div>
-            <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">背词首页</span><span class="path-arrow">→</span><span class="path-step">快捷功能区「玩游戏·消消乐」</span></div>
-          </div>
-        </div>
-        <div class="module-body">
-          <ul class="feature-list">
-            <li><span class="feature-name">模式切换</span><span class="feature-desc">右上角按钮切换：单词消消乐（辞書词汇，辞書默认）/ 50音消消乐（假名练习，MOJiKana默认）；两款App共用同一游戏界面</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="module-thumbs">
-        <img class="thumb" src="images/dict/dict-xiaoxiao-01.png" onclick="openModal(this.src)">
       </div>
     </div>
 
@@ -1445,7 +1447,7 @@
       <div class="module-body">
         <ul class="feature-list">
           <li><span class="feature-name">账号与安全</span><span class="feature-desc">账号管理；服务号绑定（绑定微信服务号）</span></li>
-          <li><span class="feature-name">功能设置</span><span class="feature-desc">发音（声优偏好）/ 主题（5种主题色）/ 搜索页定制 / 高阶玩法</span></li>
+          <li><span class="feature-name">功能设置</span><span class="feature-desc">发音（声优偏好）/ 主题（5种主题色）/ 功能区定制 / 悬浮窗 / 高阶玩法</span></li>
           <li><span class="feature-name">系统设置</span><span class="feature-desc">注音模式（假名/罗马音切换）/ 常亮模式（背词时屏幕不息屏）/ 清除缓存 / 个性化内容推荐开关 / 反馈</span></li>
         </ul>
       </div>
