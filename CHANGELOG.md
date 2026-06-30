@@ -1,3 +1,17 @@
+## 2026-06-30（五续）
+### index.html — 电脑端模块按PDF三层分级拆分（9个合并模块 → 16个独立模块）
+- 原电脑端导航是9条平铺nav-sub2，与PDF实际H2/H3标题层级不符，且与APP端三层结构（nav-sub2→nav-sub3）不一致
+- 按PDF标题拆分以下5个H2模块为多个独立module-block，新增nav-sub3子锚点：
+  - 搜题解析 → 主界面（test-web-search-main）/ 搜索结果与详情（test-web-search-detail）
+  - 试卷库 → 试卷库首页（test-web-papers-home）/ 做题页（test-web-papers-exam）
+  - 专项练习 → 文字词汇/语法/阅读Tab（test-web-zhuanxiang-tab）/ 听力Tab（test-web-zhuanxiang-listening）
+  - 题目册 → 题目册首页（test-web-timuce-home）/ 智能分析（test-web-timuce-smart）/ AI问答（test-web-timuce-ai）
+  - 备考资讯 → 资讯分类导航（test-web-zixun-nav）/ 文章详情页（test-web-zixun-article）/ 专栏列表页（test-web-zixun-column）
+- 首页/看解析/小课堂/我的 4个模块PDF中无H3子标题，保持单一module-block不变
+- 26张图片按拆分后的模块重新分配引用，无新增/删除图片
+- 导航新增12条nav-sub3锚点，9个nav-sub2父级中5个指向其首个子模块，4个为叶子直接链接
+- 已校验：17个block id（16模块+1nav容器）、26张图片引用、nav锚点与正文id全部一一对应，div标签闭合平衡
+
 ## 2026-06-30（四续）
 ### index.html — MOJiTest电脑端命名规范修正：pc → web
 - 因该部分实为浏览器网页版（非PC客户端），全部命名前缀由`test-pc-`改为`test-web-`，共47处（含9个block id、9条nav锚点、26个图片引用）

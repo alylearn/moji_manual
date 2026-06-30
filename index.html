@@ -195,12 +195,24 @@
           </a>
           <div class="nav-children" id="test-web-nav">
             <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-home')">首页</a>
-            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-search')">搜题解析</a>
-            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-papers')">试卷库</a>
-            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-zhuanxiang')">专项练习</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-search-main')">搜题解析</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-search-main')">主界面</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-search-detail')">搜索结果与详情</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-papers-home')">试卷库</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-papers-home')">试卷库首页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-papers-exam')">做题页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-zhuanxiang-tab')">专项练习</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-zhuanxiang-tab')">文字词汇/语法/阅读 Tab</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-zhuanxiang-listening')">听力 Tab</a>
             <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-jiexi')">看解析</a>
-            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-timuce')">题目册</a>
-            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-zixun')">备考资讯</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-timuce-home')">题目册</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-timuce-home')">题目册首页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-timuce-smart')">智能分析</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-timuce-ai')">AI问答</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-zixun-nav')">备考资讯</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-zixun-nav')">资讯分类导航</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-zixun-article')">文章详情页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-web-zixun-column')">专栏列表页</a>
             <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-xiaoke')">小课堂</a>
             <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-wode')">我的</a>
           </div>
@@ -3454,7 +3466,7 @@
 
     <div class="content-divider">电脑端</div>
 
-    <!-- 电脑端首页 -->
+    <!-- 首页 -->
     <div class="module-block section-block has-thumbs" id="test-web-home">
       <div class="module-content">
         <div class="module-header">
@@ -3481,14 +3493,14 @@
       </div>
     </div>
 
-    <!-- 搜题解析 -->
-    <div class="module-block section-block has-thumbs" id="test-web-search">
+    <!-- 搜题解析 - 主界面 -->
+    <div class="module-block section-block has-thumbs" id="test-web-search-main">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">🔍</div>
           <div>
-            <div class="module-title">搜题解析</div>
-            <div class="module-subtitle">主界面 · 搜索结果与详情 · 智能分析 · AI问答</div>
+            <div class="module-title">搜题解析 · 主界面</div>
+            <div class="module-subtitle">核心搜索入口 · 快捷分类标签</div>
             <div class="path-chain">
               <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">侧边栏「搜题解析」</span><span class="path-arrow">/</span>
               <span class="path-step">首页默认落地页</span>
@@ -3500,6 +3512,30 @@
             <li><span class="feature-name">搜题解析是 MOJiTest 的核心功能之一</span><span class="feature-desc">支持输入日语词汇或句子，快速查找相关题目和解析</span></li>
             <li><span class="feature-name">顶部全宽搜索框</span><span class="feature-desc">输入题目内容后回车或点击搜索图标</span></li>
             <li><span class="feature-name">快捷分类标签</span><span class="feature-desc">点击直达；文法辨析（1-3级）/ 考试试题（1-5级+考研）/ 视频教程（1-5级+考研+语法）</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/test/test-web/test-web-search-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 搜题解析 - 搜索结果与详情 -->
+    <div class="module-block section-block has-thumbs" id="test-web-search-detail">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🔍</div>
+          <div>
+            <div class="module-title">搜题解析 · 搜索结果与详情</div>
+            <div class="module-subtitle">文章Tab · 智能分析 · AI问答</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">搜题解析主界面</span><span class="path-arrow">→</span>
+              <span class="path-step">输入关键词搜索</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
             <li><span class="feature-name">搜索结果</span><span class="feature-desc">输入关键词后，左侧显示题目列表（含级别标签），右侧自动展开题目详情</span></li>
             <li><span class="feature-name">文章 Tab</span><span class="feature-desc">题目所在的阅读原文，相关词汇红色高亮</span></li>
             <li><span class="feature-name">智能分析</span><span class="feature-desc">点击后题目上方显示振り仮名，汉字下方标注中文词义</span></li>
@@ -3508,7 +3544,6 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-web/test-web-search-01.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/test/test-web/test-web-search-02.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/test/test-web/test-web-search-03.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/test/test-web/test-web-search-04.png" onclick="openModal(this.src)">
@@ -3517,14 +3552,14 @@
       </div>
     </div>
 
-    <!-- 试卷库 -->
-    <div class="module-block section-block has-thumbs" id="test-web-papers">
+    <!-- 试卷库 - 首页 -->
+    <div class="module-block section-block has-thumbs" id="test-web-papers-home">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📚</div>
           <div>
-            <div class="module-title">试卷库</div>
-            <div class="module-subtitle">真题/模拟卷筛选 · 学习记录 · 做题入口</div>
+            <div class="module-title">试卷库首页</div>
+            <div class="module-subtitle">真题/模拟卷筛选 · 学习记录 · 鼠标悬停操作</div>
             <div class="path-chain">
               <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">侧边栏「试卷库」</span>
             </div>
@@ -3537,25 +3572,50 @@
             <li><span class="feature-name">学习记录</span><span class="feature-desc">折线图：历次考试得分趋势（近10次/近30次/近50次切换）；科目正确率条形图：文字词汇/语法/阅读/听力（各显示百分比）</span></li>
             <li><span class="feature-name">试卷列表</span><span class="feature-desc">网格布局（4列），每张卡片显示：年份月份、`Free`/`PRO`标签、历史分数、收藏图标</span></li>
             <li><span class="feature-name">鼠标悬停（电脑端特有）</span><span class="feature-desc">真题卡片：浮出「做题」（黑底）+「看解析」（白底）两个按钮；模拟卷（PRO）：浮出金色「解锁」按钮</span></li>
-            <li><span class="feature-name">做题页</span><span class="feature-desc">点击「做题」后进入前置选择页，可选择全卷考试或单科专项练习；标题为{年月}{级别}试题，含考试时间说明、科目列表（每科右侧「专项练习>」链接新标签页打开）、「开始考试」红色大按钮</span></li>
           </ul>
         </div>
       </div>
       <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-papers-01.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/test/test-web/test-web-papers-02.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 试卷库 - 做题页 -->
+    <div class="module-block section-block has-thumbs" id="test-web-papers-exam">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📚</div>
+          <div>
+            <div class="module-title">做题页</div>
+            <div class="module-subtitle">前置选择页 · 全卷考试或单科专项</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">试卷库</span><span class="path-arrow">→</span>
+              <span class="path-step">悬停</span><span class="path-arrow">→</span>
+              <span class="path-step">点击「做题」</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">前置选择页</span><span class="feature-desc">点击「做题」后进入，可选择全卷考试或单科专项练习；标题为{年月}{级别}试题</span></li>
+            <li><span class="feature-name">页面内容</span><span class="feature-desc">考试时间说明、科目列表（每科右侧「专项练习>」链接新标签页打开）、「开始考试」红色大按钮</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-papers-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <!-- 专项练习 -->
-    <div class="module-block section-block has-thumbs" id="test-web-zhuanxiang">
+    <!-- 专项练习 - 文字词汇/语法/阅读 Tab -->
+    <div class="module-block section-block has-thumbs" id="test-web-zhuanxiang-tab">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">✏️</div>
           <div>
-            <div class="module-title">专项练习</div>
-            <div class="module-subtitle">连续滚动答题 · 多题同屏 · 听力原文</div>
+            <div class="module-title">专项练习 · 文字词汇/语法/阅读 Tab</div>
+            <div class="module-subtitle">连续滚动答题 · 多题同屏</div>
             <div class="path-chain">
               <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">做题页</span><span class="path-arrow">→</span>
               <span class="path-step">点击科目「专项练习 >」</span>
@@ -3567,7 +3627,6 @@
             <li><span class="feature-name">与App端逐题翻页不同</span><span class="feature-desc">电脑端支持题目连续滚动，多题同屏可见</span></li>
             <li><span class="feature-name">顶部黑色导航栏</span><span class="feature-desc">科目名称 +「答题卡」+「保存」（红色）</span></li>
             <li><span class="feature-name">文字词汇 / 语法 / 阅读 Tab</span><span class="feature-desc">题目+选项（正确答案红色高亮）；单选按钮选择答案（已选显示黑色实心圆）；右下角「← →」跨大题跳转</span></li>
-            <li><span class="feature-name">听力 Tab</span><span class="feature-desc">音频播放器（▶ + 倍速控制 1.0x）+ 题目选项 +「原文」折叠区（含日语文字稿）</span></li>
           </ul>
         </div>
       </div>
@@ -3575,6 +3634,30 @@
         <img class="thumb" src="images/test/test-web/test-web-zhuanxiang-01.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/test/test-web/test-web-zhuanxiang-02.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/test/test-web/test-web-zhuanxiang-03.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 专项练习 - 听力 Tab -->
+    <div class="module-block section-block has-thumbs" id="test-web-zhuanxiang-listening">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">🎧</div>
+          <div>
+            <div class="module-title">专项练习 · 听力 Tab</div>
+            <div class="module-subtitle">音频播放器 · 原文折叠区</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">专项练习</span><span class="path-arrow">→</span>
+              <span class="path-step">切换至听力Tab</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">听力 Tab</span><span class="feature-desc">音频播放器（▶ + 倍速控制 1.0x）+ 题目选项 +「原文」折叠区（含日语文字稿）</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-tingli-01.png" onclick="openModal(this.src)">
       </div>
     </div>
@@ -3607,14 +3690,14 @@
       </div>
     </div>
 
-    <!-- 题目册 -->
-    <div class="module-block section-block has-thumbs" id="test-web-timuce">
+    <!-- 题目册 - 首页 -->
+    <div class="module-block section-block has-thumbs" id="test-web-timuce-home">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📑</div>
           <div>
-            <div class="module-title">题目册</div>
-            <div class="module-subtitle">双栏布局 · 知识点筛选 · 智能分析 · AI问答</div>
+            <div class="module-title">题目册首页</div>
+            <div class="module-subtitle">双栏布局 · 知识点筛选</div>
             <div class="path-chain">
               <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">侧边栏「题目册」</span>
             </div>
@@ -3625,26 +3708,72 @@
             <li><span class="feature-name">双栏布局</span><span class="feature-desc">电脑端采用双栏布局（左侧题目列表 + 右侧题目详情），与App端单列进入详情不同</span></li>
             <li><span class="feature-name">左侧：题目列表</span><span class="feature-desc">内容分类Tab：全部 / 考级 / 考研203（各含二级科目筛选）；筛选器：时间（不限/今天/最近七天）+ 答案显示（全部/依次/隐藏）；数字分页</span></li>
             <li><span class="feature-name">右侧：题目详情</span><span class="feature-desc">完整题干 + 4个选项（正确答案红字，首次答错绿色）；做对/做错次数统计；知识点标签（级别+分类，可点击筛选）；★收藏 / 纠错 按钮</span></li>
-            <li><span class="feature-name">智能分析</span><span class="feature-desc">点击右上角「智能分析」按钮后激活（按钮变红色边框）：日文汉字上方显示振り仮名，汉字下方标注中文词义</span></li>
-            <li><span class="feature-name">AI 问答</span><span class="feature-desc">点击右上角「AI问答」按钮，右侧滑出抽屉：AI对话输入框（「请输入问题」）+ 额度显示 + 提问示例，可对选中文本直接提问</span></li>
           </ul>
         </div>
       </div>
       <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-timuce-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 题目册 - 智能分析 -->
+    <div class="module-block section-block has-thumbs" id="test-web-timuce-smart">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📑</div>
+          <div>
+            <div class="module-title">题目册 · 智能分析</div>
+            <div class="module-subtitle">振り仮名标注 · 中文词义</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">题目册首页</span><span class="path-arrow">→</span>
+              <span class="path-step">右上角「智能分析」</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">智能分析</span><span class="feature-desc">点击右上角「智能分析」按钮后激活（按钮变红色边框）：日文汉字上方显示振り仮名，汉字下方标注中文词义</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-timuce-02.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 题目册 - AI问答 -->
+    <div class="module-block section-block has-thumbs" id="test-web-timuce-ai">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📑</div>
+          <div>
+            <div class="module-title">题目册 · AI问答</div>
+            <div class="module-subtitle">右侧抽屉 · 选中文本提问</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">题目册首页</span><span class="path-arrow">→</span>
+              <span class="path-step">右上角「AI问答」</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">AI 问答</span><span class="feature-desc">点击右上角「AI问答」按钮，右侧滑出抽屉：AI对话输入框（「请输入问题」）+ 额度显示 + 提问示例，可对选中文本直接提问</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-timuce-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
-    <!-- 备考资讯 -->
-    <div class="module-block section-block has-thumbs" id="test-web-zixun">
+    <!-- 备考资讯 - 资讯分类导航 -->
+    <div class="module-block section-block has-thumbs" id="test-web-zixun-nav">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📰</div>
           <div>
-            <div class="module-title">备考资讯</div>
-            <div class="module-subtitle">三列网格 · 分类导航 · 专栏文章</div>
+            <div class="module-title">备考资讯 · 资讯分类导航</div>
+            <div class="module-subtitle">三列网格 · 日语入门/等级考试/专业考试</div>
             <div class="path-chain">
               <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">侧边栏「备考资讯」</span>
             </div>
@@ -3654,14 +3783,60 @@
           <ul class="feature-list">
             <li><span class="feature-name">汇聚日语学习资讯</span><span class="feature-desc">含专栏文章和拓展训练，三列网格布局</span></li>
             <li><span class="feature-name">资讯分类导航</span><span class="feature-desc">日语入门（零基础日语入门/特殊五段动词/ます形连用形总结/特殊动词总结）/ 等级考试（1级综合备考听力/1级语法/2级语法/3级语法）/ 专业考试（考研介绍备考指南/日语教资/CATTI备考）</span></li>
-            <li><span class="feature-name">文章详情页</span><span class="feature-desc">点击任意资讯 → 新标签页打开，含封面图、标题、作者、日期、正文（含振り仮名注音）、内嵌视频（部分）</span></li>
-            <li><span class="feature-name">专栏列表页</span><span class="feature-desc">专栏封面 + 简介 + 文章列表（标题 / 发布时间 / 阅读数·评论数·赞数 / 封面缩略图）</span></li>
           </ul>
         </div>
       </div>
       <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-zixun-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 备考资讯 - 文章详情页 -->
+    <div class="module-block section-block has-thumbs" id="test-web-zixun-article">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📰</div>
+          <div>
+            <div class="module-title">备考资讯 · 文章详情页</div>
+            <div class="module-subtitle">新标签页打开 · 含视频</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">备考资讯</span><span class="path-arrow">→</span>
+              <span class="path-step">点击任意资讯</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">文章详情页</span><span class="feature-desc">点击任意资讯 → 新标签页打开，含封面图、标题、作者、日期、正文（含振り仮名注音）、内嵌视频（部分）</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-zixun-02.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <!-- 备考资讯 - 专栏列表页 -->
+    <div class="module-block section-block has-thumbs" id="test-web-zixun-column">
+      <div class="module-content">
+        <div class="module-header">
+          <div class="module-icon">📰</div>
+          <div>
+            <div class="module-title">备考资讯 · 专栏列表页</div>
+            <div class="module-subtitle">专栏封面 · 文章列表</div>
+            <div class="path-chain">
+              <span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">备考资讯</span><span class="path-arrow">→</span>
+              <span class="path-step">点击专栏</span>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <ul class="feature-list">
+            <li><span class="feature-name">专栏列表页</span><span class="feature-desc">专栏封面 + 简介 + 文章列表（标题 / 发布时间 / 阅读数·评论数·赞数 / 封面缩略图）</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-thumbs">
         <img class="thumb" src="images/test/test-web/test-web-zixun-03.png" onclick="openModal(this.src)">
       </div>
     </div>
@@ -3718,7 +3893,6 @@
         <img class="thumb" src="images/test/test-web/test-web-wode-02.png" onclick="openModal(this.src)">
       </div>
     </div>
-
     <div class="content-divider">使用场景</div>
 
     <div class="scenario-grid">
