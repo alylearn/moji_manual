@@ -1,3 +1,20 @@
+## 2026-06-30（四续）
+### index.html — MOJiTest电脑端命名规范修正：pc → web
+- 因该部分实为浏览器网页版（非PC客户端），全部命名前缀由`test-pc-`改为`test-web-`，共47处（含9个block id、9条nav锚点、26个图片引用）
+- 图片路径同步改为`images/test/test-web/test-web-xxx.png`，对应Aly重命名后即将重新上传的文件夹与文件
+- 已核验：div标签闭合数量平衡，nav中27个scrollToBlock锚点与正文block id全部一一对应
+- ⚠️待办：Aly需将`images/test/test-pc/`下26张图重命名为`test-web-`前缀，文件夹改名为`test-web`后重新上传，旧的`test-pc`文件夹届时需删除
+
+## 2026-06-30（三续）
+### index.html + manual_style.css — 修复图片路径 + MOJiTest导航新增APP端/电脑端两级分组
+- 修复图片路径：实际上传路径为`images/test/test-pc/`子文件夹，原引用`images/test/test-pc-xxx.png`漏了`test-pc/`一层，已批量改为`images/test/test-pc/test-pc-xxx.png`，26张图全部核验200可访问
+- 导航重构：MOJiTest左侧导航新增「APP端」「电脑端」两个可折叠大分组（各自独立展开/收起，互不影响，可同时展开）
+  - APP端分组下：对策/背词/考试/设置 降一级为nav-sub2，原有子项再降一级为nav-sub3（新增CSS class `.nav-sub3`，缩进52px）
+  - 电脑端分组下：原9个子模块保持nav-sub2不变
+  - 新增JS函数`toggleSubNav()`，独立于现有`toggleNav()`，不影响其他产品折叠逻辑
+- 正文新增「APP端」分隔线（位于stats-row之后、「对策」分隔线之前），与已有的「电脑端」分隔线对应
+- 已校验：nav中27个scrollToBlock锚点与正文block id全部一一对应，div标签闭合数量平衡
+
 ## 2026-06-30（再续）
 ### index.html + images/test/ — MOJiTest新增「电脑端」模块（依《MOJiTest产品说明书.pdf》页23-34）
 - 新增9个功能模块：首页 / 搜题解析 / 试卷库 / 专项练习 / 看解析 / 题目册 / 备考资讯 / 小课堂 / 我的

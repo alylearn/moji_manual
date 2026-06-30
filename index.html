@@ -163,38 +163,47 @@
           <span style="flex:1">MOJiTest</span><span class="nav-arrow" id="arrow-test-nav">▸</span>
         </a>
         <div class="nav-children" id="test-nav">
-          <a class="nav-sub" onclick="showSection('test'); scrollToBlock('test-duice')">对策</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-duice')">对策</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-zhuanxiang')">专项试题练习</a>
-          <a class="nav-sub" onclick="showSection('test'); scrollToBlock('test-beici')">背词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-beici')">背词页主页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-cishu')">选择词书</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-shezhi')">背词设置</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-xuexilie')">学习列表</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-xinxue')">新学</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-fuxi')">复习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-tingci')">听词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-jizhi')">科学背词机制</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-daka')">打卡日历</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-zixishi')">MOJi自习室</a>
-          <a class="nav-sub" onclick="showSection('test'); scrollToBlock('test-shezhi2')">考试</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-zhenti')">历年真题列表</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-dati')">答题界面</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-timuce')">题目册</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-tongji')">统计</a>
-          <a class="nav-sub" onclick="showSection('test'); scrollToBlock('test-shezhi2')">设置</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-shezhi2')">个人中心</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pro')">购买中心</a>
-          <a class="nav-sub" onclick="showSection('test'); scrollToBlock('test-pc-home')">电脑端</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-home')">首页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-search')">搜题解析</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-papers')">试卷库</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-zhuanxiang')">专项练习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-jiexi')">看解析</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-timuce')">题目册</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-zixun')">备考资讯</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-xiaoke')">小课堂</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-pc-wode')">我的</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('test-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-test-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="test-app-nav">
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-duice')">对策</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-duice')">对策</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-zhuanxiang')">专项试题练习</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-beici')">背词</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-beici')">背词页主页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-cishu')">选择词书</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-shezhi')">背词设置</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-xuexilie')">学习列表</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-xinxue')">新学</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-fuxi')">复习</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-tingci')">听词</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-jizhi')">科学背词机制</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-daka')">打卡日历</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-zixishi')">MOJi自习室</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-shezhi2')">考试</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-zhenti')">历年真题列表</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-dati')">答题界面</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-timuce')">题目册</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-tongji')">统计</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-shezhi2')">设置</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-shezhi2')">个人中心</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('test'); scrollToBlock('test-pro')">购买中心</a>
+          </div>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('test-web-nav')">
+            <span style="flex:1;font-weight:600">电脑端</span><span class="nav-arrow" id="arrow-test-web-nav">▸</span>
+          </a>
+          <div class="nav-children" id="test-web-nav">
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-home')">首页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-search')">搜题解析</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-papers')">试卷库</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-zhuanxiang')">专项练习</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-jiexi')">看解析</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-timuce')">题目册</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-zixun')">备考资讯</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-xiaoke')">小课堂</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('test'); scrollToBlock('test-web-wode')">我的</a>
+          </div>
         </div>
       </div>
 
@@ -2812,6 +2821,8 @@
       <div class="stat-item"><div class="stat-number" style="color:var(--test-red)">100+</div><div class="stat-label">配套词书</div></div>
     </div>
 
+    <div class="content-divider">APP端</div>
+
     <div class="content-divider">对策</div>
 
     <!-- 对策页 -->
@@ -3444,7 +3455,7 @@
     <div class="content-divider">电脑端</div>
 
     <!-- 电脑端首页 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-home">
+    <div class="module-block section-block has-thumbs" id="test-web-home">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">💻</div>
@@ -3466,12 +3477,12 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-home-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-home-01.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 搜题解析 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-search">
+    <div class="module-block section-block has-thumbs" id="test-web-search">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">🔍</div>
@@ -3497,17 +3508,17 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-search-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-search-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-search-03.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-search-04.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-search-05.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-search-06.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-search-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-search-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-search-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-search-04.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-search-05.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-search-06.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 试卷库 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-papers">
+    <div class="module-block section-block has-thumbs" id="test-web-papers">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📚</div>
@@ -3531,14 +3542,14 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-papers-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-papers-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-papers-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-papers-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-papers-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-papers-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 专项练习 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-zhuanxiang">
+    <div class="module-block section-block has-thumbs" id="test-web-zhuanxiang">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">✏️</div>
@@ -3561,15 +3572,15 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-zhuanxiang-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-zhuanxiang-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-zhuanxiang-03.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-tingli-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-zhuanxiang-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-zhuanxiang-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-zhuanxiang-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-tingli-01.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 看解析 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-jiexi">
+    <div class="module-block section-block has-thumbs" id="test-web-jiexi">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📖</div>
@@ -3590,14 +3601,14 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-jiexi-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-jiexi-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-jiexi-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-jiexi-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-jiexi-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-jiexi-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 题目册 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-timuce">
+    <div class="module-block section-block has-thumbs" id="test-web-timuce">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📑</div>
@@ -3620,14 +3631,14 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-timuce-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-timuce-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-timuce-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-timuce-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-timuce-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-timuce-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 备考资讯 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-zixun">
+    <div class="module-block section-block has-thumbs" id="test-web-zixun">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">📰</div>
@@ -3649,14 +3660,14 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-zixun-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-zixun-02.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-zixun-03.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-zixun-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-zixun-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-zixun-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 小课堂 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-xiaoke">
+    <div class="module-block section-block has-thumbs" id="test-web-xiaoke">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">🎓</div>
@@ -3676,12 +3687,12 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-xiaoke-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-xiaoke-01.png" onclick="openModal(this.src)">
       </div>
     </div>
 
     <!-- 我的 -->
-    <div class="module-block section-block has-thumbs" id="test-pc-wode">
+    <div class="module-block section-block has-thumbs" id="test-web-wode">
       <div class="module-content">
         <div class="module-header">
           <div class="module-icon">👤</div>
@@ -3703,8 +3714,8 @@
         </div>
       </div>
       <div class="module-thumbs">
-        <img class="thumb" src="images/test/test-pc-wode-01.png" onclick="openModal(this.src)">
-        <img class="thumb" src="images/test/test-pc-wode-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-wode-01.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/test/test-web/test-web-wode-02.png" onclick="openModal(this.src)">
       </div>
     </div>
 
@@ -4500,6 +4511,13 @@ function toggleNav(groupId) {
     g.classList.add('open');
     if(a) a.classList.add('open');
   }
+}
+function toggleSubNav(groupId) {
+  var g = document.getElementById(groupId);
+  var a = document.getElementById('arrow-' + groupId);
+  if(!g) return;
+  g.classList.toggle('open');
+  if(a) a.classList.toggle('open');
 }
 function toggleSidebar() {
   var sidebar = document.querySelector('.sidebar');

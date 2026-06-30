@@ -145,6 +145,56 @@ MOJi 产品矩阵内部说明手册，供新人 / 实习生 / 跨部门同事了
 
 ---
 
+## 多平台产品（App + Web）扩展规范
+
+部分产品（如 MOJiTest）同时有 App 端和浏览器网页版，需要在导航和截图命名上做区分。
+
+### 截图命名
+
+网页版截图单独建子文件夹，与 App 端截图同级存放：
+
+```
+images/{产品前缀}/
+├── {产品前缀}-xxx-01.png        # App端截图（原有规则不变）
+└── {产品前缀}-web/              # 网页版截图子文件夹
+    └── {产品前缀}-web-xxx-01.png
+```
+
+⚠️ 文件夹和文件名统一用 `web`，不要用 `pc`——本质是浏览器网页版，不是PC客户端。
+
+示例：`images/test/test-web/test-web-papers-01.png`
+
+### 导航结构
+
+左侧导航在该产品下新增两个可折叠分组，导航显示文案沿用中文「APP端」「电脑端」（用户认知习惯），但 HTML id 和图片前缀统一用英文 `app` / `web`。两个分组各自独立展开/收起，互不影响，可同时展开：
+
+```html
+<div class="nav-children" id="{product}-nav">
+  <a class="nav-sub nav-parent" onclick="toggleSubNav('{product}-app-nav')">
+    <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-{product}-app-nav">▸</span>
+  </a>
+  <div class="nav-children" id="{product}-app-nav">
+    <!-- 原有App端 nav-sub/nav-sub2 内容，整体降一级：原nav-sub→nav-sub2，原nav-sub2→nav-sub3 -->
+  </div>
+  <a class="nav-sub nav-parent" onclick="toggleSubNav('{product}-web-nav')">
+    <span style="flex:1;font-weight:600">电脑端</span><span class="nav-arrow" id="arrow-{product}-web-nav">▸</span>
+  </a>
+  <div class="nav-children" id="{product}-web-nav">
+    <!-- Web端各模块 nav-sub2 -->
+  </div>
+</div>
+```
+
+JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥），不要复用 `toggleNav()`——那个是顶层产品互斥折叠专用，会牵连收起其他产品的导航。
+
+`nav-sub3`（第三级缩进，52px）专为这种三层结构新增，仅在 App 端原有的二级菜单需要再降一级时使用。
+
+### 正文分隔
+
+正文内对应加「APP端」「电脑端」两条 `content-divider`，分别放在各自模块组的最前面。
+
+---
+
 ## 如何改样式
 
 样式都在 `manual_style.css`，常见改动位置：
