@@ -166,7 +166,7 @@ images/{产品前缀}/
 
 ### 导航结构
 
-左侧导航在该产品下新增两个可折叠分组，导航显示文案沿用中文「APP端」「电脑端」（用户认知习惯），但 HTML id 和图片前缀统一用英文 `app` / `web`。两个分组各自独立展开/收起，互不影响，可同时展开：
+左侧导航在该产品下新增两个可折叠分组，导航显示文案沿用中文「APP端」「网页端」（用户认知习惯），但 HTML id 和图片前缀统一用英文 `app` / `web`。两个分组各自独立展开/收起，互不影响，可同时展开：
 
 ```html
 <div class="nav-children" id="{product}-nav">
@@ -177,7 +177,7 @@ images/{产品前缀}/
     <!-- 原有App端 nav-sub/nav-sub2 内容，整体降一级：原nav-sub→nav-sub2，原nav-sub2→nav-sub3 -->
   </div>
   <a class="nav-sub nav-parent" onclick="toggleSubNav('{product}-web-nav')">
-    <span style="flex:1;font-weight:600">电脑端</span><span class="nav-arrow" id="arrow-{product}-web-nav">▸</span>
+    <span style="flex:1;font-weight:600">网页端</span><span class="nav-arrow" id="arrow-{product}-web-nav">▸</span>
   </a>
   <div class="nav-children" id="{product}-web-nav">
     <!-- Web端各模块 nav-sub2 -->
@@ -191,9 +191,9 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 ### 正文分隔
 
-正文内对应加「APP端」「Web端/电脑端」两条最外层 `content-divider`，分别放在各自模块组的最前面。
+正文内对应加「APP端」「Web端/网页端」两条最外层 `content-divider`，分别放在各自模块组的最前面。
 
-⚠️ 容易漏的点：**每个 nav-sub2 二级分组在正文里也要有自己的 `content-divider`**，不能只有最外层那一条。参考 APP端 已有的「对策」「背词」「考试」「设置」，电脑端同理需要「首页」「搜题解析」「试卷库」「题目册」「备考资讯」「小课堂」「我的」等各自的小标题，分别放在该分组第一个 module-block 之前。一个 content-divider 下可以覆盖多个 module-block（比如「试卷库」标题下可以连续放试卷库首页/做题页/专项练习/看解析 4个块，不需要再拆更细的标题）。
+⚠️ 容易漏的点：**每个 nav-sub2 二级分组在正文里也要有自己的 `content-divider`**，不能只有最外层那一条。参考 APP端 已有的「对策」「背词」「考试」「设置」，网页端同理需要「首页」「搜题解析」「试卷库」「题目册」「备考资讯」「小课堂」「我的」等各自的小标题，分别放在该分组第一个 module-block 之前。一个 content-divider 下可以覆盖多个 module-block（比如「试卷库」标题下可以连续放试卷库首页/做题页/专项练习/看解析 4个块，不需要再拆更细的标题）。
 
 ---
 
@@ -240,6 +240,8 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 改动较小（1-3 处文字或图片）时，无需上传 PDF，直接说明改动内容即可。涉及新模块或大范围内容核对时再上传 PDF。
 
+**场景一：大改动 / 内容核对（需上传 PDF）**
+
 ```
 我在更新 moji_manual 产品手册（GitHub：alylearn/moji_manual），需要更新「[产品名]」模块。
 
@@ -252,6 +254,25 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 1. 提取 PDF 截图，按命名规范重命名
 2. 对比 PDF 文字和 HTML 现有内容，列出差异
 3. 输出更新后的 index.html 和 CHANGELOG.md
+```
+
+将「[产品名]」和「[产品前缀]」替换为实际产品即可。
+
+**场景二：新增网页端模块（App + Web 双平台）**
+
+```
+现在要处理 moji_manual 仓库（GitHub: alylearn/moji_manual，部署在 alylearn.github.io/moji_manual）的内容更新。
+
+本次任务：为「[产品名]」新增网页端模块。我会发给你截图，你先把内容整理成文本+树状层级结构图，等我确认结构正确后再动手写HTML。
+
+工作流规范：
+- 每次编辑前先 curl 拉取GitHub最新文件，不用project里的缓存版本
+- 所有改动以文本形式与我确认后，才可以写入HTML或跑代码
+- 改完同步更新 CHANGELOG.md，提醒我上传GitHub
+- 图片命名：网页端截图放 images/[产品前缀]/[产品前缀]-web/ 子文件夹，文件名前缀统一用 [产品前缀]-web-
+- nav-sub层级：nav-sub → nav-sub2 → nav-sub3 → nav-sub4，缩进和颜色逐级递减
+- 每个nav-sub2二级分组在正文里都要有对应的 content-divider 小标题
+- 处理层级结构前，先把入口路径（📍入口）和标题层级整理成树状结构图发我确认，再动手写HTML
 ```
 
 将「[产品名]」和「[产品前缀]」替换为实际产品即可。
