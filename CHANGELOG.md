@@ -1,3 +1,9 @@
+## 2026-07-01（续，消消乐补图 + Kori新增APP端）
+### index.html + 图片
+- 消消乐（block-xiaoxiao）补第3张图：背词首页入口截图（原上传文件名dict-xiaoxiaole-01.png有多余"le"字，已按现有命名规范改为dict-xiaoxiao-03.png），此前该模块只有游戏界面和MOJi圈入口两张图，缺了入口路径里提到的"背词首页"这个入口的截图
+- Kori辞书仿照阅读/会话/Kana模式新增APP端分组包裹原有全部内容，暂不加网页端
+- 已校验：div标签闭合平衡（1743/1743）、无重复id、锚点全部对应
+
 ## 2026-07-01（续，MOJi小课堂/阅读/会话/Kana新增APP端分组）
 ### index.html — 4个产品仿照辞書/MOJiTest模式新增APP端折叠分组
 - 自检修正：小课堂网页端新模块（xiaoke-web-home）误带了`has-thumbs`类但未配图，与仓库"无图block不加has-thumbs"的既有约定不符（CSS层面不会破版，纯粹类名不准确），已去掉该类

@@ -305,28 +305,33 @@
           <span style="flex:1">Kori辞书</span><span class="nav-arrow" id="arrow-kori-nav">▸</span>
         </a>
         <div class="nav-children" id="kori-nav">
-          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-fanyi')">翻译页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-fanyi')">智能翻译</a>
-          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-search')">搜索页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-search')">搜索</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-citiao')">词条详情</a>
-          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-shoucang')">收藏页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-shoucang')">收藏主页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-shoucang-tingci')">听词</a>
-          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-beici-home')">背词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-beici-home')">背词首页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-beici-set')">背词设置</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-xuexiliebiao')">学习列表</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-xinxue')">新学</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-fuxi')">复习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-tingci')">听词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-daka')">打卡日历</a>
-          <a class="nav-sub" onclick="showSection('kori'); scrollToBlock('kori-wode')">我的</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode')">我的中心</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-profile')">个人主页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-xiaozujian')">桌面小组件</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-huigu')">每日回顾</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode-shezhi')">设置</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('kori-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-kori-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="kori-app-nav">
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-fanyi')">翻译页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-fanyi')">智能翻译</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-search')">搜索页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-search')">搜索</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-citiao')">词条详情</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-shoucang')">收藏页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-shoucang')">收藏主页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-shoucang-tingci')">听词</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-beici-home')">背词</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-beici-home')">背词首页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-beici-set')">背词设置</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-xuexiliebiao')">学习列表</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-xinxue')">新学</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-fuxi')">复习</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-tingci')">听词</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-daka')">打卡日历</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kori'); scrollToBlock('kori-wode')">我的</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-wode')">我的中心</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-wode-profile')">个人主页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-wode-xiaozujian')">桌面小组件</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-wode-huigu')">每日回顾</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kori'); scrollToBlock('kori-wode-shezhi')">设置</a>
+          </div>
         </div>
       </div>
 
@@ -1372,6 +1377,7 @@
       <div class="module-thumbs">
         <img class="thumb" src="images/dict/dict-xiaoxiao-01.png" onclick="openModal(this.src)">
         <img class="thumb" src="images/dict/dict-xiaoxiao-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-xiaoxiao-03.png" onclick="openModal(this.src)">
       </div>
     </div>
 
@@ -4729,6 +4735,8 @@
     </div>
 
     <!-- ========== 翻译页 ========== -->
+    <div class="content-divider">APP端</div>
+
     <div class="content-divider">翻译页</div>
 
     <div class="module-block section-block has-thumbs" id="kori-fanyi">
