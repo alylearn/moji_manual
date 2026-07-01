@@ -42,53 +42,86 @@
           <span style="flex:1">MOJi辞書</span><span class="nav-arrow" id="arrow-dict-nav">▸</span>
         </a>
         <div class="nav-children" id="dict-nav">
-          <a class="nav-sub" onclick="showSection('dict'); scrollToBlock('block-fanyi')">翻译页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-fanyi-zhiyi')">智能翻译</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-fanyi-zhuyin')">注音分析</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-fanyi-piga')">批改润色</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-fanyi-web')">网页版</a>
-          <a class="nav-sub" onclick="showSection('dict'); scrollToBlock('block-search')">搜索页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-search-detail')">搜索</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-citiao')">词条详情</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-mojiquan')">MOJi圈</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-cidan')">词单</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-xiaoke')">小课堂</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-tingdu')">听读</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-liuxue')">留学</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-ai')">AI问答</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shadow')">影子跟读</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wenfa')">文法</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-zichuang')">自创</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wenlaoshi')">问老师</a>
-          <a class="nav-sub" onclick="showSection('dict'); scrollToBlock('block-shoucang')">收藏页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-main')">收藏主页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-chuangjian')">创建词单</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-shoucangjia')">收藏夹</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-tingci')">听词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-beici')">背词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-daochu')">单词导出</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-biji')">笔记</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang-huigu')">回顾</a>
-          <a class="nav-sub" onclick="showSection('dict'); scrollToBlock('block-beici-home')">背词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-beici-home-detail')">背词首页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-beici-more')">更多计划</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-beici-set')">背词设置</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-xuexiliebiao')">学习列表</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-xinxue')">新学</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-fuxi')">复习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-tingci')">听词</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-daka')">打卡日历</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-leiji')">累计学词</a>
-          <a class="nav-sub" onclick="showSection('dict'); scrollToBlock('block-youxi')">趣味游戏/测试</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-xiaoxiao')">消消乐</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-cihui-test')">词汇水平测试</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-renge-test')">日语人格测试</a>
-          <a class="nav-sub" onclick="showSection('dict'); scrollToBlock('block-wode')">我的</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wode-center')">我的中心</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wode-profile')">个人主页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wode-xiaozujian')">桌面小组件</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wode-xiaoxi')">消息</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wode-shezhi')">设置</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('dict-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-dict-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="dict-app-nav">
+          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-fanyi')">翻译页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-fanyi-zhiyi')">智能翻译</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-fanyi-zhuyin')">注音分析</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-fanyi-piga')">批改润色</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-fanyi-web')">网页版</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-search')">搜索页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-search-detail')">搜索</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-citiao')">词条详情</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-mojiquan')">MOJi圈</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-cidan')">词单</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-xiaoke')">小课堂</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-tingdu')">听读</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-liuxue')">留学</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-ai')">AI问答</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shadow')">影子跟读</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wenfa')">文法</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-zichuang')">自创</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wenlaoshi')">问老师</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-shoucang')">收藏页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-main')">收藏主页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-chuangjian')">创建词单</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-shoucangjia')">收藏夹</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-tingci')">听词</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-beici')">背词</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-daochu')">单词导出</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-biji')">笔记</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-shoucang-huigu')">回顾</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-beici-home')">背词</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-beici-home-detail')">背词首页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-beici-more')">更多计划</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-beici-set')">背词设置</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-xuexiliebiao')">学习列表</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-xinxue')">新学</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-fuxi')">复习</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-tingci')">听词</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-daka')">打卡日历</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-leiji')">累计学词</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-youxi')">趣味游戏/测试</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-xiaoxiao')">消消乐</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-cihui-test')">词汇水平测试</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-renge-test')">日语人格测试</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('block-wode')">我的</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wode-center')">我的中心</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wode-profile')">个人主页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wode-xiaozujian')">桌面小组件</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wode-xiaoxi')">消息</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('block-wode-shezhi')">设置</a>
+          </div>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('dict-web-nav')">
+            <span style="flex:1;font-weight:600">网页端</span><span class="nav-arrow" id="arrow-dict-web-nav">▸</span>
+          </a>
+          <div class="nav-children" id="dict-web-nav">
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-home')">首页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-search-main')">搜索</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-search-main')">搜索结果页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-search-detail')">词条详情页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-fanyi')">翻译</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-tingdu-list')">听读</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-tingdu-list')">栏目列表</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-tingdu-articles')">文章列表页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-tingdu-detail')">文章详情页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-shoucang-list')">收藏</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-shoucang-list')">收藏夹列表</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-shoucang-new')">新建文件夹弹窗</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-shoucang-manage')">管理模式</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-xiaoke')">小课堂</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-biji')">笔记</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-cidan')">词单</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-fenxi')">分析</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-zichuang-word')">自创</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-zichuang-word')">单词</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-zichuang-grammar')">语法</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-zichuang-sentence')">例句</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('dict'); scrollToBlock('dict-web-zichuang-url')">网址</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('dict'); scrollToBlock('dict-web-wode')">我的</a>
+          </div>
         </div>
       </div>
 
@@ -415,6 +448,8 @@
     <div class="section-desc">
       百万用户共建的日语学习词典，支持自动识别假名、汉字、罗马音输入，共收录百万详解词条。是MOJi生态的核心入口，覆盖查词、背词、翻译、问答、辅助阅读等完整学习链路。当前版本 v8.40.0。
     </div>
+
+    <div class="content-divider">APP端</div>
 
     <!-- ========== 翻译页 ========== -->
     <div class="content-divider" id="block-fanyi">翻译页</div>
@@ -1492,6 +1527,493 @@
         <img class="thumb" src="images/dict/dict-shezhi-02.png" onclick="openModal(this.src)">
       </div>
     
+    </div>
+
+    <div class="content-divider">网页端</div>
+
+    <div class="content-divider">首页</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-home">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">💻</div>
+        <div>
+          <div class="module-title">首页</div>
+          <div class="module-subtitle">搜索框 · 系统学习 · 实时热搜 · 最新文章</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">mojidict.com</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">顶部导航栏</span><span class="feature-desc">全部APP / 能力考真题 / 网页插件 / 购买会员（¥4.8/月）/ 打卡 / 繁體中文切换</span></li>
+          <li><span class="feature-name">搜索框</span><span class="feature-desc">查询单词或文本，网页端核心入口</span></li>
+          <li><span class="feature-name">系统学习</span><span class="feature-desc">备考课程 / 1v1授课 / 赴日留学 / 更多，宫格入口</span></li>
+          <li><span class="feature-name">实时热搜</span><span class="feature-desc">展示当前热门检索词，部分词条附查询人数标记</span></li>
+          <li><span class="feature-name">最新文章</span><span class="feature-desc">展示听读板块最新发布文章，含标签、发布时间、阅读/评论/点赞数</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-home-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">搜索</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-search-main">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🔍</div>
+        <div>
+          <div class="module-title">搜索结果页</div>
+          <div class="module-subtitle">综合 · 文法 · 例句 · 翻译</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">首页搜索框输入</span><span class="path-arrow">→</span><span class="path-step">搜索结果页</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">分类Tab</span><span class="feature-desc">综合（默认）/ 文法 / 例句 / 翻译，切换查看不同维度结果</span></li>
+          <li><span class="feature-name">词条列表</span><span class="feature-desc">展示词头、假名、词性标签、中文释义摘要，点击进入详情页</span></li>
+          <li><span class="feature-name">翻译入口</span><span class="feature-desc">列表末尾提供「原词-翻译」快捷入口，含站内翻译与DeepL翻译两种</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-search-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-search-detail">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📖</div>
+        <div>
+          <div class="module-title">词条详情页</div>
+          <div class="module-subtitle">释义 · 例句 · 关联词</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">搜索结果列表</span><span class="path-arrow">→</span><span class="path-step">点击词条</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">词头信息</span><span class="feature-desc">汉字词头、假名读音、罗马音、发音朗读图标</span></li>
+          <li><span class="feature-name">操作栏</span><span class="feature-desc">词性 · JLPT等级标签；收藏 / 笔记 / 分享；更多菜单（反馈 / 举报 / 设置）</span></li>
+          <li><span class="feature-name">简明释义</span><span class="feature-desc">AI生成的一句话中文概括释义</span></li>
+          <li><span class="feature-name">释义与例句</span><span class="feature-desc">中日对照展示，支持展开查看全部释义与例句</span></li>
+          <li><span class="feature-name">关联词</span><span class="feature-desc">多音词（同汉字不同读法）、近义词横向列表，点击可跳转</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-search-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-web/dict-web-search-03.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">翻译</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-fanyi">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🌐</div>
+        <div>
+          <div class="module-title">翻译</div>
+          <div class="module-subtitle">中日互译 · 词汇收集 · 历史记录</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「翻译」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">语言切换</span><span class="feature-desc">中文⇄日语一键互换，单次翻译限1000字</span></li>
+          <li><span class="feature-name">词汇收集</span><span class="feature-desc">右侧栏收集翻译过程中的生词，可批量操作</span></li>
+          <li><span class="feature-name">历史记录</span><span class="feature-desc">查看过往翻译记录</span></li>
+          <li><span class="feature-name">收藏与折叠</span><span class="feature-desc">翻译结果可收藏；右侧栏可折叠收起，扩大编辑区</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-fanyi-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">听读</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-tingdu-list">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🎧</div>
+        <div>
+          <div class="module-title">栏目列表</div>
+          <div class="module-subtitle">订阅栏目 · 分类导航</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「听读」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">我的订阅</span><span class="feature-desc">展示已订阅栏目，置顶显示</span></li>
+          <li><span class="feature-name">栏目导航</span><span class="feature-desc">NHK新闻听读 / NHK简易新闻 / 每日一练 / 翻译备考 / 社会新语 / 早安日语 / MOJi会话 / 杂志屋 / 昔话百选 / MOJi百科 等</span></li>
+          <li><span class="feature-name">顶部功能</span><span class="feature-desc">搜索文章、消息通知入口</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-tingdu-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-tingdu-articles">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📰</div>
+        <div>
+          <div class="module-title">文章列表页</div>
+          <div class="module-subtitle">标题 · 标签 · 互动数据</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">栏目列表</span><span class="path-arrow">→</span><span class="path-step">选择栏目</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">文章卡片</span><span class="feature-desc">标题、配图（右侧缩略图）、发布时间</span></li>
+          <li><span class="feature-name">标签</span><span class="feature-desc">部分文章标记「VIP翻译」等付费/权益标签</span></li>
+          <li><span class="feature-name">互动数据</span><span class="feature-desc">阅读数 · 评论数 · 点赞数</span></li>
+          <li><span class="feature-name">订阅入口</span><span class="feature-desc">栏目页顶部展示订阅人数与订阅按钮</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-tingdu-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-tingdu-detail">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📄</div>
+        <div>
+          <div class="module-title">文章详情页</div>
+          <div class="module-subtitle">音频播放 · 译文对照 · 重点词汇</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">文章列表</span><span class="path-arrow">→</span><span class="path-step">点击文章</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">音频播放器</span><span class="feature-desc">支持循环/不循环切换；倍速可选0.6/0.8/1.0/1.2/1.4</span></li>
+          <li><span class="feature-name">译文显示</span><span class="feature-desc">三种模式：显示译文 / 点击显示译文 / 隐藏译文，可随时切换</span></li>
+          <li><span class="feature-name">重点词汇</span><span class="feature-desc">文末汇总本篇重点词汇卡片，含词性与释义，点击可查看更多</span></li>
+          <li><span class="feature-name">上下篇切换</span><span class="feature-desc">文末提供「上一篇」「下一篇」快捷导航</span></li>
+          <li><span class="feature-name">互动操作</span><span class="feature-desc">阅读数展示；点赞 / 收藏 / 分享</span></li>
+          <li><span class="feature-name">推荐区</span><span class="feature-desc">热门文章 / 最新发布 Tab切换；专栏推荐横向卡片（文化之旅、视频推荐等）</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-tingdu-02.png" onclick="openModal(this.src)">
+        <img class="thumb" src="images/dict/dict-web/dict-web-tingdu-03.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">收藏</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-shoucang-list">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">⭐</div>
+        <div>
+          <div class="module-title">收藏夹列表</div>
+          <div class="module-subtitle">新建 · 管理 · 筛选</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「收藏」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">排序方式</span><span class="feature-desc">默认按「最新收藏」排序，可切换</span></li>
+          <li><span class="feature-name">新建收藏夹</span><span class="feature-desc">顶部＋图标，创建自定义收藏夹</span></li>
+          <li><span class="feature-name">管理收藏夹</span><span class="feature-desc">顶部宫格图标，进入批量管理模式</span></li>
+          <li><span class="feature-name">筛选</span><span class="feature-desc">全部分类下拉 + 选择过滤下拉，缩小查看范围</span></li>
+          <li><span class="feature-name">收藏夹卡片</span><span class="feature-desc">展示封面图与名称，点击进入详情</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-shoucang-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-shoucang-new">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📁</div>
+        <div>
+          <div class="module-title">新建文件夹弹窗</div>
+          <div class="module-subtitle">封面 · 名称 · 标签 · 简介</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏夹列表</span><span class="path-arrow">→</span><span class="path-step">点击＋新建</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">封面上传</span><span class="feature-desc">支持选择本地JPG/PNG图片，提示「清晰的封面更易被推荐」</span></li>
+          <li><span class="feature-name">名称</span><span class="feature-desc">必填项</span></li>
+          <li><span class="feature-name">标签</span><span class="feature-desc">最多可选择5个标签</span></li>
+          <li><span class="feature-name">简介</span><span class="feature-desc">选填文本描述</span></li>
+          <li><span class="feature-name">操作</span><span class="feature-desc">确定 / 取消</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-shoucang-02.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-shoucang-manage">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🗂️</div>
+        <div>
+          <div class="module-title">管理模式</div>
+          <div class="module-subtitle">批量选择 · 移动 · 删除</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">收藏夹列表</span><span class="path-arrow">→</span><span class="path-step">点击管理图标</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">全选/取消</span><span class="feature-desc">顶部提供全选与取消操作，实时显示已选择数量</span></li>
+          <li><span class="feature-name">单项勾选</span><span class="feature-desc">每个收藏夹/词条前的圆形勾选框</span></li>
+          <li><span class="feature-name">底部操作栏</span><span class="feature-desc">移动、删除两个批量操作入口</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-shoucang-03.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">小课堂</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-xiaoke">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🎓</div>
+        <div>
+          <div class="module-title">小课堂</div>
+          <div class="module-subtitle">课程分类 · 快捷入口 · 好课推荐</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「小课堂」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">级别Tab</span><span class="feature-desc">N1-N5 / 五十音 / 考研 / 其他</span></li>
+          <li><span class="feature-name">搜索</span><span class="feature-desc">顶部搜索框可直接搜课程</span></li>
+          <li><span class="feature-name">轮播Banner</span><span class="feature-desc">顶部大图轮播广告位，展示当期主推课程</span></li>
+          <li><span class="feature-name">功能宫格</span><span class="feature-desc">考前冲刺 / 语法 / 口语 / 阅读 / 词汇 / 小班课 / 真题 / 考研</span></li>
+          <li><span class="feature-name">快捷入口</span><span class="feature-desc">JLPT / 趣味学 / 全程班 / 1对1</span></li>
+          <li><span class="feature-name">最近在学</span><span class="feature-desc">展示用户当前学习进度中的课程</span></li>
+          <li><span class="feature-name">口碑好课</span><span class="feature-desc">横向卡片展示高播放量课程，含讲师、播放数标签</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-xiaoke-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">笔记</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-biji">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📝</div>
+        <div>
+          <div class="module-title">笔记</div>
+          <div class="module-subtitle">分类 · 排序 · 空状态</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「笔记」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">分类Tab</span><span class="feature-desc">词条 / 小课堂 / 其他</span></li>
+          <li><span class="feature-name">排序与视图</span><span class="feature-desc">按「最新」排序，支持切换视图样式</span></li>
+          <li><span class="feature-name">空状态</span><span class="feature-desc">无笔记时显示「暂无笔记」提示</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-biji-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">词单</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-cidan">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📚</div>
+        <div>
+          <div class="module-title">词单</div>
+          <div class="module-subtitle">分类 · 搜索 · 词单卡片</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「词单」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">分类Tab</span><span class="feature-desc">全部 / 教材 / 考级 / 生活 / 行业 / 娱乐 / 基础 / 其他</span></li>
+          <li><span class="feature-name">搜索</span><span class="feature-desc">支持按词单名称搜索</span></li>
+          <li><span class="feature-name">词单卡片</span><span class="feature-desc">展示封面、名称、作者、内容数、收藏（星标）数、所属分类标签及简介摘要</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-cidan-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">分析</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-fenxi">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🔬</div>
+        <div>
+          <div class="module-title">分析</div>
+          <div class="module-subtitle">文本标注 · 逐词释义 · PDF导出</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「分析」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">输入文本</span><span class="feature-desc">支持粘贴或输入长段日语文本</span></li>
+          <li><span class="feature-name">逐词标注</span><span class="feature-desc">自动标注假名读音与中文简要释义，点击词汇可展开完整释义</span></li>
+          <li><span class="feature-name">显示设置</span><span class="feature-desc">可自定义标注显示样式</span></li>
+          <li><span class="feature-name">PDF导出</span><span class="feature-desc">支持将标注结果导出为PDF</span></li>
+          <li><span class="feature-name">词汇收集侧栏</span><span class="feature-desc">右侧汇总本次分析涉及词汇，支持全选、收藏、删除</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-fenxi-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">自创</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-zichuang-word">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">✏️</div>
+        <div>
+          <div class="module-title">单词</div>
+          <div class="module-subtitle">自建词条 · 释义例句</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「自创」</span>（Tab：单词 / 语法 / 例句 / 网址）</div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">基础信息</span><span class="feature-desc">单词拼写、平假名、罗马音（根据平假名自动生成）、音调（选填）、词类·活用型·自他动词、词条来源链接</span></li>
+          <li><span class="feature-name">释义与例句</span><span class="feature-desc">日文/中文释义、来源；支持＋添加更多释义或例句、＋例句</span></li>
+          <li><span class="feature-name">保存设置</span><span class="feature-desc">保存至指定收藏夹；公开/私有单选；需勾选同意MOJi平台公约及词条规范</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-zichuang-01.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-zichuang-grammar">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">📐</div>
+        <div>
+          <div class="module-title">语法</div>
+          <div class="module-subtitle">语法条目 · 中日释义对照</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">自创</span><span class="path-arrow">→</span><span class="path-step">语法Tab</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">基础信息</span><span class="feature-desc">语法条目、平假名</span></li>
+          <li><span class="feature-name">中文释义</span><span class="feature-desc">中文释义（至少填1种）、中文使用语境（选填）</span></li>
+          <li><span class="feature-name">日文释义</span><span class="feature-desc">日文释义（至少填1种）、日文使用语境（选填）、接续（选填）</span></li>
+          <li><span class="feature-name">例句</span><span class="feature-desc">选填，支持＋添加更多释义、语境或例句</span></li>
+          <li><span class="feature-name">保存设置</span><span class="feature-desc">保存至指定收藏夹；公开/私有单选；需同意平台公约</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-zichuang-02.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-zichuang-sentence">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">💬</div>
+        <div>
+          <div class="module-title">例句</div>
+          <div class="module-subtitle">字幕识别 · 批量收藏</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">自创</span><span class="path-arrow">→</span><span class="path-step">例句Tab</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">句子录入</span><span class="feature-desc">格式选择「日语+换行+中文」；支持上传字幕文件后点击「识别」自动提取</span></li>
+          <li><span class="feature-name">格式说明</span><span class="feature-desc">用换行区分原文和翻译，用空行区分不同例句（页面附示例文本）</span></li>
+          <li><span class="feature-name">识别结果</span><span class="feature-desc">右侧展示识别出的例句列表，支持全选、删除、批量收藏</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-zichuang-03.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-zichuang-url">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">🔗</div>
+        <div>
+          <div class="module-title">网址</div>
+          <div class="module-subtitle">导入网址 · 自动获取标题</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">自创</span><span class="path-arrow">→</span><span class="path-step">网址Tab</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">网址导入</span><span class="feature-desc">网址（必填）输入框，支持粘贴任意链接</span></li>
+          <li><span class="feature-name">标题</span><span class="feature-desc">必填，可点击「自动获取」按网址内容自动填充</span></li>
+          <li><span class="feature-name">简介与封面</span><span class="feature-desc">简介文本框（选填）；上传封面图（选填）</span></li>
+          <li><span class="feature-name">保存</span><span class="feature-desc">底部保存按钮提交</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-zichuang-04.png" onclick="openModal(this.src)">
+      </div>
+    </div>
+
+    <div class="content-divider">我的</div>
+
+    <div class="module-block section-block has-thumbs" id="dict-web-wode">
+        <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">👤</div>
+        <div>
+          <div class="module-title">我的</div>
+          <div class="module-subtitle">个人信息 · 数据统计 · 内容展示</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">左侧导航「我的」</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">顶部Tab</span><span class="feature-desc">个人信息 / 功能设置 / 系统设置</span></li>
+          <li><span class="feature-name">个人信息卡片</span><span class="feature-desc">头像、昵称、个性签名，右侧「编辑资料」入口</span></li>
+          <li><span class="feature-name">数据统计</span><span class="feature-desc">共享 / 收藏 / 关注 / 粉丝，各项数量实时展示</span></li>
+          <li><span class="feature-name">内容网格</span><span class="feature-desc">按选中Tab（如「收藏」）展示对应内容卡片列表</span></li>
+          <li><span class="feature-name">退出登录</span><span class="feature-desc">页面右上角退出登录入口</span></li>
+        </ul>
+      </div>
+      </div>
+      <div class="module-thumbs">
+        <img class="thumb" src="images/dict/dict-web/dict-web-wode-01.png" onclick="openModal(this.src)">
+      </div>
     </div>
 
     <div class="content-divider">使用场景</div>
