@@ -1,9 +1,18 @@
-## 2026-07-01（续3）
-### index.html — MOJiTest网页端文案打磨（对照PDF校对后的2处优化）
-- 做题页：补充科目列表明细（文字词汇/语法/阅读/听力）与考试时长示例（约171分钟），此前只写了笼统的"科目列表"
-- 看解析：精简重复措辞，"完整试卷解析：提供完整的试卷解析" → "按科目分Tab提供试卷解析"
-- 已校验：div标签闭合平衡（1722/1722），所有scrollToBlock锚点与正文id一一对应
-- 另：核对发现网页端「试卷库」级别筛选无"高考"选项（APP端有高考套餐），PDF原文也是如此，标记为产品层面待确认事项，非文档问题
+## 2026-07-01（续5）
+### index.html — 清理Kori辞書区块6处废弃id
+- 删除6个content-divider上多余的"-section"后缀id（kori-fanyi-section/kori-search-section/kori-shoucang-section/kori-beici-section/kori-wode-section/kori-scenario-section），这些id从未被nav/CSS/JS任何地方引用，是历史遗留死代码
+- 真正的跳转锚点（kori-fanyi/kori-search等，在module-block上）不受影响，功能无变化
+- 已校验：div标签闭合平衡（1722/1722）、id总数从199降至193（正好减少6个）、无重复id、锚点全部对应
+
+## 2026-07-01（续4）
+### 全仓库审计（结构/CSS/措辞）+ 1处顺手修复
+- 结构校验：div标签闭合平衡（1722/1722）、199个id无重复、所有scrollToBlock锚点与正文id一一对应、无JS函数重复定义
+- 发现但判定为正常的情况：section-*、*-nav等id单独出现1次是因为被showSection()等JS函数动态拼接调用，非孤立代码
+- 发现真实冗余：Kori辞書区块6个content-divider上带有多余的id后缀（如kori-fanyi-section），与nav实际锚点（kori-fanyi）不一致，这些"-section"后缀id从未被引用，是废弃的历史遗留，建议后续清理（本次未动，风险评估后再处理）
+- 发现CSS覆盖缺口3处：nav-group（纯结构容器，无影响）、path-sep（分隔符缺少间距样式，视觉轻微，可选补充）、sub-list（嵌套子列表缺少缩进/视觉区分样式，仅靠浏览器默认ul边距撑开层级，建议后续显式补充CSS）
+- 顺手修复：自创·语法模块（dict-web-zichuang-grammar）"中文释义/日文释义"两条feature-desc开头与feature-name重复，已精简
+- 全文排查未发现jisho残留、电脑端残留（除CHANGELOG历史记录本身，属正常存档不回改）
+- 已重新校验：div标签闭合平衡，锚点全部对应
 
 ## 2026-07-01（续2）
 ### 图片重命名打包 + index.html图片引用修正
