@@ -1,55 +1,17 @@
-## 2026-07-01（续5）
-### index.html — 清理Kori辞書区块6处废弃id
-- 删除6个content-divider上多余的"-section"后缀id（kori-fanyi-section/kori-search-section/kori-shoucang-section/kori-beici-section/kori-wode-section/kori-scenario-section），这些id从未被nav/CSS/JS任何地方引用，是历史遗留死代码
-- 真正的跳转锚点（kori-fanyi/kori-search等，在module-block上）不受影响，功能无变化
-- 已校验：div标签闭合平衡（1722/1722）、id总数从199降至193（正好减少6个）、无重复id、锚点全部对应
+## 2026-07-01（今日汇总）
 
-## 2026-07-01（续4）
-### 全仓库审计（结构/CSS/措辞）+ 1处顺手修复
-- 结构校验：div标签闭合平衡（1722/1722）、199个id无重复、所有scrollToBlock锚点与正文id一一对应、无JS函数重复定义
-- 发现但判定为正常的情况：section-*、*-nav等id单独出现1次是因为被showSection()等JS函数动态拼接调用，非孤立代码
-- 发现真实冗余：Kori辞書区块6个content-divider上带有多余的id后缀（如kori-fanyi-section），与nav实际锚点（kori-fanyi）不一致，这些"-section"后缀id从未被引用，是废弃的历史遗留，建议后续清理（本次未动，风险评估后再处理）
-- 发现CSS覆盖缺口3处：nav-group（纯结构容器，无影响）、path-sep（分隔符缺少间距样式，视觉轻微，可选补充）、sub-list（嵌套子列表缺少缩进/视觉区分样式，仅靠浏览器默认ul边距撑开层级，建议后续显式补充CSS）
-- 顺手修复：自创·语法模块（dict-web-zichuang-grammar）"中文释义/日文释义"两条feature-desc开头与feature-name重复，已精简
-- 全文排查未发现jisho残留、电脑端残留（除CHANGELOG历史记录本身，属正常存档不回改）
-- 已重新校验：div标签闭合平衡，锚点全部对应
+### index.html
+- 修复MOJiTest APP端导航3处问题：「考试」锚点指错、「对策」子项重名、"历年真题列表"文案不统一
+- MOJi辞書新增「网页端」大分组（11个二级模块/19个功能块，domain: mojidict.com），原有内容整体归入「APP端」，图片路径占位待后续切图上传
+- 20张辞書网页端截图重命名打包（dict-web-{模块}-{序号}.png），并修正3处图片引用数量与实际不符的问题
+- MOJiTest网页端文案打磨：做题页补充科目明细、看解析措辞去重复
+- 清理Kori辞書区块6个从未被引用的废弃id
+- 全仓库自检：结构（div/id/锚点）无误，CSS有3处class缺样式定义（nav-group/path-sep/sub-list，影响轻微），顺手精简1处重复措辞
 
-## 2026-07-01（续2）
-### 图片重命名打包 + index.html图片引用修正
-- 20张截图按规范重命名为 dict-web-{模块}-{序号}.png，打包为 dict-web-images.zip
-- 修正3处图片引用与实际截图数量不符的问题：
-  - 搜索结果页：原引用2张图，实际只有1张对应截图，已减为1张
-  - 词条详情页：图片编号从03/04改为02/03（对应搜索结果页让出的编号）
-  - 听读文章列表页：与栏目列表复用同一张源图（原型图里两者本就在同一屏），从引用tingdu-02改为tingdu-01；文章详情页图片从3张（03/04/05）减为实际的2张（02/03）
-- 已重新校验：20张HTML引用文件与实际打包文件完全一一对应，无缺无多；div标签闭合平衡（1722/1722）；158个scrollToBlock锚点全部命中正文id
-
-### 自检结论（本次nav层级改动）
-- 无重复id（199个id全部唯一）
-- toggleSubNav为通用函数，无需为dict-app-nav/dict-web-nav单独写JS逻辑
-- CSS的.dict相关规则均为class选择器（非id/数量绑定），新增dict-web-*模块自动继承辞書绿色主题，无需改CSS
-- module-block实际为19个（此前口头描述"18个"有误，以此为准）
-
-## 2026-07-01（续）
-### index.html — MOJi辞書新增「网页端」大分组，原有内容整体归入「APP端」
-- 导航结构：仿照MOJiTest现成的 nav-parent + 折叠分组模式，MOJi辞書nav-children下新增「APP端」「网页端」两个折叠标题（toggleSubNav），原有40+条nav-sub2子项整体降一级归入「APP端」（nav-sub2→nav-sub3），不改动任何原内容
-- 新增「网页端」内容（domain: mojidict.com），共11个nav-sub2分组、18个module-block：
-  - 首页（搜索框/系统学习/实时热搜/最新文章）
-  - 搜索（搜索结果页、词条详情页）
-  - 翻译（中日互译/词汇收集/历史记录）
-  - 听读（栏目列表、文章列表页、文章详情页-含音频播放与译文对照）
-  - 收藏（收藏夹列表、新建文件夹弹窗、管理模式）
-  - 小课堂、笔记、词单、分析（各1个module-block）
-  - 自创（单词、语法、例句、网址 四个Tab分别成块）
-  - 我的
-- 图片路径按规范占位为 images/dict/dict-web/dict-web-xxx-01.png，实际截图切图与上传为后续步骤
-- 已校验：div标签闭合平衡（1722/1722），158个scrollToBlock锚点与正文id全部一一对应
-
-## 2026-07-01
-### index.html — 修复MOJiTest APP端导航3处问题
-- 锚点错误：「考试」nav-sub2 原指向 test-shezhi2（实为"个人中心"，属于"设置"组），与"设置"组锚点重复，已改为 test-zhenti（历年真题，"考试"组正确的首个子项）
-- 重名问题：「对策」nav-sub2 与其 nav-sub3 子项文字重复（均为"对策"），子项改名为"对策首页"，与"背词页主页"/"试卷库首页"命名方式统一
-- 文案不一致：nav里"历年真题列表"与正文 module-title"历年真题"不一致，已统一为"历年真题"
-- 已校验：改动后所有 scrollToBlock 锚点与正文 id 一一对应
+### README.md
+- 章节按"规范类/操作指南/AI提示词/修改历史/其他维度"重新分组，不改动原有文字内容
+- 补2处App/Web双平台跳转提示，避免读者只看App端规则漏掉Web端部分
+- 去掉"UI同事"表述（现无专职UI）、"本文档包含"清单同步精简
 
 ## 2026-06-30（九续）
 ### index.html + README.md — 全局命名规范修正：电脑端 → 网页端
