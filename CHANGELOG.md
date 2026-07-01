@@ -1,3 +1,10 @@
+## 2026-07-01（续，MOJi小课堂/阅读/会话/Kana新增APP端分组）
+### index.html — 4个产品仿照辞書/MOJiTest模式新增APP端折叠分组
+- 自检修正：小课堂网页端新模块（xiaoke-web-home）误带了`has-thumbs`类但未配图，与仓库"无图block不加has-thumbs"的既有约定不符（CSS层面不会破版，纯粹类名不准确），已去掉该类
+- MOJi小课堂：新增APP端（原有首页/课程浏览/学习中心/我的整体降一级归入）+ 网页端（新增，入口 https://www.mojidict.com/classroom，简要说明+跳转提示指向"MOJi辞書→网页端→小课堂"查看完整功能，因两者是同一页面）
+- MOJi阅读、MOJi会话、MOJiKana：仅新增APP端分组包裹原有全部内容，暂不加网页端（无对应内容）
+- 已校验：div标签闭合平衡（1741/1741）、204个id无重复、所有scrollToBlock锚点与正文id一一对应
+
 ## 2026-07-01（今日汇总）
 
 ### index.html

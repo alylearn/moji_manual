@@ -131,14 +131,25 @@
           <span style="flex:1">MOJi小课堂</span><span class="nav-arrow" id="arrow-xiaoke-nav">▸</span>
         </a>
         <div class="nav-children" id="xiaoke-nav">
-          <a class="nav-sub" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-home')">首页</a>
-          <a class="nav-sub" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-list')">课程浏览</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-list')">课程列表页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-jingxuan')">精选课程页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-zhuanqu')">专区课程页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-detail')">课程详情页</a>
-          <a class="nav-sub" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-xuexizhongxin')">学习中心</a>
-          <a class="nav-sub" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-wode')">我的</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('xiaoke-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-xiaoke-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="xiaoke-app-nav">
+            <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-home')">首页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-list')">课程浏览</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-list')">课程列表页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-jingxuan')">精选课程页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-zhuanqu')">专区课程页</a>
+            <a class="nav-sub nav-sub3" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-detail')">课程详情页</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-xuexizhongxin')">学习中心</a>
+            <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-wode')">我的</a>
+          </div>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('xiaoke-web-nav')">
+            <span style="flex:1;font-weight:600">网页端</span><span class="nav-arrow" id="arrow-xiaoke-web-nav">▸</span>
+          </a>
+          <div class="nav-children" id="xiaoke-web-nav">
+            <a class="nav-sub nav-sub2" onclick="showSection('xiaoke'); scrollToBlock('xiaoke-web-home')">小课堂</a>
+          </div>
         </div>
       </div>
 
@@ -148,25 +159,30 @@
           <span style="flex:1">MOJi阅读</span><span class="nav-arrow" id="arrow-read-nav">▸</span>
         </a>
         <div class="nav-children" id="read-nav">
-          <a class="nav-sub" onclick="showSection('read'); scrollToBlock('read-faxian')">发现</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-faxian')">发现页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-bofang')">常驻播放条</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-dangan')">阅读档案</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-fenlei')">分类页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-quanzi')">圈子</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-reader')">文章阅读器</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-jujie')">句子解析</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-jihua')">阅读计划</a>
-          <a class="nav-sub" onclick="showSection('read'); scrollToBlock('read-yueduqi')">阅读器</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-bendiwenjian')">本地文件导入</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-qingkong')">青空文库</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-liulanwangye')">浏览网页</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-duanpian')">短篇辅助阅读</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-paizhao')">拍照提取</a>
-          <a class="nav-sub" onclick="showSection('read'); scrollToBlock('read-xuexi')">学习</a>
-          <a class="nav-sub" onclick="showSection('read'); scrollToBlock('read-wode')">我的</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-shezhi')">设置</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-vip')">订阅会员权益</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('read-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-read-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="read-app-nav">
+          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-faxian')">发现</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-faxian')">发现页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-bofang')">常驻播放条</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-dangan')">阅读档案</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-fenlei')">分类页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-quanzi')">圈子</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-reader')">文章阅读器</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-jujie')">句子解析</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-jihua')">阅读计划</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-yueduqi')">阅读器</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-bendiwenjian')">本地文件导入</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-qingkong')">青空文库</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-liulanwangye')">浏览网页</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-duanpian')">短篇辅助阅读</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-paizhao')">拍照提取</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-xuexi')">学习</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('read'); scrollToBlock('read-wode')">我的</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-shezhi')">设置</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('read'); scrollToBlock('read-vip')">订阅会员权益</a>
+          </div>
         </div>
       </div>
 
@@ -176,17 +192,22 @@
           <span style="flex:1">MOJiKana</span><span class="nav-arrow" id="arrow-kana-nav">▸</span>
         </a>
         <div class="nav-children" id="kana-nav">
-          <a class="nav-sub" onclick="showSection('kana'); scrollToBlock('kana-home')">首页</a>
-          <a class="nav-sub" onclick="showSection('kana'); scrollToBlock('kana-wushiyin')">五十音学习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-wushiyin')">五十音图</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-jiaming')">假名详情</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-shuxie')">书写练习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-lianxi')">假名练习</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-jieguo')">练习结果</a>
-          <a class="nav-sub" onclick="showSection('kana'); scrollToBlock('kana-xiaoxiao')">消消乐</a>
-          <a class="nav-sub" onclick="showSection('kana'); scrollToBlock('kana-ziliao')">入门资料</a>
-          <a class="nav-sub" onclick="showSection('kana'); scrollToBlock('kana-xiaoke')">小课堂</a>
-          <a class="nav-sub" onclick="showSection('kana'); scrollToBlock('kana-wode')">我的</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('kana-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-kana-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="kana-app-nav">
+          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-home')">首页</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-wushiyin')">五十音学习</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kana'); scrollToBlock('kana-wushiyin')">五十音图</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kana'); scrollToBlock('kana-jiaming')">假名详情</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kana'); scrollToBlock('kana-shuxie')">书写练习</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kana'); scrollToBlock('kana-lianxi')">假名练习</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kana'); scrollToBlock('kana-jieguo')">练习结果</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-xiaoxiao')">消消乐</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-ziliao')">入门资料</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-xiaoke')">小课堂</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kana'); scrollToBlock('kana-wode')">我的</a>
+          </div>
         </div>
       </div>
 
@@ -262,14 +283,19 @@
           <span style="flex:1">MOJi会话</span><span class="nav-arrow" id="arrow-kaiwa-nav">▸</span>
         </a>
         <div class="nav-children" id="kaiwa-nav">
-          <a class="nav-sub" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-ai')">AI对话</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-ai')">AI伙伴选择</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-duihua')">对话界面</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-shezhi')">对话设置</a>
-          <a class="nav-sub" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-kouyu')">口语册</a>
-          <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-changjing')">场景会话</a>
+          <a class="nav-sub nav-parent" onclick="toggleSubNav('kaiwa-app-nav')">
+            <span style="flex:1;font-weight:600">APP端</span><span class="nav-arrow" id="arrow-kaiwa-app-nav">▸</span>
+          </a>
+          <div class="nav-children" id="kaiwa-app-nav">
+          <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-ai')">AI对话</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-ai')">AI伙伴选择</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-duihua')">对话界面</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-shezhi')">对话设置</a>
           <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-kouyu')">口语册</a>
-          <a class="nav-sub" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-wode')">我的</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-changjing')">场景会话</a>
+          <a class="nav-sub nav-sub3" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-kouyu')">口语册</a>
+          <a class="nav-sub nav-sub2" onclick="showSection('kaiwa'); scrollToBlock('kaiwa-wode')">我的</a>
+          </div>
         </div>
       </div>
 
@@ -2065,6 +2091,8 @@
       MOJi旗下独立课程平台（MOJi スクール），汇聚一线名师，提供JLPT备考、趣味日语、全程班、1v1定制等多类型课程（含免费与付费），支持直播+录播双模式学习。
     </div>
 
+    <div class="content-divider">APP端</div>
+
     <div class="content-divider">首页</div>
 
     <div class="module-block section-block has-thumbs" id="xiaoke-home">
@@ -2231,6 +2259,27 @@
       </div>
     </div>
 
+    <div class="content-divider">网页端</div>
+
+    <div class="module-block section-block" id="xiaoke-web-home">
+      <div class="module-content">
+      <div class="module-header">
+        <div class="module-icon">💻</div>
+        <div>
+          <div class="module-title">小课堂</div>
+          <div class="module-subtitle">课程分类 · 快捷入口 · 好课推荐</div>
+          <div class="path-chain"><span style="font-size:11px;color:var(--text-muted);font-weight:500;margin-right:2px">📍 入口：</span><span class="path-step">https://www.mojidict.com/classroom</span></div>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="feature-list">
+          <li><span class="feature-name">页面内容</span><span class="feature-desc">与App端小课堂同源，含级别Tab、搜索、轮播Banner、功能宫格、快捷入口、最近在学、口碑好课等完整功能</span></li>
+          <li><span class="feature-name">完整功能详情</span><span class="feature-desc">该页面实为 MOJi辞書 网页端的一部分，完整功能拆解详见「MOJi辞書 → 网页端 → 小课堂」</span></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- MOJi阅读 -->
@@ -2242,6 +2291,7 @@
     <div class="section-desc">
       专注日语有声精读，每日更新备考、时事、生活、文学、娱乐等分级阅读内容，配备完整辅助阅读工具链。覆盖发现、阅读器、学习、个人中心四大板块，支持圈子社区互动与系统化阅读计划。当前版本 v3.4.5。
     </div>
+    <div class="content-divider">APP端</div>
     <div class="content-divider">发现</div>
     <div class="module-block section-block has-thumbs" id="read-faxian">
       <div class="module-content">
@@ -3038,6 +3088,8 @@
     <div class="section-desc">
       零基础日语入门必备。46个假名各有专属「假名小子」假名小子，认读、发音、书写、练习循序渐进；6种题型全方位强化，趣味消消乐游戏边玩边记，知识地图带你打好日语基础。当前版本 v3.2.4。
     </div>
+
+    <div class="content-divider">APP端</div>
 
     <!-- 首页 -->
     <div class="content-divider">首页</div>
@@ -4472,6 +4524,8 @@
     <div class="section-desc">
       8位性格各异的AI伙伴，7×24小时随时陪练日语口语。说错了不被评判，说得不标准有润色辅助，看不懂有翻译，不知道怎么接有提示——i人也能轻松开口说日语。当前版本 v3.8.3。
     </div>
+
+    <div class="content-divider">APP端</div>
 
     <!-- 对话页 -->
     <div class="content-divider">AI对话</div>
