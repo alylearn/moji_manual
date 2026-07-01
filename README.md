@@ -6,15 +6,14 @@ MOJi 产品矩阵内部说明手册，供新人 / 实习生 / 跨部门同事了
 
 ## 本文档包含
 
-- 文件结构与部署说明
-- 截图命名规范与操作步骤
-- 样式改动指引
-- 版本管理规则
-- AI 操作规范与提示词
-- UI 维度参考
-- 开发维度参考
+- 规范类
+- 操作指南（含AI协作提示词）
+- 修改历史：版本记录入口
+- 其他维度：UI维度参考、开发维度参考
 
 ---
+
+**规范类**
 
 ## 文件结构
 
@@ -91,57 +90,7 @@ MOJi 产品矩阵内部说明手册，供新人 / 实习生 / 跨部门同事了
 - 后缀 `.png`（清晰度优先）或 `.jpg`（体积优先）都行
 - 单张图建议 200KB 以内（上限 500KB）
 
----
-
-## 如何给一个功能加图
-
-### 第 1 步：放截图
-
-按命名规范放进对应产品子文件夹，上传到 GitHub。
-
-### 第 2 步：找到对应模块
-
-打开 `index.html`，搜索 `id="block-XXX"`。
-
-### 第 3 步：改两处
-
-**1. 在 class 里加 `has-thumbs`：**
-
-```html
-<div class="module-block section-block has-thumbs" id="block-citiao">
-```
-
-**2. 用 `module-content` 包裹原有内容，并插入 `module-thumbs`：**
-
-```html
-<div class="module-block section-block has-thumbs" id="block-citiao">
-  <div class="module-content">
-    <div class="module-header">...原有内容...</div>
-    <div class="module-body">...原有内容...</div>
-  </div>
-  <div class="module-thumbs">
-    <img class="thumb" src="images/dict/dict-citiao-01.png" onclick="openModal(this.src)">
-    <img class="thumb" src="images/dict/dict-citiao-02.png" onclick="openModal(this.src)">
-  </div>
-</div>
-```
-
----
-
-## 如何换图
-
-保持文件名不变，直接用新图覆盖旧图上传到 GitHub。HTML 不用改，刷新即生效。
-
----
-
-## 如何加一个新功能模块
-
-复制现有的 `module-block` 整个块，修改：
-- `id`（如 `block-newfeature`）
-- 模块标题、副标题、入口路径、功能列表
-- 如有图，按上方步骤加 `module-thumbs`
-
-同步在左侧导航对应产品的 `nav-group` 里加一条 `<a class="nav-sub nav-sub2">`。
+⚠️ 以上是单平台（App）产品的命名规则。App + Web 双平台产品的网页端截图另有子文件夹命名规则，见下方「多平台产品扩展规范」。
 
 ---
 
@@ -197,26 +146,6 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 ---
 
-## 如何改样式
-
-样式都在 `manual_style.css`，常见改动位置：
-
-| 位置 | 作用 |
-|---|---|
-| `:root` 顶部变量 | 品牌色、文字色、背景色 |
-| `.module-block` / `.module-title` | 卡片样式 |
-| `.thumb` | 缩略图大小（桌面 110px） |
-| `.modal-overlay` | 弹窗样式 |
-| `@media (max-width: 768px)` | 移动端覆盖样式 |
-
----
-
-## 版本记录
-
-详见 `CHANGELOG.md`。
-
----
-
 ## 产品版本号同步规则
 
 每个产品介绍段末尾标注「当前版本 vX.X.X」，和 App 实际版本保持一致。
@@ -234,13 +163,81 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 ---
 
-## 给 AI 的操作规范
+**操作指南类**
 
-### 可直接复制的提示词
+## 如何给一个功能加图
+
+### 第 1 步：放截图
+
+按命名规范放进对应产品子文件夹，上传到 GitHub。
+
+### 第 2 步：找到对应模块
+
+打开 `index.html`，搜索 `id="block-XXX"`。
+
+### 第 3 步：改两处
+
+**1. 在 class 里加 `has-thumbs`：**
+
+```html
+<div class="module-block section-block has-thumbs" id="block-citiao">
+```
+
+**2. 用 `module-content` 包裹原有内容，并插入 `module-thumbs`：**
+
+```html
+<div class="module-block section-block has-thumbs" id="block-citiao">
+  <div class="module-content">
+    <div class="module-header">...原有内容...</div>
+    <div class="module-body">...原有内容...</div>
+  </div>
+  <div class="module-thumbs">
+    <img class="thumb" src="images/dict/dict-citiao-01.png" onclick="openModal(this.src)">
+    <img class="thumb" src="images/dict/dict-citiao-02.png" onclick="openModal(this.src)">
+  </div>
+</div>
+```
+
+---
+
+## 如何换图
+
+保持文件名不变，直接用新图覆盖旧图上传到 GitHub。HTML 不用改，刷新即生效。
+
+---
+
+## 如何加一个新功能模块
+
+复制现有的 `module-block` 整个块，修改：
+- `id`（如 `block-newfeature`）
+- 模块标题、副标题、入口路径、功能列表
+- 如有图，按上方步骤加 `module-thumbs`
+
+同步在左侧导航对应产品的 `nav-group` 里加一条 `<a class="nav-sub nav-sub2">`。
+
+⚠️ 以上是单平台产品的做法。如果是 App + Web 双平台产品，导航结构和图片路径不能直接套用这一条，请参考「多平台产品扩展规范」。
+
+---
+
+## 如何改样式
+
+样式都在 `manual_style.css`，常见改动位置：
+
+| 位置 | 作用 |
+|---|---|
+| `:root` 顶部变量 | 品牌色、文字色、背景色 |
+| `.module-block` / `.module-title` | 卡片样式 |
+| `.thumb` | 缩略图大小（桌面 110px） |
+| `.modal-overlay` | 弹窗样式 |
+| `@media (max-width: 768px)` | 移动端覆盖样式 |
+
+---
+
+## AI协作提示词
 
 改动较小（1-3 处文字或图片）时，无需上传 PDF，直接说明改动内容即可。涉及新模块或大范围内容核对时再上传 PDF。
 
-**场景一：大改动 / 内容核对（需上传 PDF）**
+### 场景一：大改动 / 内容核对（需上传 PDF）
 
 ```
 我在更新 moji_manual 产品手册（GitHub：alylearn/moji_manual），需要更新「[产品名]」模块。
@@ -258,7 +255,7 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 将「[产品名]」和「[产品前缀]」替换为实际产品即可。
 
-**场景二：新增网页端模块（App + Web 双平台）**
+### 场景二：新增网页端模块（App + Web 双平台）
 
 ```
 现在要处理 moji_manual 仓库（GitHub: alylearn/moji_manual，部署在 alylearn.github.io/moji_manual）的内容更新。
@@ -287,9 +284,17 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 ---
 
+**修改历史**
+
+## 版本记录
+
+详见 `CHANGELOG.md`。
+
+---
+
 ## UI 维度
 
-本网站为内容原型，UI 同事以此为参考出设计稿，无需直接修改代码。
+本网站为内容原型，以下色值为随机填选的占位色，具体色调以实际情况调整；移动端现状供参考。
 
 ### 产品色值参考
 
