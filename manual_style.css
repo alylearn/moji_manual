@@ -1,19 +1,21 @@
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 
   :root {
-    --moji-green: #1D9E75;
-    --moji-green-light: #E1F5EE;
-    --moji-green-mid: #5DCAA5;
-    --test-red: #E8342A;
-    --test-red-light: #FFF0EF;
-    --read-blue: #1A6BAF;
-    --read-blue-light: #EAF3FB;
-    --kana-green: #3BAA5C;
-    --kana-green-light: #EBF7EF;
-    --kaiwa-orange: #F07D00;
-    --kaiwa-orange-light: #FFF4E6;
-    --kori-indigo: #5B5FD9;
-    --kori-indigo-light: #ECEDFB;
+    --moji-green: #eb0f06;
+    --moji-green-light: #FDE7E6;
+    --moji-green-mid: #F2665F;
+    --test-red: #eb0f06;
+    --test-red-light: #FDE7E6;
+    --read-blue: #df4d70;
+    --read-blue-light: #FCECF1;
+    --kana-green: #37c213;
+    --kana-green-light: #E7F8E3;
+    --kaiwa-orange: #ff6105;
+    --kaiwa-orange-light: #FFEBE0;
+    --kori-indigo: #2a69ce;
+    --kori-indigo-light: #E7EFFA;
+    --school-red: #eb0f06;
+    --school-red-light: #FDE7E6;
     --text-primary: #1a1a1a;
     --text-secondary: #555;
     --text-muted: #999;
@@ -307,6 +309,7 @@
   }
 
   .dict .path-step { background: var(--moji-green-light); color: var(--moji-green); }
+  .school .path-step { background: var(--school-red-light); color: var(--school-red); }
   .read .path-step { background: var(--read-blue-light); color: var(--read-blue); }
   .kana .path-step { background: var(--kana-green-light); color: var(--kana-green); }
   .kaiwa .path-step { background: var(--kaiwa-orange-light); color: var(--kaiwa-orange); }
@@ -430,6 +433,12 @@
   .dict .app-badge { background: var(--moji-green-light); color: var(--moji-green); }
   .dict .stat-number { color: var(--moji-green); }
   .dict .scenario-label { color: var(--moji-green); }
+  .school .module-icon { background: var(--school-red-light); }
+  .school .module-title { color: var(--school-red); }
+  .school .section-title { color: var(--school-red); }
+  .school .app-badge { background: var(--school-red-light); color: var(--school-red); }
+  .school .stat-number { color: var(--school-red); }
+  .school .scenario-label { color: var(--school-red); }
 
   .read .module-icon { background: var(--read-blue-light); }
   .read .module-title { color: var(--read-blue); }

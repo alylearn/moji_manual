@@ -300,13 +300,13 @@ JS 用独立的 `toggleSubNav(groupId)` 函数（简单 toggle，不做互斥）
 
 | 产品 | Class | 色值 |
 |---|---|---|
-| MOJi辞書 | `dict` | 红色系 `#E8003D` |
-| MOJi阅读 | `read` | 绿色系 `#00B26B` |
-| MOJiKana | `kana` | 蓝色系 `#3B82F6` |
-| MOJiTest | `test` | 红色系 `#E8003D` |
-| MOJi会话 | `kaiwa` | 橙色系 `#F07D00` |
-| MOJi小课堂 | `school` | 红色系 `#E8003D` |
-| Kori辞书 | `kori` | 绿色系 `#00B26B` |
+| MOJi辞書 | `dict` | 红色系 `#eb0f06` |
+| MOJi阅读 | `read` | 玫红色系 `#df4d70` |
+| MOJiKana | `kana` | 绿色系 `#37c213` |
+| MOJiTest | `test` | 红色系 `#eb0f06` |
+| MOJi会话 | `kaiwa` | 橙红色系 `#ff6105` |
+| MOJi小课堂 | `school` | 红色系 `#eb0f06` |
+| Kori辞书 | `kori` | 蓝色系 `#2a69ce` |
 
 ### 移动端现状
 
