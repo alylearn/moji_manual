@@ -240,7 +240,7 @@
   .section-title {
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -497,9 +497,9 @@
   .nav-children.open { display:block; }
   .nav-sub { display:block; padding:5px 16px 5px 28px; font-size:12px; color:var(--text-secondary); cursor:pointer; text-decoration:none; }
   .nav-sub:hover { color:var(--moji-green); background:var(--moji-green-light); }
-  .nav-sub2 { padding-left:40px; font-size:11px; color:var(--text-muted); }
-  .nav-sub3 { padding-left:56px; font-size:10px; color:#b8b8b8; }
-  .nav-sub4 { padding-left:72px; font-size:9.5px; color:#cfcfcf; }
+  .nav-sub2 { padding-left:40px; font-size:12px; color:var(--text-muted); }
+  .nav-sub3 { padding-left:56px; font-size:11.5px; color:#a8a8a8; }
+  .nav-sub4 { padding-left:72px; font-size:11px; color:#c0c0c0; }
   .section-block { scroll-margin-top:24px; }
 
   .sidebar-toggle {
