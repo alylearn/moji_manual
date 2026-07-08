@@ -31,6 +31,13 @@
   <div class="sidebar-logo">
     <div class="logo-text">MOJi 产品说明书</div>
   </div>
+  <div class="sidebar-search-wrap">
+    <div class="sidebar-search-box">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#9a9a9a" stroke-width="1.4"/><path d="M9.2 9.2L12 12" stroke="#9a9a9a" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <input type="text" id="siteSearchInput" placeholder="搜功能，比如：换词书" oninput="onSiteSearch(this.value)" onfocus="onSiteSearch(this.value)" autocomplete="off">
+    </div>
+    <div class="site-search-results" id="siteSearchResults"></div>
+  </div>
   <button class="sidebar-toggle" onclick="toggleSidebar()" title="折叠/展开导航栏">‹</button>
   <nav class="sidebar-nav" id="sidebar-nav">
     <div class="nav-section">
@@ -5327,6 +5334,243 @@ function scrollToBlock(blockId) {
     window.scrollTo({ top: top, behavior: 'instant' });
   });
 }
+
+/* ========== 全站搜索 ========== */
+var moduleTags = {
+  'block-fanyi-zhiyi': '翻译,中翻日,日翻中,智能翻译',
+  'block-fanyi-zhuyin': '假名注音,振假名,标注读音',
+  'block-fanyi-piga': '写作批改,作文润色,改错',
+  'block-fanyi-web': '电脑版翻译,网页翻译',
+  'block-search-detail': '查词,搜单词,怎么搜',
+  'block-citiao': '查词义,词条释义,单词意思',
+  'block-mojiquan': '社区,圈子,动态,MOJi圈',
+  'block-cidan': '词单,单词本,词汇表',
+  'block-xiaoke': '课程,上课,小课堂入口',
+  'block-tingdu': '听读,听力阅读',
+  'block-liuxue': '留学,日本留学咨询',
+  'block-ai': 'AI提问,智能问答',
+  'block-shadow': '跟读,口语练习,模仿发音',
+  'block-wenfa': '语法,语法词单,学语法',
+  'block-zichuang': '自建词条,自定义单词',
+  'block-wenlaoshi': '问老师,提问老师',
+  'block-shoucang-main': '收藏,生词本,收藏的单词',
+  'block-shoucang-chuangjian': '创建词单,做词书,分享单词本,自建词单',
+  'block-shoucang-shoucangjia': '收藏夹,分类整理收藏',
+  'block-shoucang-tingci': '听单词,听力复习',
+  'block-shoucang-beici': '背词入口',
+  'block-shoucang-daochu': '导出单词,导出PDF',
+  'block-shoucang-biji': '笔记',
+  'block-shoucang-huigu': '复习回顾,每日回顾',
+  'block-beici-home-detail': '背单词,开始背词,怎么背单词',
+  'block-beici-more': '换词书,换教材,选词书,切换学习计划',
+  'block-beici-set': '背词数量,每组几个,题型设置,调整背词',
+  'block-xuexiliebiao': '生词本管理,批量已掌握,批量标记',
+  'block-xinxue': '新学单词',
+  'block-fuxi': '复习单词',
+  'block-tingci': '听力复习,听单词',
+  'block-daka': '打卡,签到,学习记录',
+  'block-leiji': '学习统计,累计数据',
+  'block-xiaoxiao': '游戏,消消乐,玩游戏',
+  'block-cihui-test': '测水平,测等级,词汇量测试',
+  'block-renge-test': '性格测试,人格测试',
+  'block-wode-center': '个人中心,我的',
+  'block-wode-profile': '个人主页',
+  'block-wode-xiaozujian': '桌面小组件,widget',
+  'block-wode-xiaoxi': '消息通知,提醒',
+  'block-wode-shezhi': '设置',
+  'dict-web-home': '网页版首页,mojidict.com',
+  'dict-web-search-main': '网页查词,网页搜索',
+  'dict-web-search-detail': '网页词条详情',
+  'dict-web-fanyi': '网页翻译',
+  'dict-web-tingdu-list': '网页听读',
+  'dict-web-tingdu-articles': '听读文章列表',
+  'dict-web-tingdu-detail': '听读文章详情',
+  'dict-web-shoucang-list': '网页收藏,网页收藏夹',
+  'dict-web-shoucang-new': '新建收藏夹',
+  'dict-web-shoucang-manage': '批量管理收藏',
+  'dict-web-xiaoke': '网页课程',
+  'dict-web-biji': '网页笔记',
+  'dict-web-cidan': '网页词单',
+  'dict-web-fenxi': '文本分析,句子拆解,语法分析',
+  'dict-web-zichuang-word': '自创单词',
+  'dict-web-zichuang-grammar': '自创语法',
+  'dict-web-zichuang-sentence': '自创例句',
+  'dict-web-zichuang-url': '导入网址',
+  'dict-web-wode': '网页我的',
+  'xiaoke-home': '课程首页,课程发现',
+  'xiaoke-list': '课程列表,浏览课程',
+  'xiaoke-jingxuan': '精选课程',
+  'xiaoke-zhuanqu': '专区课程',
+  'xiaoke-detail': '课程详情,课程介绍',
+  'xiaoke-xuexizhongxin': '学习中心,我的课程',
+  'xiaoke-wode': '小课堂我的',
+  'xiaoke-web-home': '网页版小课堂',
+  'read-faxian': '发现,首页,推荐文章',
+  'read-bofang': '播放条,常驻播放',
+  'read-dangan': '阅读档案,阅读记录',
+  'read-fenlei': '分类,按类型找文章',
+  'read-quanzi': '圈子,阅读社区',
+  'read-reader': '文章阅读器,读文章',
+  'read-jujie': '句子解析,语法分析',
+  'read-jihua': '阅读计划,打卡计划',
+  'read-yueduqi': '阅读器入口',
+  'read-bendiwenjian': '本地文件,导入文件,自己的文档',
+  'read-qingkong': '青空文库,日文原著',
+  'read-liulanwangye': '浏览网页,网页阅读',
+  'read-duanpian': '短篇阅读,辅助阅读',
+  'read-paizhao': '拍照提取文字,拍照识别',
+  'read-xuexi': '学习页,阅读学习',
+  'read-wode': '阅读我的',
+  'read-shezhi': '设置',
+  'read-vip': '会员权益,订阅',
+  'kana-home': '五十音首页',
+  'kana-wushiyin': '五十音图,学假名',
+  'kana-jiaming': '假名详情,单个假名',
+  'kana-shuxie': '书写练习,写假名',
+  'kana-lianxi': '假名练习,做题',
+  'kana-jieguo': '练习结果,成绩',
+  'kana-xiaoxiao': '游戏,消消乐',
+  'kana-ziliao': '入门资料,新手资料',
+  'kana-xiaoke': '小课堂',
+  'kana-wode': '我的',
+  'test-duice': '对策,备考总览',
+  'test-zhuanxiang': '专项试题,专项练习',
+  'test-beici': '背词首页',
+  'test-cishu': '选词书,换词书',
+  'test-shezhi': '背词设置',
+  'test-xuexilie': '学习列表',
+  'test-xinxue': '新学',
+  'test-fuxi': '复习',
+  'test-tingci': '听词',
+  'test-jizhi': '背词机制,艾宾浩斯',
+  'test-daka': '打卡,签到',
+  'test-zixishi': '自习室,一起学习',
+  'test-zhenti': '历年真题,真题列表',
+  'test-dati': '答题界面,做题',
+  'test-tongji': '统计,成绩分析',
+  'test-timuce': '题目册,错题本',
+  'test-shezhi2': '个人中心',
+  'test-pro': '购买会员,Pro购买',
+  'test-web-home': '网页版首页',
+  'test-web-search-main': '搜题,搜题解析',
+  'test-web-search-detail': '搜题结果详情',
+  'test-web-papers-home': '试卷库,历年真题网页版',
+  'test-web-papers-exam': '网页做题',
+  'test-web-zhuanxiang-tab': '网页专项练习',
+  'test-web-zhuanxiang-listening': '网页听力练习',
+  'test-web-jiexi': '看解析,答案解析',
+  'test-web-timuce-home': '网页题目册',
+  'test-web-timuce-smart': '智能分析',
+  'test-web-timuce-ai': 'AI问答',
+  'test-web-zixun-nav': '备考资讯,学习资讯',
+  'test-web-zixun-article': '资讯文章详情',
+  'test-web-zixun-column': '专栏列表',
+  'test-web-xiaoke': '网页小课堂',
+  'test-web-wode': '网页我的',
+  'kaiwa-ai': 'AI伙伴,选AI角色',
+  'kaiwa-duihua': '对话界面,聊天',
+  'kaiwa-shezhi': '对话设置',
+  'kaiwa-changjing': '场景会话,情景对话',
+  'kaiwa-kouyu': '口语册,口语练习',
+  'kaiwa-wode': '我的',
+  'kori-fanyi': '韩语翻译,中韩互译',
+  'kori-search': '韩语查词,搜韩语单词',
+  'kori-citiao': '韩语词条详情',
+  'kori-shoucang': '韩语收藏,生词本',
+  'kori-shoucang-tingci': '听韩语单词',
+  'kori-beici-home': '背韩语单词',
+  'kori-beici-set': '背词设置',
+  'kori-xuexiliebiao': '学习列表',
+  'kori-xinxue': '新学',
+  'kori-fuxi': '复习',
+  'kori-tingci': '听词',
+  'kori-daka': '打卡',
+  'kori-wode': '我的',
+  'kori-wode-profile': '个人主页',
+  'kori-wode-xiaozujian': '桌面小组件',
+  'kori-wode-huigu': '每日回顾',
+  'kori-wode-shezhi': '设置',
+};
+var searchIndex = [];
+var productNames = {
+  dict: 'MOJi辞書', read: 'MOJi阅读', kana: 'MOJiKana', test: 'MOJiTest',
+  kaiwa: 'MOJi会话', xiaoke: 'MOJi小课堂', kori: 'Kori辞书'
+};
+
+function buildSearchIndex() {
+  searchIndex = [];
+  document.querySelectorAll('.module-block').forEach(function(block) {
+    if (!block.id) return;
+    var section = block.closest('.product-section');
+    if (!section) return;
+    var sectionId = section.id.replace('section-', '');
+    var titleEl = block.querySelector('.module-title');
+    var subtitleEl = block.querySelector('.module-subtitle');
+    var title = titleEl ? titleEl.textContent.trim() : '';
+    var subtitle = subtitleEl ? subtitleEl.textContent.trim() : '';
+    if (!title) return;
+    var tags = moduleTags[block.id] || '';
+    var text = (block.textContent + ' ' + tags).replace(/\s+/g, ' ').toLowerCase();
+    searchIndex.push({
+      blockId: block.id,
+      sectionId: sectionId,
+      productName: productNames[sectionId] || '',
+      title: title,
+      subtitle: subtitle,
+      text: text
+    });
+  });
+}
+
+function escapeHtml(s) {
+  var div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+function onSiteSearch(q) {
+  var resultsEl = document.getElementById('siteSearchResults');
+  q = q.trim().toLowerCase();
+  if (!q) { resultsEl.innerHTML = ''; resultsEl.classList.remove('open'); return; }
+  var matches = searchIndex.filter(function(item) {
+    return item.text.indexOf(q) !== -1;
+  }).slice(0, 20);
+
+  if (matches.length === 0) {
+    resultsEl.innerHTML = '<div class="search-empty">没搜到，换个说法试试</div>';
+  } else {
+    var html = '';
+    matches.forEach(function(m) {
+      html += '<div class="search-result-item" data-section="' + m.sectionId + '" data-block="' + m.blockId + '">'
+        + '<div class="search-result-product">' + escapeHtml(m.productName) + '</div>'
+        + '<div class="search-result-title">' + escapeHtml(m.title) + '</div>'
+        + (m.subtitle ? '<div class="search-result-sub">' + escapeHtml(m.subtitle) + '</div>' : '')
+        + '</div>';
+    });
+    resultsEl.innerHTML = html;
+  }
+  resultsEl.classList.add('open');
+}
+
+document.addEventListener('click', function(e) {
+  var item = e.target.closest('.search-result-item');
+  if (item) {
+    var sectionId = item.getAttribute('data-section');
+    var blockId = item.getAttribute('data-block');
+    showSection(sectionId);
+    document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
+    document.getElementById('siteSearchResults').classList.remove('open');
+    document.getElementById('siteSearchInput').value = '';
+    scrollToBlock(blockId);
+    return;
+  }
+  var wrap = e.target.closest('.sidebar-search-wrap');
+  if (!wrap) {
+    document.getElementById('siteSearchResults').classList.remove('open');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', buildSearchIndex);
 </script>
 <!-- 截图弹窗 -->
 <div class="modal-overlay" id="imgModal" onclick="closeModal(event)">
