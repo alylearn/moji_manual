@@ -54,6 +54,77 @@
     border-bottom: 1px solid var(--border);
   }
 
+  .sidebar-search-wrap {
+    position: relative;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+  }
+  .sidebar-search-box svg { flex-shrink: 0; }
+  .sidebar-search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    color: var(--text-primary);
+    flex: 1;
+    min-width: 0;
+  }
+  .sidebar-search-box input::placeholder { color: var(--text-muted); }
+  .site-search-results {
+    display: none;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: calc(100% - 4px);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    max-height: 360px;
+    overflow-y: auto;
+    z-index: 500;
+  }
+  .site-search-results.open { display: block; }
+  .search-result-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background: var(--bg); }
+  .search-result-product {
+    font-size: 10px;
+    color: var(--moji-green);
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .search-result-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .search-result-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .search-empty {
+    padding: 16px 14px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
   .sidebar-logo .logo-text {
     font-size: 20px;
     font-weight: 700;
