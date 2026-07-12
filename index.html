@@ -5634,6 +5634,7 @@ function buildSearchIndex() {
       productName: productNames[sectionId] || '',
       title: title,
       subtitle: subtitle,
+      tags: tags.toLowerCase(),
       text: text
     });
   });
@@ -5649,9 +5650,23 @@ function onSiteSearch(q, targetId) {
   var resultsEl = document.getElementById(targetId || 'siteSearchResults');
   q = q.trim().toLowerCase();
   if (!q) { resultsEl.innerHTML = ''; resultsEl.classList.remove('open'); return; }
-  var matches = searchIndex.filter(function(item) {
-    return item.text.indexOf(q) !== -1;
-  }).slice(0, 20);
+
+  function score(item) {
+    var t = item.title.toLowerCase();
+    if (t === q) return 100;
+    if (t.indexOf(q) !== -1) return 60;
+    if (item.tags.indexOf(q) !== -1) return 40;
+    if (item.subtitle.toLowerCase().indexOf(q) !== -1) return 20;
+    if (item.text.indexOf(q) !== -1) return 5;
+    return -1;
+  }
+
+  var matches = searchIndex
+    .map(function(item) { return { item: item, s: score(item) }; })
+    .filter(function(x) { return x.s > 0; })
+    .sort(function(a, b) { return b.s - a.s; })
+    .slice(0, 20)
+    .map(function(x) { return x.item; });
 
   if (matches.length === 0) {
     resultsEl.innerHTML = '<div class="search-empty">没搜到，换个说法试试</div>';
