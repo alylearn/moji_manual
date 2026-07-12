@@ -5455,12 +5455,15 @@ function scrollToBlock(blockId, query) {
     if (!el) return;
     var top = el.getBoundingClientRect().top + window.pageYOffset - 16;
     window.scrollTo({ top: top, behavior: 'instant' });
-    el.classList.remove('jump-flash');
-    void el.offsetWidth; /* 强制重排，确保重复跳转同一模块也能重新触发动画 */
-    el.classList.add('jump-flash');
-    setTimeout(function() { el.classList.remove('jump-flash'); }, 1400);
     clearTextHighlights();
-    if (query) highlightTextInBlock(el, query);
+    if (query) {
+      highlightTextInBlock(el, query);
+    } else {
+      el.classList.remove('jump-pulse');
+      void el.offsetWidth;
+      el.classList.add('jump-pulse');
+      setTimeout(function() { el.classList.remove('jump-pulse'); }, 1000);
+    }
   });
 }
 
@@ -5663,6 +5666,11 @@ var productNames = {
   dict: 'MOJi辞書', read: 'MOJi阅读', kana: 'MOJiKana', test: 'MOJiTest',
   kaiwa: 'MOJi会话', xiaoke: 'MOJi小课堂', kori: 'Kori辞书'
 };
+var productColors = {
+  dict: 'var(--moji-green)', read: 'var(--read-blue)', kana: 'var(--kana-green)',
+  test: 'var(--test-red)', kaiwa: 'var(--kaiwa-orange)', xiaoke: 'var(--school-red)',
+  kori: 'var(--kori-indigo)'
+};
 
 function buildSearchIndex() {
   searchIndex = [];
@@ -5724,7 +5732,7 @@ function onSiteSearch(q, targetId) {
     var html = '';
     matches.forEach(function(m) {
       html += '<div class="search-result-item" data-section="' + m.sectionId + '" data-block="' + m.blockId + '">'
-        + '<div class="search-result-product">' + escapeHtml(m.productName) + '</div>'
+        + '<div class="search-result-product" style="color:' + (productColors[m.sectionId] || 'inherit') + '">' + escapeHtml(m.productName) + '</div>'
         + '<div class="search-result-title">' + escapeHtml(m.title) + '</div>'
         + (m.subtitle ? '<div class="search-result-sub">' + escapeHtml(m.subtitle) + '</div>' : '')
         + '</div>';

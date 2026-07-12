@@ -104,7 +104,6 @@
   .search-result-item:hover { background: var(--bg); }
   .search-result-product {
     font-size: 10px;
-    color: var(--moji-green);
     font-weight: 700;
     margin-bottom: 2px;
   }
@@ -442,13 +441,12 @@
     overflow: hidden;
   }
 
-  .module-block.jump-flash {
-    animation: jumpFlash 1.4s ease;
+  .module-block.jump-pulse {
+    animation: jumpPulse 1s ease;
   }
-  @keyframes jumpFlash {
-    0%   { background: #FDF3D6; border-color: #E8C766; }
-    70%  { background: #FDF3D6; border-color: #E8C766; }
-    100% { background: var(--white); border-color: var(--border); }
+  @keyframes jumpPulse {
+    0%   { border-color: var(--moji-green); box-shadow: 0 0 0 3px rgba(235,15,6,0.12); }
+    100% { border-color: var(--border); box-shadow: none; }
   }
 
   mark.text-highlight {
