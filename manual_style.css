@@ -125,38 +125,6 @@
     text-align: center;
   }
 
-  /* 反馈按钮 */
-  .feedback-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 24px 20px;
-    flex-wrap: wrap;
-  }
-  .feedback-label { font-size: 12px; color: var(--text-muted); }
-  .feedback-btn {
-    font-size: 12px;
-    padding: 5px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    cursor: pointer;
-    color: var(--text-secondary);
-    transition: all .15s ease;
-  }
-  .feedback-btn:hover { border-color: var(--text-secondary); }
-  .feedback-btn.picked {
-    border-color: var(--moji-green);
-    color: var(--moji-green);
-    background: var(--moji-green-light);
-  }
-  .feedback-thanks {
-    display: none;
-    font-size: 12px;
-    color: #00B26B;
-    font-weight: 500;
-  }
-  .feedback-row.answered .feedback-thanks { display: inline; }
-
   /* 全局悬浮搜索按钮 */
   .search-fab {
     position: fixed;

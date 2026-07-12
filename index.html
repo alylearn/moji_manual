@@ -5588,31 +5588,6 @@ document.addEventListener('click', function(e) {
 });
 
 document.addEventListener('DOMContentLoaded', buildSearchIndex);
-
-/* ========== 反馈按钮 ========== */
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.module-block').forEach(function(block) {
-    if (!block.id) return;
-    var fb = document.createElement('div');
-    fb.className = 'feedback-row';
-    fb.innerHTML =
-      '<span class="feedback-label">这条说明有帮助吗？</span>' +
-      '<span class="feedback-btn" data-fb="up">👍 有帮助</span>' +
-      '<span class="feedback-btn" data-fb="down">👎 没解决</span>' +
-      '<span class="feedback-thanks">谢谢反馈</span>';
-    block.appendChild(fb);
-  });
-});
-
-document.addEventListener('click', function(e) {
-  var btn = e.target.closest('.feedback-btn');
-  if (btn) {
-    var row = btn.closest('.feedback-row');
-    row.querySelectorAll('.feedback-btn').forEach(function(b){ b.classList.remove('picked'); });
-    btn.classList.add('picked');
-    row.classList.add('answered');
-  }
-});
 </script>
 <!-- 截图弹窗 -->
 <div class="modal-overlay" id="imgModal" onclick="closeModal(event)">
