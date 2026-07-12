@@ -207,8 +207,8 @@
   .search-modal-results .search-empty { padding: 24px 18px; }
 
   @media (max-width: 600px) {
-    .search-modal-overlay { padding-top: 0; align-items: flex-end; }
-    .search-modal { width: 100%; max-width: 100%; border-radius: 16px 16px 0 0; max-height: 80vh; }
+    .search-modal-overlay { padding-top: 8vh; align-items: flex-start; }
+    .search-modal { width: 92%; max-width: 100%; border-radius: 14px; max-height: 70vh; }
   }
 
   .sidebar-contact {
