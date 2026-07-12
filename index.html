@@ -26,6 +26,11 @@
 <!-- 移动端sidebar遮罩 -->
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileSidebar()"></div>
 
+<!-- 全局悬浮搜索入口 -->
+<div class="search-fab" onclick="openSiteSearch()" title="搜功能">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="6.2" stroke="#fff" stroke-width="1.8"/><path d="M13.2 13.2L17 17" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+</div>
+
 <!-- Sidebar -->
 <aside class="sidebar" id="mainSidebar">
   <div class="sidebar-logo">
@@ -5319,6 +5324,19 @@ function toggleMobileSidebar() {
   sidebar.classList.toggle('mobile-open');
   overlay.classList.toggle('active');
 }
+function openSiteSearch() {
+  var sidebar = document.getElementById('mainSidebar');
+  var overlay = document.getElementById('sidebarOverlay');
+  if (window.innerWidth <= 768) {
+    sidebar.classList.add('mobile-open');
+    overlay.classList.add('active');
+  }
+  setTimeout(function() {
+    var input = document.getElementById('siteSearchInput');
+    input.focus();
+    input.scrollIntoView({ block: 'center' });
+  }, 150);
+}
 function closeMobileSidebar() {
   var sidebar = document.getElementById('mainSidebar');
   var overlay = document.getElementById('sidebarOverlay');
@@ -5528,8 +5546,8 @@ function escapeHtml(s) {
   return div.innerHTML;
 }
 
-function onSiteSearch(q) {
-  var resultsEl = document.getElementById('siteSearchResults');
+function onSiteSearch(q, targetId) {
+  var resultsEl = document.getElementById(targetId || 'siteSearchResults');
   q = q.trim().toLowerCase();
   if (!q) { resultsEl.innerHTML = ''; resultsEl.classList.remove('open'); return; }
   var matches = searchIndex.filter(function(item) {
@@ -5564,13 +5582,37 @@ document.addEventListener('click', function(e) {
     scrollToBlock(blockId);
     return;
   }
-  var wrap = e.target.closest('.sidebar-search-wrap');
-  if (!wrap) {
+  if (!e.target.closest('.sidebar-search-wrap')) {
     document.getElementById('siteSearchResults').classList.remove('open');
   }
 });
 
 document.addEventListener('DOMContentLoaded', buildSearchIndex);
+
+/* ========== 反馈按钮 ========== */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.module-block').forEach(function(block) {
+    if (!block.id) return;
+    var fb = document.createElement('div');
+    fb.className = 'feedback-row';
+    fb.innerHTML =
+      '<span class="feedback-label">这条说明有帮助吗？</span>' +
+      '<span class="feedback-btn" data-fb="up">👍 有帮助</span>' +
+      '<span class="feedback-btn" data-fb="down">👎 没解决</span>' +
+      '<span class="feedback-thanks">谢谢反馈</span>';
+    block.appendChild(fb);
+  });
+});
+
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.feedback-btn');
+  if (btn) {
+    var row = btn.closest('.feedback-row');
+    row.querySelectorAll('.feedback-btn').forEach(function(b){ b.classList.remove('picked'); });
+    btn.classList.add('picked');
+    row.classList.add('answered');
+  }
+});
 </script>
 <!-- 截图弹窗 -->
 <div class="modal-overlay" id="imgModal" onclick="closeModal(event)">

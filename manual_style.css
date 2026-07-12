@@ -6,11 +6,11 @@
     --moji-green-mid: #F2665F;
     --test-red: #eb0f06;
     --test-red-light: #FDE7E6;
-    --read-blue: #df4d70;
+    --read-blue: #c84564;
     --read-blue-light: #FCECF1;
-    --kana-green: #37c213;
+    --kana-green: #26870d;
     --kana-green-light: #E7F8E3;
-    --kaiwa-orange: #ff6105;
+    --kaiwa-orange: #cb4d03;
     --kaiwa-orange-light: #FFEBE0;
     --kori-indigo: #2a69ce;
     --kori-indigo-light: #E7EFFA;
@@ -124,6 +124,57 @@
     color: var(--text-muted);
     text-align: center;
   }
+
+  /* 反馈按钮 */
+  .feedback-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px 20px;
+    flex-wrap: wrap;
+  }
+  .feedback-label { font-size: 12px; color: var(--text-muted); }
+  .feedback-btn {
+    font-size: 12px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all .15s ease;
+  }
+  .feedback-btn:hover { border-color: var(--text-secondary); }
+  .feedback-btn.picked {
+    border-color: var(--moji-green);
+    color: var(--moji-green);
+    background: var(--moji-green-light);
+  }
+  .feedback-thanks {
+    display: none;
+    font-size: 12px;
+    color: #00B26B;
+    font-weight: 500;
+  }
+  .feedback-row.answered .feedback-thanks { display: inline; }
+
+  /* 全局悬浮搜索按钮 */
+  .search-fab {
+    position: fixed;
+    right: 22px;
+    bottom: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--moji-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    cursor: pointer;
+    z-index: 400;
+    transition: transform .15s ease;
+  }
+  .search-fab:hover { transform: scale(1.06); }
 
   .sidebar-logo .logo-text {
     font-size: 20px;
