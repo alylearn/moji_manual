@@ -128,8 +128,8 @@
   /* 全局悬浮搜索按钮 */
   .search-fab {
     position: fixed;
-    right: 22px;
-    bottom: 26px;
+    right: max(22px, calc(22px + env(safe-area-inset-right, 0px)));
+    bottom: calc(26px + env(safe-area-inset-bottom, 0px));
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -449,6 +449,13 @@
     0%   { background: #FDF3D6; border-color: #E8C766; }
     70%  { background: #FDF3D6; border-color: #E8C766; }
     100% { background: var(--white); border-color: var(--border); }
+  }
+
+  mark.text-highlight {
+    background: #FFE58A;
+    color: inherit;
+    padding: 1px 2px;
+    border-radius: 3px;
   }
 
   .module-header {

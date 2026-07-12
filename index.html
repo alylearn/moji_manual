@@ -5364,12 +5364,22 @@ document.addEventListener('keydown', function(e) {
 
   function posKey() { return 'moji-fab-pos'; }
 
+  function getSafeBottom() {
+    var probe = document.createElement('div');
+    probe.style.cssText = 'position:fixed;bottom:0;left:0;width:1px;height:env(safe-area-inset-bottom, 0px);visibility:hidden;pointer-events:none;';
+    document.body.appendChild(probe);
+    var h = probe.getBoundingClientRect().height;
+    document.body.removeChild(probe);
+    return h;
+  }
+  var safeBottom = getSafeBottom();
+
   function loadPos() {
     try {
       var saved = JSON.parse(localStorage.getItem(posKey()));
       if (saved) {
         fab.style.right = saved.right + 'px';
-        fab.style.bottom = saved.bottom + 'px';
+        fab.style.bottom = Math.max(saved.bottom, 4 + safeBottom) + 'px';
       }
     } catch (e) {}
   }
@@ -5406,7 +5416,7 @@ document.addEventListener('keydown', function(e) {
     var newRight = startRight - dx;
     var newBottom = startBottom - dy;
     newRight = Math.max(4, Math.min(newRight, window.innerWidth - 54));
-    newBottom = Math.max(4, Math.min(newBottom, window.innerHeight - 54));
+    newBottom = Math.max(4 + safeBottom, Math.min(newBottom, window.innerHeight - 54));
     fab.style.right = newRight + 'px';
     fab.style.bottom = newBottom + 'px';
   }
@@ -5438,7 +5448,7 @@ function closeMobileSidebar() {
   sidebar.classList.remove('mobile-open');
   overlay.classList.remove('active');
 }
-function scrollToBlock(blockId) {
+function scrollToBlock(blockId, query) {
   closeMobileSidebar();
   requestAnimationFrame(function() {
     var el = document.getElementById(blockId);
@@ -5449,6 +5459,46 @@ function scrollToBlock(blockId) {
     void el.offsetWidth; /* 强制重排，确保重复跳转同一模块也能重新触发动画 */
     el.classList.add('jump-flash');
     setTimeout(function() { el.classList.remove('jump-flash'); }, 1400);
+    clearTextHighlights();
+    if (query) highlightTextInBlock(el, query);
+  });
+}
+
+/* ===== 正文关键词高亮（跳转后标出具体匹配的文字，不只是整块背景闪一下）===== */
+function clearTextHighlights() {
+  document.querySelectorAll('mark.text-highlight').forEach(function(m) {
+    var parent = m.parentNode;
+    if (!parent) return;
+    parent.replaceChild(document.createTextNode(m.textContent), m);
+    parent.normalize();
+  });
+}
+
+function highlightTextInBlock(block, query) {
+  query = query.trim();
+  if (!query) return;
+  var lowerQuery = query.toLowerCase();
+  var walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
+  var nodes = [];
+  var n;
+  while ((n = walker.nextNode())) {
+    if (n.nodeValue.toLowerCase().indexOf(lowerQuery) !== -1) nodes.push(n);
+  }
+  nodes.forEach(function(node) {
+    var text = node.nodeValue;
+    var lowerText = text.toLowerCase();
+    var frag = document.createDocumentFragment();
+    var idx = 0, pos;
+    while ((pos = lowerText.indexOf(lowerQuery, idx)) !== -1) {
+      if (pos > idx) frag.appendChild(document.createTextNode(text.slice(idx, pos)));
+      var mark = document.createElement('mark');
+      mark.className = 'text-highlight';
+      mark.textContent = text.slice(pos, pos + query.length);
+      frag.appendChild(mark);
+      idx = pos + query.length;
+    }
+    if (idx < text.length) frag.appendChild(document.createTextNode(text.slice(idx)));
+    if (node.parentNode) node.parentNode.replaceChild(frag, node);
   });
 }
 
@@ -5689,12 +5739,13 @@ document.addEventListener('click', function(e) {
   if (item) {
     var sectionId = item.getAttribute('data-section');
     var blockId = item.getAttribute('data-block');
+    var q = (document.getElementById('siteSearchInput').value || document.getElementById('modalSearchInput').value || '').trim();
     showSection(sectionId);
     document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
     document.getElementById('siteSearchResults').classList.remove('open');
     document.getElementById('siteSearchInput').value = '';
     closeSearchModal();
-    scrollToBlock(blockId);
+    scrollToBlock(blockId, q);
     return;
   }
   if (!e.target.closest('.sidebar-search-wrap')) {
