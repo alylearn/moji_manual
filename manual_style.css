@@ -232,13 +232,6 @@
     letter-spacing: -0.5px;
   }
 
-  .sidebar-logo .logo-sub {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 3px;
-    letter-spacing: 1px;
-  }
-
   .sidebar-nav { padding: 16px 0; flex: 1; overflow-y: auto; min-height: 0; }
 
   .nav-section { margin-bottom: 8px; }
@@ -712,7 +705,6 @@
   .sidebar { transition: width 0.25s; overflow-x: hidden; overflow-y: auto; }
   .sidebar.collapsed { width: 0 !important; min-width: 0 !important; }
   .sidebar-toggle.collapsed { left: 0; }
-  .main-content { transition: margin-left 0.25s; }
 
   /* ============================================
      截图缩略图 + 弹窗（v28新增 · v28.4 图下方横排）
